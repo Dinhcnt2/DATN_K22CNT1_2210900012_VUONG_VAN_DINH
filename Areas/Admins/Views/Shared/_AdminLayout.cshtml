@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Admin BookStore</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <!-- 🔥 FIX LỖI Styles -->
+    @RenderSection("Styles", required: false)
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI",sans-serif;
+            background: #f4f6f9;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100vh;
+            background: #1f2d3d;
+            color: white;
+        }
+
+            .sidebar h4 {
+                text-align: center;
+                padding: 20px;
+                border-bottom: 1px solid #394b5a;
+            }
+
+            .sidebar a {
+                display: block;
+                padding: 12px 20px;
+                color: #c2c7d0;
+                text-decoration: none;
+                transition: 0.3s;
+            }
+
+                .sidebar a:hover {
+                    background: #007bff;
+                    color: white;
+                }
+
+                /* 🔥 ACTIVE MENU */
+                .sidebar a.active {
+                    background: #007bff;
+                    color: white;
+                }
+
+        /* TOPBAR */
+        .topbar {
+            margin-left: 250px;
+            height: 60px;
+            background: white;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        /* CONTENT */
+        .main-content {
+            margin-left: 250px;
+            padding: 25px;
+            min-height: calc(100vh - 120px);
+        }
+
+        /* FOOTER */
+        .footer {
+            margin-left: 250px;
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+        <h4>📚 BOOK ADMIN</h4>
+
+        <a asp-area="Admins" asp-controller="Home" asp-action="Index">🏠 Dashboard</a>
+        <a asp-area="Admins" asp-controller="SanPhams" asp-action="Index">📖 Quản lý sách</a>
+        <a asp-area="Admins" asp-controller="DanhMucs" asp-action="Index">📂 Danh mục</a>
+        <a asp-area="Admins" asp-controller="LoaiBias" asp-action="Index">📘 Loại bìa</a>
+        <a asp-area="Admins" asp-controller="NgonNgus" asp-action="Index">🌐 Ngôn ngữ</a>
+        <a asp-area="Admins" asp-controller="BienTheSachs" asp-action="Index">📚 Biến thể sách</a>
+        <a asp-area="Admins" asp-controller="DonHangs" asp-action="Index">🧾 Đơn hàng</a>
+        <a asp-area="Admins" asp-controller="ChiTietDonHangs" asp-action="Index">📋 Chi tiết đơn hàng</a>
+        <a asp-area="Admins" asp-controller="GioHangs" asp-action="Index">🛒 Giỏ hàng</a>
+        <a asp-area="Admins" asp-controller="NguoiDungs" asp-action="Index">👤 Người dùng</a>
+        <a asp-area="Admins" asp-controller="DanhGias" asp-action="Index">⭐ Đánh giá</a>
+        <a asp-area="Admins" asp-controller="BaiViets" asp-action="Index">📰 Bài viết</a>
+        <a asp-area="Admins" asp-controller="LienHes" asp-action="Index">📩 Liên hệ</a>
+        <a asp-area="Admins" asp-controller="Vouchers" asp-action="Index">🎁 Voucher</a>
+
+    </div>
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+
+        <h5>📊 Hệ thống quản trị website bán sách</h5>
+
+        <a class="btn btn-sm btn-outline-danger"
+           asp-area=""
+           asp-controller="TaiKhoan"
+           asp-action="DangXuat">
+            Đăng xuất
+        </a>
+
+    </div>
+
+    <!-- CONTENT -->
+    <div class="main-content">
+        @RenderBody() <!-- 🔥 QUAN TRỌNG -->
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        © 2026 - Hệ thống quản lý bán sách
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- 🔥 SCRIPT SECTION -->
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

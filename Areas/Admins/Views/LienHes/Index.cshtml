@@ -1,0 +1,160 @@
+﻿@model IEnumerable<VVD_2210900012_DATN.Models.LienHe>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    body {
+        background: #f5f6fa;
+    }
+
+    h1 {
+        font-size: 26px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .card-box {
+        background: #fff;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .btn-create {
+        background: linear-gradient(45deg, #28a745, #5cd65c);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .table-custom thead {
+        background: linear-gradient(45deg, #007bff, #00c6ff);
+        color: white;
+    }
+
+    .table-custom th,
+    .table-custom td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .table-custom tbody tr:hover {
+        background: #f1f1f1;
+    }
+
+    .email {
+        color: #007bff;
+        font-weight: bold;
+    }
+
+    .content-box {
+        max-width: 250px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .date {
+        font-size: 13px;
+        color: #666;
+    }
+
+    .btn-action {
+        padding: 5px 10px;
+        border-radius: 6px;
+        font-size: 13px;
+        text-decoration: none;
+        margin: 2px;
+        display: inline-block;
+    }
+
+    .edit {
+        background: #ffc107;
+        color: black;
+    }
+
+    .detail {
+        background: #17a2b8;
+        color: white;
+    }
+
+    .delete {
+        background: #dc3545;
+        color: white;
+    }
+</style>
+
+<h1>📩 Danh sách Liên hệ</h1>
+
+<p>
+    <a asp-action="Create" class="btn-create">➕ Thêm mới</a>
+</p>
+
+<div class="card-box">
+
+    <table class="table table-hover table-custom">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.HoTen)</th>
+                <th>@Html.DisplayNameFor(model => model.Email)</th>
+                <th>@Html.DisplayNameFor(model => model.TieuDe)</th>
+                <th>Nội dung</th>
+                <th>@Html.DisplayNameFor(model => model.NgayGui)</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.HoTen</td>
+
+                    <td class="email">
+                        @item.Email
+                    </td>
+
+                    <td>
+                        <b>@item.TieuDe</b>
+                    </td>
+
+                    <td>
+                        <div class="content-box" title="@item.NoiDung">
+                            @item.NoiDung
+                        </div>
+                    </td>
+
+                    <td class="date">
+                        @item.NgayGui?.ToString("dd/MM/yyyy HH:mm")
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit"
+                           asp-route-id="@item.Id"
+                           class="btn-action edit">
+                            ✏️ Sửa
+                        </a>
+
+                        <a asp-action="Details"
+                           asp-route-id="@item.Id"
+                           class="btn-action detail">
+                            👁 Xem
+                        </a>
+
+                        <a asp-action="Delete"
+                           asp-route-id="@item.Id"
+                           class="btn-action delete"
+                           onclick="return confirm('Xoá liên hệ này?')">
+                            🗑 Xoá
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

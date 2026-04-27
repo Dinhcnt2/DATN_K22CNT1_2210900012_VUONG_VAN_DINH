@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\VVD_2210900012_DATN.props" />
+</Project>

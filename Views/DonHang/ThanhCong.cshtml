@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Thành công";
+
+    decimal tien = 0;
+    if (ViewBag.TongTien != null)
+    {
+        tien = (decimal)ViewBag.TongTien;
+    }
+}
+
+<div class="container text-center mt-5">
+
+    <h1 class="text-success mb-4">🎉 Đặt hàng thành công!</h1>
+
+    <a href="/" class="btn btn-primary mt-3">
+        🏠 Về trang chủ
+    </a>
+
+</div>

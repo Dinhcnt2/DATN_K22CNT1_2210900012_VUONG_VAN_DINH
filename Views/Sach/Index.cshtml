@@ -1,0 +1,107 @@
+﻿@model dynamic
+
+@{
+    ViewData["Title"] = "Sách bán chạy";
+}
+
+<style>
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+    }
+
+    .card {
+        background: white;
+        padding: 15px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: 0.3s;
+        position: relative;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+    .price {
+        color: red;
+        font-weight: bold;
+    }
+
+    .sold {
+        color: #666;
+        font-size: 14px;
+    }
+
+    .btn {
+        background: #ff6a00;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 6px;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 8px;
+    }
+
+    /* 🔥 BADGE NGỪNG BÁN */
+    .badge-stop {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: red;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 6px;
+        font-size: 12px;
+    }
+
+    .btn-disable {
+        background: gray !important;
+        cursor: not-allowed;
+    }
+</style>
+
+<h2>🔥 Sách bán chạy</h2>
+
+<div class="grid">
+    @foreach (var item in Model)
+    {
+        <div class="card">
+
+            <!-- 🔥 HIỂN THỊ NGỪNG BÁN (nếu có IsActive) -->
+            @if (item.IsActive != null && item.IsActive == false)
+            {
+                <div class="badge-stop">Ngừng bán</div>
+            }
+
+            <img src="~/images/@(item.AnhBia ?? "no-image.png")" />
+
+            <h5>@item.TenSach</h5>
+
+            <p class="price">
+                @(item.Gia != null ? item.Gia.ToString("N0") : "0") đ
+            </p>
+
+            <p class="sold">Đã bán: @item.LuotBan</p>
+
+            <!-- 🔥 NÚT -->
+            @if (item.IsActive != null && item.IsActive == false)
+            {
+                <span class="btn btn-disable">Ngừng bán</span>
+            }
+            else
+            {
+                <a href="/Sach/ChiTiet/@item.Id" class="btn">Xem chi tiết</a>
+            }
+
+        </div>
+    }
+</div>

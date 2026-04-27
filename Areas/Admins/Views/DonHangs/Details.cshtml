@@ -1,0 +1,219 @@
+﻿@model VVD_2210900012_DATN.Models.DonHang
+
+@{
+    ViewData["Title"] = "Chi tiết đơn hàng";
+}
+
+<style>
+    body {
+        background: #f5f6fa;
+    }
+
+    .container-box {
+        max-width: 900px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+        font-size: 26px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .row-item {
+        display: flex;
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .label {
+        width: 220px;
+        font-weight: 600;
+        color: #555;
+    }
+
+    .value {
+        flex: 1;
+    }
+
+    .price {
+        color: red;
+        font-weight: bold;
+    }
+
+    .badge {
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+    }
+
+    .done {
+        background: #28a745;
+        color: white;
+    }
+
+    .cancel {
+        background: #dc3545;
+        color: white;
+    }
+
+    .waiting {
+        background: #ffc107;
+    }
+
+    .processing {
+        background: #17a2b8;
+        color: white;
+    }
+
+    .btn-group {
+        margin-top: 25px;
+    }
+
+    .btn-edit {
+        background: #ffc107;
+        color: black;
+        padding: 10px 18px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .btn-back {
+        background: #6c757d;
+        color: white;
+        padding: 10px 18px;
+        border-radius: 8px;
+        text-decoration: none;
+        margin-left: 10px;
+    }
+
+    .btn-edit:hover {
+        background: #e0a800;
+    }
+
+    .btn-back:hover {
+        background: #5a6268;
+    }
+</style>
+
+<div class="container-box">
+
+    <h1>📦 Chi tiết đơn hàng</h1>
+
+    <div class="row-item">
+        <div class="label">Mã đơn</div>
+        <div class="value"><b>@Model.MaDonHangCode</b></div>
+    </div>
+
+    <div class="row-item">
+        <div class="label">Khách hàng</div>
+        <div class="value">@Model.HoTen</div>
+    </div>
+
+    <div class="row-item">
+        <div class="label">SĐT</div>
+        <div class="value">@Model.SoDienThoai</div>
+    </div>
+
+    <div class="row-item">
+        <div class="label">Địa chỉ</div>
+        <div class="value">@Model.DiaChi</div>
+    </div>
+
+    <div class="row-item">
+        <div class="label">Tổng tiền</div>
+        <div class="value price">@Model.TongTien?.ToString("N0") đ</div>
+    </div>
+
+    <div class="row-item">
+        <div class="label">Phí vận chuyển</div>
+        <div class="value">@Model.PhiVanChuyen?.ToString("N0") đ</div>
+    </div>
+
+    <div class="row-item">
+        <div class="label">Phương thức thanh toán</div>
+        <div class="value">@Model.PhuongThucThanhToan</div>
+    </div>
+
+    <!-- THANH TOÁN -->
+    <div class="row-item">
+        <div class="label">Thanh toán</div>
+        <div class="value">
+            @if (Model.TrangThaiThanhToan == "ChuaThanhToan")
+            {
+                <span class="badge cancel">Chưa thanh toán</span>
+            }
+            else
+            {
+                <span class="badge done">Đã thanh toán</span>
+            }
+        </div>
+    </div>
+
+    <!-- TRẠNG THÁI -->
+    <div class="row-item">
+        <div class="label">Trạng thái</div>
+        <div class="value">
+            @if (Model.TrangThai == "ChoXacNhan")
+            {
+                <span class="badge waiting">Chờ xác nhận</span>
+            }
+            else if (Model.TrangThai == "DangXuLy")
+            {
+                <span class="badge processing">Đang xử lý</span>
+            }
+            else if (Model.TrangThai == "HoanThanh")
+            {
+                <span class="badge done">Hoàn thành</span>
+            }
+            else
+            {
+                <span class="badge cancel">Huỷ</span>
+            }
+        </div>
+    </div>
+
+    <div class="row-item">
+        <div class="label">Ghi chú</div>
+        <div class="value">@Model.GhiChu</div>
+    </div>
+
+    <div class="row-item">
+        <div class="label">Ngày đặt</div>
+        <div class="value">@Model.NgayDat?.ToString("dd/MM/yyyy")</div>
+    </div>
+
+    <div class="row-item">
+        <div class="label">Ngày cập nhật</div>
+        <div class="value">@Model.NgayCapNhat?.ToString("dd/MM/yyyy")</div>
+    </div>
+
+    <div class="row-item">
+        <div class="label">Người dùng</div>
+        <div class="value">@Model.MaNguoiDungNavigation?.MaNguoiDung</div>
+    </div>
+
+    <div class="row-item">
+        <div class="label">Voucher</div>
+        <div class="value">
+            @(Model.Voucher != null ? Model.Voucher.MaCode : "Không")
+        </div>
+    </div>
+
+    <!-- BUTTON -->
+    <div class="btn-group">
+        <a asp-action="Edit" asp-route-id="@Model.MaDonHang" class="btn-edit">
+            ✏️ Sửa
+        </a>
+
+        <a asp-action="Index" class="btn-back">
+            ⬅ Quay lại
+        </a>
+    </div>
+
+</div>

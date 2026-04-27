@@ -1,0 +1,147 @@
+﻿@model IEnumerable<VVD_2210900012_DATN.Models.BienTheSach>
+
+@{
+    ViewData["Title"] = "Biến thể sách";
+}
+
+<style>
+    body {
+        background: #f5f6fa;
+    }
+
+    h1 {
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .card-box {
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .btn-create {
+        background: linear-gradient(45deg, #007bff, #00c6ff);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 8px;
+        text-decoration: none;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    th {
+        background: #007bff;
+        color: white;
+        text-align: center;
+    }
+
+    td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .stock {
+        color: green;
+        font-weight: bold;
+    }
+
+    .low {
+        color: red;
+        font-weight: bold;
+    }
+
+    .btn-action {
+        padding: 5px 8px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 12px;
+    }
+
+    .edit {
+        background: orange;
+        color: black;
+    }
+
+    .detail {
+        background: #17a2b8;
+        color: white;
+    }
+
+    .delete {
+        background: red;
+        color: white;
+    }
+</style>
+
+<h1>📚 Quản lý biến thể sách</h1>
+
+<p>
+    <a asp-action="Create" class="btn-create">➕ Thêm mới</a>
+</p>
+
+<div class="card-box">
+
+    <table class="table table-hover table-bordered">
+
+        <thead>
+            <tr>
+                <th>Sách</th>
+                <th>Loại bìa</th>
+                <th>Ngôn ngữ</th>
+                <th>Tồn kho</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <!-- 🔥 TÊN SÁCH -->
+                    <td>
+                        @item.SanPham?.TenSach
+                    </td>
+
+                    <!-- 🔥 LOẠI BÌA -->
+                    <td>
+                        @item.LoaiBia.MaLoaiBia
+                    </td>
+
+                    <!-- 🔥 NGÔN NGỮ -->
+                    <td>
+                        @item.NgonN?.TenNgonNgu
+                    </td>
+
+                    <!-- 🔥 TỒN KHO -->
+                    <td>
+                        @if (item.SoLuongTon > 10)
+                        {
+                            <span class="stock">@item.SoLuongTon</span>
+                        }
+                        else
+                        {
+                            <span class="low">@item.SoLuongTon</span>
+                        }
+                    </td>
+
+                    <!-- 🔥 ACTION -->
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn-action edit">Sửa</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn-action detail">Xem</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn-action delete">Xoá</a>
+                    </td>
+
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+
+</div>

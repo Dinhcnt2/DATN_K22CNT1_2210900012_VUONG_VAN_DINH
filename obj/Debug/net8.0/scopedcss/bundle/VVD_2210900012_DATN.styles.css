@@ -1,0 +1,98 @@
+/* _content/VVD_2210900012_DATN/Areas/Admins/Views/Shared/_AdminLayout.cshtml.rz.scp.css */
+/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-v3pqcixc0y] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-v3pqcixc0y] {
+  color: #0077cc;
+}
+
+.btn-primary[b-v3pqcixc0y] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-v3pqcixc0y], .nav-pills .show > .nav-link[b-v3pqcixc0y] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-v3pqcixc0y] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-v3pqcixc0y] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-v3pqcixc0y] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-v3pqcixc0y] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-v3pqcixc0y] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
+/* _content/VVD_2210900012_DATN/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-w7rev90h8u] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-w7rev90h8u] {
+  color: #0077cc;
+}
+
+.btn-primary[b-w7rev90h8u] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-w7rev90h8u], .nav-pills .show > .nav-link[b-w7rev90h8u] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-w7rev90h8u] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-w7rev90h8u] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-w7rev90h8u] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-w7rev90h8u] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-w7rev90h8u] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}

@@ -1,0 +1,103 @@
+﻿@model VVD_2210900012_DATN.Models.SanPham
+
+<h2>Chi tiết sách</h2>
+
+<div class="row">
+
+    <div class="col-md-4">
+        <img src="~/images/@Model.AnhBia" style="width:100%" />
+    </div>
+
+    <div class="col-md-8">
+
+        <h3>@Model.TenSach</h3>
+
+        <p><b>Tác giả:</b> @Model.TacGia</p>
+        <p><b>NXB:</b> @Model.NhaXuatBan</p>
+
+        <h4 style="color:red">
+            @Model.GiaGoc.ToString("N0") đ
+        </h4>
+
+        <p>@Model.MoTaChiTiet</p>
+
+        <!-- NÚT -->
+        <a href="/Sach/MuaNgay/@Model.Id" class="btn btn-success">
+            🛒 Mua ngay
+        </a>
+
+        <a href="/Sach/Index" class="btn btn-secondary">
+            ← Quay lại
+        </a>
+
+    </div>
+
+</div>
+
+<!-- ================= ĐÁNH GIÁ ================= -->
+
+<hr />
+
+<h4>⭐ Đánh giá sản phẩm</h4>
+
+<!-- FORM -->
+<div class="mb-3">
+
+    <select id="soSao" class="form-control mb-2" style="width:150px;">
+        <option value="5">⭐⭐⭐⭐⭐</option>
+        <option value="4">⭐⭐⭐⭐</option>
+        <option value="3">⭐⭐⭐</option>
+        <option value="2">⭐⭐</option>
+        <option value="1">⭐</option>
+    </select>
+
+    <textarea id="noiDung"
+              class="form-control mb-2"
+              placeholder="Nhập đánh giá..."></textarea>
+
+    <button class="btn btn-success"
+            onclick="guiDanhGia(@Model.Id)">
+        Gửi đánh giá
+    </button>
+
+</div>
+
+<!-- DANH SÁCH -->
+<div id="danhGiaList"></div>
+
+<!-- ================= SCRIPT ================= -->
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    function loadDanhGia() {
+        $("#danhGiaList").load("/DanhGia/List?sanPhamId=@Model.Id");
+    }
+
+    function guiDanhGia(id) {
+
+        var soSao = $("#soSao").val();
+        var noiDung = $("#noiDung").val();
+
+        $.post("/DanhGia/Create",
+            {
+                sanPhamId: id,
+                soSao: soSao,
+                noiDung: noiDung
+            },
+            function (res) {
+
+                if (res.success) {
+                    alert("Đánh giá thành công!");
+                    $("#noiDung").val("");
+                    loadDanhGia();
+                } else {
+                    alert(res.message);
+                }
+            });
+    }
+
+    $(document).ready(function () {
+        loadDanhGia(); // 🔥 QUAN TRỌNG
+    });
+</script>

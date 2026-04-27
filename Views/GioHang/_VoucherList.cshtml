@@ -1,0 +1,62 @@
+﻿@model List<VVD_2210900012_DATN.Models.Voucher>
+
+@if (!Model.Any())
+{
+    <div class="text-danger">Không có voucher</div>
+}
+else
+{
+    foreach (var v in Model)
+    {
+        var hetHan = v.NgayKetThuc < DateTime.Now;
+        var hetLuot = v.SoLuong <= 0;
+        var disabled = hetHan || hetLuot;
+
+        <div class="border p-3 mb-2 rounded d-flex justify-content-between align-items-center
+                    @(disabled ? "bg-light text-muted" : "")">
+
+            <div>
+                <b class="text-danger">@v.MaCode</b><br />
+
+                @if (v.Loai == "PhanTram")
+                {
+                    <span>Giảm @v.GiamGia %</span>
+                }
+                else
+                {
+                    <span>Giảm @v.GiamGia?.ToString("N0") đ</span>
+                }
+
+                <br />
+
+                <small>
+                    HSD: @v.NgayKetThuc?.ToString("dd/MM/yyyy")
+                </small>
+
+                @if (hetHan)
+                {
+                    <div class="text-danger">Hết hạn</div>
+                }
+                else if (hetLuot)
+                {
+                    <div class="text-warning">Hết lượt</div>
+                }
+            </div>
+
+            @if (!disabled)
+            {
+                <button class="btn btn-success"
+                        onclick="chonVoucher(@v.Id)">
+                    Chọn
+                </button>
+            }
+            else
+            {
+                <button class="btn btn-secondary" disabled>
+                    Không dùng được
+                </button>
+            }
+
+        </div>
+    }
+}

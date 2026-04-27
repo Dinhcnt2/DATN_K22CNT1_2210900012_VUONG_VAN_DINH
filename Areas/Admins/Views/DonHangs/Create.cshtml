@@ -1,0 +1,161 @@
+﻿@model VVD_2210900012_DATN.Models.DonHang
+
+@{
+    ViewData["Title"] = "Tạo đơn hàng";
+}
+
+<style>
+    body {
+        background: #f5f6fa;
+    }
+
+    .container-box {
+        max-width: 900px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+        font-size: 26px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .row-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-weight: 600;
+    }
+
+    .form-control {
+        border-radius: 8px;
+        padding: 8px;
+    }
+
+    .price {
+        color: red;
+        font-weight: bold;
+    }
+
+    .btn-create {
+        background: linear-gradient(45deg, #ff6a00, #ff914d);
+        color: white;
+        padding: 10px 18px;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+        .btn-create:hover {
+            opacity: 0.9;
+        }
+
+    .btn-back {
+        background: #6c757d;
+        color: white;
+        padding: 10px 18px;
+        border-radius: 8px;
+        text-decoration: none;
+        margin-left: 10px;
+    }
+
+    .btn-group {
+        margin-top: 20px;
+    }
+</style>
+
+<div class="container-box">
+
+    <h1>➕ Tạo đơn hàng</h1>
+
+    <form asp-action="Create">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="row-grid">
+
+            <div class="form-group">
+                <label>Mã đơn</label>
+                <input asp-for="MaDonHangCode" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Khách hàng</label>
+                <input asp-for="HoTen" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>SĐT</label>
+                <input asp-for="SoDienThoai" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Địa chỉ</label>
+                <input asp-for="DiaChi" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Tổng tiền</label>
+                <input asp-for="TongTien" class="form-control price" />
+            </div>
+
+            <div class="form-group">
+                <label>Phương thức thanh toán</label>
+                <select asp-for="PhuongThucThanhToan" class="form-control">
+                    <option value="COD">Thanh toán khi nhận hàng</option>
+                    <option value="QR">Chuyển khoản QR</option>
+                </select>
+            </div>
+
+            <!-- 🔥 MẶC ĐỊNH -->
+            <input type="hidden" asp-for="TrangThai" value="ChoXacNhan" />
+            <input type="hidden" asp-for="TrangThaiThanhToan" value="ChuaThanhToan" />
+
+            <div class="form-group">
+                <label>Ghi chú</label>
+                <input asp-for="GhiChu" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Người dùng</label>
+                <select asp-for="MaNguoiDung" class="form-control" asp-items="ViewBag.MaNguoiDung"></select>
+            </div>
+
+            <div class="form-group">
+                <label>Voucher</label>
+                <select asp-for="VoucherId" class="form-control" asp-items="ViewBag.VoucherId"></select>
+            </div>
+
+        </div>
+
+        <div class="btn-group">
+            <button type="submit" class="btn-create">
+                🚀 Tạo đơn
+            </button>
+
+            <a asp-action="Index" class="btn-back">
+                ⬅ Quay lại
+            </a>
+        </div>
+
+    </form>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

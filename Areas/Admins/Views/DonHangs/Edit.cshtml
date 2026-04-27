@@ -1,0 +1,194 @@
+﻿@model VVD_2210900012_DATN.Models.DonHang
+
+@{
+    ViewData["Title"] = "Chỉnh sửa đơn hàng";
+}
+
+<style>
+    body {
+        background: #f5f6fa;
+    }
+
+    .container-box {
+        max-width: 900px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+        font-size: 26px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .form-control {
+        border-radius: 8px;
+        padding: 8px;
+    }
+
+    .row-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .price {
+        color: red;
+        font-weight: bold;
+    }
+
+    .btn-save {
+        background: #28a745;
+        color: white;
+        padding: 10px 18px;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+        .btn-save:hover {
+            background: #218838;
+        }
+
+    .btn-back {
+        background: #6c757d;
+        color: white;
+        padding: 10px 18px;
+        border-radius: 8px;
+        text-decoration: none;
+        margin-left: 10px;
+    }
+
+        .btn-back:hover {
+            background: #5a6268;
+        }
+
+    .btn-group {
+        margin-top: 20px;
+    }
+</style>
+
+<div class="container-box">
+
+    <h1>✏️ Chỉnh sửa đơn hàng</h1>
+
+    <form asp-action="Edit">
+
+        <input type="hidden" asp-for="MaDonHang" />
+
+        <div class="row-grid">
+
+            <div class="form-group">
+                <label>Mã đơn</label>
+                <input asp-for="MaDonHangCode" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Khách hàng</label>
+                <input asp-for="HoTen" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>SĐT</label>
+                <input asp-for="SoDienThoai" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Địa chỉ</label>
+                <input asp-for="DiaChi" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Tổng tiền</label>
+                <input asp-for="TongTien" class="form-control price" />
+            </div>
+
+            <div class="form-group">
+                <label>Phí vận chuyển</label>
+                <input asp-for="PhiVanChuyen" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Phương thức thanh toán</label>
+                <input asp-for="PhuongThucThanhToan" class="form-control" />
+            </div>
+
+            <!-- 🔥 SELECT TRẠNG THÁI THANH TOÁN -->
+            <div class="form-group">
+                <label>Thanh toán</label>
+                <select asp-for="TrangThaiThanhToan" class="form-control">
+                    <option value="ChuaThanhToan">Chưa thanh toán</option>
+                    <option value="DaThanhToan">Đã thanh toán</option>
+                </select>
+            </div>
+
+            <!-- 🔥 SELECT TRẠNG THÁI ĐƠN -->
+            <div class="form-group">
+                <label>Trạng thái</label>
+                <select asp-for="TrangThai" class="form-control">
+                    <option value="ChoXacNhan">Chờ xác nhận</option>
+                    <option value="DangXuLy">Đang xử lý</option>
+                    <option value="HoanThanh">Hoàn thành</option>
+                    <option value="DaHuy">Huỷ</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Ghi chú</label>
+                <input asp-for="GhiChu" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Ngày đặt</label>
+                <input asp-for="NgayDat" class="form-control" type="date" />
+            </div>
+
+            <div class="form-group">
+                <label>Ngày cập nhật</label>
+                <input asp-for="NgayCapNhat" class="form-control" type="date" />
+            </div>
+
+            <div class="form-group">
+                <label>Người dùng</label>
+                <select asp-for="MaNguoiDung" class="form-control" asp-items="ViewBag.MaNguoiDung"></select>
+            </div>
+
+            <div class="form-group">
+                <label>Voucher</label>
+                <select asp-for="VoucherId" class="form-control" asp-items="ViewBag.VoucherId"></select>
+            </div>
+
+        </div>
+
+        <div class="btn-group">
+            <button type="submit" class="btn-save">
+                💾 Lưu thay đổi
+            </button>
+
+            <a asp-action="Index" class="btn-back">
+                ⬅ Quay lại
+            </a>
+        </div>
+
+    </form>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

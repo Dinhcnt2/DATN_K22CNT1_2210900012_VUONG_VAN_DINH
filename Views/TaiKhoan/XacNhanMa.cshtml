@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Xác nhận mã";
+}
+
+<style>
+    .box {
+        max-width: 400px;
+        margin: 80px auto;
+        padding: 30px;
+        border-radius: 15px;
+        background: white;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .title {
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .code-demo {
+        background: #ffe4e1;
+        padding: 10px;
+        text-align: center;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+</style>
+
+<div class="box">
+    <h3 class="title">📩 Nhập mã xác nhận</h3>
+
+    <!-- demo mã -->
+    @if (ViewBag.Code != null)
+    {
+        <div class="code-demo">
+            👉 Mã của bạn: <b>@ViewBag.Code</b>
+        </div>
+    }
+
+    <form method="post">
+        <input type="hidden" name="TenDangNhap" value="@ViewBag.User" />
+
+        <input name="code"
+               class="form-control mb-3"
+               placeholder="Nhập mã"
+               required />
+
+        <button class="btn btn-success w-100">
+            Xác nhận
+        </button>
+    </form>
+
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger mt-3">
+            @ViewBag.Error
+        </div>
+    }
+</div>

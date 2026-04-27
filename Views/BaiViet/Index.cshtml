@@ -1,0 +1,39 @@
+﻿@model List<VVD_2210900012_DATN.Models.BaiViet>
+
+<h2 class="mb-4">📰 Bài viết</h2>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+
+                @if (!string.IsNullOrEmpty(item.HinhAnh))
+                {
+                    <img src="@item.HinhAnh" class="card-img-top" style="height:200px;object-fit:cover;" />
+                }
+
+                <div class="card-body">
+
+                    <h5>@item.TieuDe</h5>
+
+                    <p class="text-muted">
+                        @item.CreatedAt?.ToString("dd/MM/yyyy")
+                    </p>
+
+                    <p>
+                        @(item.NoiDung.Length > 80
+                            ? item.NoiDung.Substring(0, 80) + "..."
+                            : item.NoiDung)
+                    </p>
+
+                    <a href="/BaiViet/Details/@item.Id"
+                       class="btn btn-primary btn-sm">
+                        Xem chi tiết
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    }
+</div>

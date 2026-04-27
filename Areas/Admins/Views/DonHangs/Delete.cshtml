@@ -1,0 +1,205 @@
+﻿@model VVD_2210900012_DATN.Models.DonHang
+
+@{
+    ViewData["Title"] = "Xoá đơn hàng";
+}
+
+<style>
+    body {
+        background: #f5f6fa;
+    }
+
+    .container-box {
+        max-width: 900px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+        font-size: 26px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .warning {
+        background: #ffecec;
+        color: #d63031;
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+
+    .row-item {
+        display: flex;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .label {
+        width: 200px;
+        font-weight: 600;
+        color: #555;
+    }
+
+    .value {
+        flex: 1;
+    }
+
+    .price {
+        color: red;
+        font-weight: bold;
+    }
+
+    .badge {
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+    }
+
+    .done {
+        background: #28a745;
+        color: white;
+    }
+
+    .cancel {
+        background: #dc3545;
+        color: white;
+    }
+
+    .waiting {
+        background: #ffc107;
+    }
+
+    .btn-group {
+        margin-top: 20px;
+    }
+
+    .btn-delete {
+        background: #dc3545;
+        color: white;
+        padding: 10px 18px;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+        .btn-delete:hover {
+            background: #c82333;
+        }
+
+    .btn-back {
+        background: #6c757d;
+        color: white;
+        padding: 10px 18px;
+        border-radius: 8px;
+        text-decoration: none;
+        margin-left: 10px;
+    }
+
+        .btn-back:hover {
+            background: #5a6268;
+        }
+</style>
+
+<div class="container-box">
+
+    <h1>🗑️ Xoá đơn hàng</h1>
+
+    <div class="warning">
+        ⚠️ Bạn có chắc chắn muốn xoá đơn hàng này không?
+    </div>
+
+    <div class="row-item">
+        <div class="label">Mã đơn</div>
+        <div class="value"><b>@Model.MaDonHangCode</b></div>
+    </div>
+
+    <div class="row-item">
+        <div class="label">Khách hàng</div>
+        <div class="value">@Model.HoTen</div>
+    </div>
+
+    <div class="row-item">
+        <div class="label">SĐT</div>
+        <div class="value">@Model.SoDienThoai</div>
+    </div>
+
+    <div class="row-item">
+        <div class="label">Địa chỉ</div>
+        <div class="value">@Model.DiaChi</div>
+    </div>
+
+    <div class="row-item">
+        <div class="label">Tổng tiền</div>
+        <div class="value price">@Model.TongTien?.ToString("N0") đ</div>
+    </div>
+
+    <div class="row-item">
+        <div class="label">Thanh toán</div>
+        <div class="value">
+            @if (Model.TrangThaiThanhToan == "ChuaThanhToan")
+            {
+                <span class="badge cancel">Chưa thanh toán</span>
+            }
+            else
+            {
+                <span class="badge done">Đã thanh toán</span>
+            }
+        </div>
+    </div>
+
+    <div class="row-item">
+        <div class="label">Trạng thái</div>
+        <div class="value">
+            @if (Model.TrangThai == "ChoXacNhan")
+            {
+                <span class="badge waiting">Chờ xác nhận</span>
+            }
+            else if (Model.TrangThai == "DangXuLy")
+            {
+                <span class="badge waiting">Đang xử lý</span>
+            }
+            else if (Model.TrangThai == "HoanThanh")
+            {
+                <span class="badge done">Hoàn thành</span>
+            }
+            else
+            {
+                <span class="badge cancel">Huỷ</span>
+            }
+        </div>
+    </div>
+
+    <div class="row-item">
+        <div class="label">Ngày đặt</div>
+        <div class="value">@Model.NgayDat?.ToString("dd/MM/yyyy")</div>
+    </div>
+
+    <div class="row-item">
+        <div class="label">Voucher</div>
+        <div class="value">
+            @(Model.Voucher != null ? Model.Voucher.MaCode : "Không")
+        </div>
+    </div>
+
+    <!-- FORM -->
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="MaDonHang" />
+
+        <div class="btn-group">
+            <button type="submit" class="btn-delete">
+                ❌ Xác nhận xoá
+            </button>
+
+            <a asp-action="Index" class="btn-back">
+                ⬅ Quay lại
+            </a>
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,1030 @@
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\appsettings.Development.json
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\appsettings.json
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\VVD_2210900012_DATN.staticwebassets.runtime.json
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\VVD_2210900012_DATN.staticwebassets.endpoints.json
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\VVD_2210900012_DATN.exe
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\VVD_2210900012_DATN.deps.json
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\VVD_2210900012_DATN.runtimeconfig.json
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\VVD_2210900012_DATN.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\VVD_2210900012_DATN.pdb
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Humanizer.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.AspNetCore.Razor.Language.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Build.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Build.Framework.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.AnalyzerUtilities.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Features.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.Elfie.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.Features.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.Razor.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.Scripting.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.DiaSymReader.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.DotNet.Scaffolding.Shared.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.NET.StringTools.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\dotnet-aspnet-codegenerator-design.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Mono.TextTemplating.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.Common.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.Configuration.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.DependencyResolver.Core.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.Frameworks.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.LibraryModel.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.Packaging.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.ProjectModel.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.Protocol.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.Versioning.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.CodeDom.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Composition.Convention.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Composition.Hosting.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Composition.Runtime.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Composition.TypedParts.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Reflection.MetadataLoadContext.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\af\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ar\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\az\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\bg\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\bn-BD\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\cs\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\da\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\de\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\el\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\es\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fa\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fi-FI\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr-BE\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\he\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\hr\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\hu\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\hy\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\id\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\is\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\it\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ja\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ko-KR\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ku\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\lv\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ms-MY\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\mt\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\nb\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\nb-NO\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\nl\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pl\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pt\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ro\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ru\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\sk\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\sl\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\sr\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\sr-Latn\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\sv\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\th-TH\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\tr\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\uk\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\uz-Cyrl-UZ\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\uz-Latn-UZ\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\vi\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-CN\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hans\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hant\Humanizer.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.csproj.AssemblyReference.cache
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.GeneratedMSBuildEditorConfig.editorconfig
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.AssemblyInfoInputs.cache
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.AssemblyInfo.cs
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.csproj.CoreCompileInputs.cache
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.MvcApplicationPartsAssemblyInfo.cache
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.RazorAssemblyInfo.cache
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.RazorAssemblyInfo.cs
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\scopedcss\bundle\VVD_2210900012_DATN.styles.css
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\scopedcss\projectbundle\VVD_2210900012_DATN.bundle.scp.css
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets.build.json
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets.development.json
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210.E74B8B43.Up2Date
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.dll
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\refint\VVD_2210900012_DATN.dll
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.pdb
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.genruntimeconfig.cache
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\ref\VVD_2210900012_DATN.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Azure.Core.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Azure.Identity.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.ClientModel.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Memory.Data.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Runtime.Caching.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\DATN\VVD_2210900012_DATN\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\DATN\VVD_2210900012_DATN\obj\Debug\net8.0\scopedcss\Areas\Admins\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\appsettings.json
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\VVD_2210900012_DATN.staticwebassets.runtime.json
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\VVD_2210900012_DATN.staticwebassets.endpoints.json
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\VVD_2210900012_DATN.exe
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\VVD_2210900012_DATN.deps.json
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\VVD_2210900012_DATN.runtimeconfig.json
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\VVD_2210900012_DATN.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\VVD_2210900012_DATN.pdb
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Azure.Core.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Azure.Identity.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Humanizer.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Build.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Build.Framework.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.AnalyzerUtilities.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Features.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.Elfie.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.Features.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.DiaSymReader.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.DotNet.Scaffolding.Shared.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.NET.StringTools.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\dotnet-aspnet-codegenerator-design.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.Common.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.Configuration.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.DependencyResolver.Core.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.Frameworks.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.LibraryModel.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.Packaging.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.ProjectModel.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.Protocol.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.Versioning.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.ClientModel.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.CodeDom.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Composition.Convention.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Composition.Hosting.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Composition.Runtime.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Composition.TypedParts.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Formats.Asn1.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Memory.Data.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Reflection.MetadataLoadContext.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Runtime.Caching.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\af\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ar\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\az\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\bg\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\bn-BD\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\cs\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\da\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\de\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\el\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\es\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fa\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fi-FI\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr-BE\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\he\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\hr\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\hu\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\hy\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\id\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\is\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\it\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ja\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ko-KR\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ku\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\lv\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ms-MY\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\mt\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\nb\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\nb-NO\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\nl\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pl\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pt\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ro\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ru\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\sk\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\sl\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\sr\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\sr-Latn\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\sv\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\th-TH\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\tr\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\uk\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\uz-Cyrl-UZ\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\uz-Latn-UZ\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\vi\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-CN\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hans\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hant\Humanizer.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Features.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Scripting.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Scripting.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Scripting.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Scripting.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Scripting.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Scripting.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Scripting.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Scripting.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Scripting.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Scripting.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Scripting.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.csproj.AssemblyReference.cache
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.AssemblyInfoInputs.cache
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.AssemblyInfo.cs
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.csproj.CoreCompileInputs.cache
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.RazorAssemblyInfo.cache
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.RazorAssemblyInfo.cs
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\scopedcss\Areas\Admins\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\scopedcss\bundle\VVD_2210900012_DATN.styles.css
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\scopedcss\projectbundle\VVD_2210900012_DATN.bundle.scp.css
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets\msbuild.VVD_2210900012_DATN.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets\msbuild.VVD_2210900012_DATN.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets\msbuild.build.VVD_2210900012_DATN.props
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.VVD_2210900012_DATN.props
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.VVD_2210900012_DATN.props
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210.E74B8B43.Up2Date
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\refint\VVD_2210900012_DATN.dll
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.pdb
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.genruntimeconfig.cache
+C:\Users\Vuong Dinh\Downloads\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\ref\VVD_2210900012_DATN.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\appsettings.Development.json
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\appsettings.json
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\VVD_2210900012_DATN.staticwebassets.endpoints.json
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\VVD_2210900012_DATN.staticwebassets.runtime.json
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\VVD_2210900012_DATN.exe
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\VVD_2210900012_DATN.deps.json
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\VVD_2210900012_DATN.runtimeconfig.json
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\VVD_2210900012_DATN.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\VVD_2210900012_DATN.pdb
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Azure.Core.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Azure.Identity.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Humanizer.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.AspNetCore.Razor.Language.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Build.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Build.Framework.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.AnalyzerUtilities.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Features.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.Elfie.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.Features.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.Razor.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.Scripting.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.DiaSymReader.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.DotNet.Scaffolding.Shared.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.NET.StringTools.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\dotnet-aspnet-codegenerator-design.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Mono.TextTemplating.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.Common.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.Configuration.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.DependencyResolver.Core.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.Frameworks.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.LibraryModel.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.Packaging.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.ProjectModel.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.Protocol.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\NuGet.Versioning.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.ClientModel.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.CodeDom.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Composition.Convention.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Composition.Hosting.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Composition.Runtime.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Composition.TypedParts.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Formats.Asn1.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Memory.Data.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Reflection.MetadataLoadContext.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Runtime.Caching.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\System.Text.Json.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\af\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ar\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\az\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\bg\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\bn-BD\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\cs\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\da\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\de\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\el\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\es\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fa\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fi-FI\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr-BE\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\he\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\hr\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\hu\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\hy\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\id\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\is\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\it\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ja\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ko-KR\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ku\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\lv\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ms-MY\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\mt\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\nb\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\nb-NO\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\nl\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pl\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pt\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ro\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ru\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\sk\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\sl\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\sr\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\sr-Latn\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\sv\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\th-TH\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\tr\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\uk\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\uz-Cyrl-UZ\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\uz-Latn-UZ\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\vi\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-CN\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hans\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hant\Humanizer.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Features.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.csproj.AssemblyReference.cache
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.GeneratedMSBuildEditorConfig.editorconfig
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.AssemblyInfoInputs.cache
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.AssemblyInfo.cs
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.csproj.CoreCompileInputs.cache
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.MvcApplicationPartsAssemblyInfo.cache
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.RazorAssemblyInfo.cache
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.RazorAssemblyInfo.cs
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\scopedcss\Areas\Admins\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\scopedcss\bundle\VVD_2210900012_DATN.styles.css
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\scopedcss\projectbundle\VVD_2210900012_DATN.bundle.scp.css
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets.build.json
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets.development.json
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets\msbuild.VVD_2210900012_DATN.Microsoft.AspNetCore.StaticWebAssets.props
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets\msbuild.VVD_2210900012_DATN.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets\msbuild.build.VVD_2210900012_DATN.props
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.VVD_2210900012_DATN.props
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.VVD_2210900012_DATN.props
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets.pack.json
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210.E74B8B43.Up2Date
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\refint\VVD_2210900012_DATN.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.pdb
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.genruntimeconfig.cache
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\ref\VVD_2210900012_DATN.dll
+D:\vuongdinh\VVD_2210900012_DATN\VVD_2210900012_DATN\obj\Debug\net8.0\VVD_2210900012_DATN.sourcelink.json
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\appsettings.Development.json
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\appsettings.json
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\VVD_2210900012_DATN.staticwebassets.runtime.json
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\VVD_2210900012_DATN.staticwebassets.endpoints.json
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\VVD_2210900012_DATN.exe
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\VVD_2210900012_DATN.deps.json
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\VVD_2210900012_DATN.runtimeconfig.json
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\VVD_2210900012_DATN.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\VVD_2210900012_DATN.pdb
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Azure.Core.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Azure.Identity.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Humanizer.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.AspNetCore.Razor.Language.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.Build.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.Build.Framework.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.CodeAnalysis.AnalyzerUtilities.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Features.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.CodeAnalysis.Elfie.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.CodeAnalysis.Features.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.CodeAnalysis.Razor.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.CodeAnalysis.Scripting.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.DiaSymReader.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.DotNet.Scaffolding.Shared.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.NET.StringTools.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\dotnet-aspnet-codegenerator-design.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Mono.TextTemplating.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\NuGet.Common.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\NuGet.Configuration.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\NuGet.DependencyResolver.Core.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\NuGet.Frameworks.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\NuGet.LibraryModel.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\NuGet.Packaging.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\NuGet.ProjectModel.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\NuGet.Protocol.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\NuGet.Versioning.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\System.ClientModel.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\System.CodeDom.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\System.Composition.Convention.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\System.Composition.Hosting.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\System.Composition.Runtime.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\System.Composition.TypedParts.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\System.Formats.Asn1.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\System.Memory.Data.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\System.Reflection.MetadataLoadContext.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\System.Runtime.Caching.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\System.Text.Json.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\af\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ar\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\az\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\bg\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\bn-BD\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\cs\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\da\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\de\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\el\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\es\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\fa\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\fi-FI\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\fr\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\fr-BE\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\he\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\hr\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\hu\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\hy\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\id\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\is\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\it\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ja\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ko-KR\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ku\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\lv\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ms-MY\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\mt\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\nb\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\nb-NO\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\nl\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\pl\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\pt\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ro\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ru\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\sk\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\sl\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\sr\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\sr-Latn\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\sv\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\th-TH\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\tr\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\uk\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\uz-Cyrl-UZ\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\uz-Latn-UZ\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\vi\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\zh-CN\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\zh-Hans\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\zh-Hant\Humanizer.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Features.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\DATN-VVD_2210900012-main\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\VVD_2210900012_DATN.csproj.AssemblyReference.cache
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\VVD_2210900012_DATN.GeneratedMSBuildEditorConfig.editorconfig
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\VVD_2210900012_DATN.AssemblyInfoInputs.cache
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\VVD_2210900012_DATN.AssemblyInfo.cs
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\VVD_2210900012_DATN.csproj.CoreCompileInputs.cache
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\VVD_2210900012_DATN.MvcApplicationPartsAssemblyInfo.cache
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\VVD_2210900012_DATN.RazorAssemblyInfo.cache
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\VVD_2210900012_DATN.RazorAssemblyInfo.cs
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\scopedcss\Areas\Admins\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\scopedcss\bundle\VVD_2210900012_DATN.styles.css
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\scopedcss\projectbundle\VVD_2210900012_DATN.bundle.scp.css
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\staticwebassets.build.json
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\staticwebassets.development.json
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\staticwebassets\msbuild.VVD_2210900012_DATN.Microsoft.AspNetCore.StaticWebAssets.props
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\staticwebassets\msbuild.VVD_2210900012_DATN.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\staticwebassets\msbuild.build.VVD_2210900012_DATN.props
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.VVD_2210900012_DATN.props
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.VVD_2210900012_DATN.props
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\staticwebassets.pack.json
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\VVD_2210.E74B8B43.Up2Date
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\VVD_2210900012_DATN.dll
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\refint\VVD_2210900012_DATN.dll
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\VVD_2210900012_DATN.pdb
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\VVD_2210900012_DATN.genruntimeconfig.cache
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\ref\VVD_2210900012_DATN.dll

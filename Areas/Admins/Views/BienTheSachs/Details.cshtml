@@ -1,0 +1,134 @@
+﻿@model VVD_2210900012_DATN.Models.BienTheSach
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<style>
+    body {
+        background: linear-gradient(135deg, #eef2ff, #f8fafc);
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    h1 {
+        font-size: 28px;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 5px;
+    }
+
+    h4 {
+        color: #64748b;
+        margin-bottom: 15px;
+    }
+
+    hr {
+        border: none;
+        height: 1px;
+        background: #e2e8f0;
+        margin-bottom: 25px;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .col-sm-2 {
+        font-weight: 600;
+        color: #334155;
+    }
+
+    .col-sm-10 {
+        color: #111827;
+    }
+
+    dl.row {
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 16px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        max-width: 600px;
+        margin: auto;
+    }
+
+    dt {
+        padding: 10px 0;
+    }
+
+    dd {
+        padding: 10px 0;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+        dd:last-child {
+            border-bottom: none;
+        }
+
+    a {
+        display: inline-block;
+        margin-top: 20px;
+        margin-right: 10px;
+        padding: 8px 14px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+        a[asp-action="Edit"] {
+            background: #facc15;
+            color: #000;
+        }
+
+        a[asp-action="Index"] {
+            background: #6366f1;
+            color: white;
+        }
+
+        a:hover {
+            opacity: 0.85;
+            transform: translateY(-1px);
+        }
+</style>
+
+<h1>📄 Chi tiết biến thể</h1>
+
+<div>
+    <h4>Thông tin chi tiết</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SoLuongTon)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SoLuongTon)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LoaiBia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LoaiBia.MaLoaiBia)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NgonN)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NgonN.MaNgonNgu)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SanPham)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SanPham.Id)
+        </dd>
+    </dl>
+</div>
+
+<div style="text-align:center;">
+    <a asp-action="Edit" asp-route-id="@Model?.Id">✏️ Sửa</a>
+    <a asp-action="Index">⬅ Quay lại</a>
+</div>

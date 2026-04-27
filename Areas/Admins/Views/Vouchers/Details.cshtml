@@ -1,0 +1,166 @@
+﻿@model VVD_2210900012_DATN.Models.Voucher
+
+@{
+    ViewData["Title"] = "Chi tiết Voucher";
+}
+
+<style>
+    body {
+        background: linear-gradient(120deg, #f0f2f5, #e0eafc);
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .card-detail {
+        background: #fff;
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        margin-top: 30px;
+    }
+
+    h1 {
+        font-weight: bold;
+        color: #333;
+    }
+
+    .label {
+        font-weight: 600;
+        color: #555;
+    }
+
+    .value {
+        font-weight: 500;
+        color: #222;
+    }
+
+    .row-item {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .badge-status {
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    .active {
+        background: #d4edda;
+        color: #155724;
+    }
+
+    .inactive {
+        background: #f8d7da;
+        color: #721c24;
+    }
+
+    .btn-custom {
+        padding: 8px 15px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .btn-edit {
+        background: #ffc107;
+        color: black;
+    }
+
+    .btn-back {
+        background: #007bff;
+        color: white;
+    }
+
+    .btn-custom:hover {
+        opacity: 0.85;
+    }
+</style>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+
+            ```
+            <div class="card-detail">
+
+                <h1>🎁 Chi tiết Voucher</h1>
+                <hr />
+
+                <div class="row-item">
+                    <span class="label">Mã Code:</span>
+                    <div class="value">@Model.MaCode</div>
+                </div>
+
+                <div class="row-item">
+                    <span class="label">Giảm giá:</span>
+                    <div class="value">
+                        @if (Model.Loai == "PhanTram")
+                        {
+                            @($"{Model.GiamGia}%")
+                        }
+                        else
+                        {
+                            @($"{Model.GiamGia:N0} đ")
+                        }
+                    </div>
+                </div>
+
+                <div class="row-item">
+                    <span class="label">Loại:</span>
+                    <div class="value">
+                        @(Model.Loai == "Tien" ? "Giảm tiền" : "Giảm %")
+                    </div>
+                </div>
+
+                <div class="row-item">
+                    <span class="label">Ngày bắt đầu:</span>
+                    <div class="value">
+                        @Model.NgayBatDau?.ToString("dd/MM/yyyy")
+                    </div>
+                </div>
+
+                <div class="row-item">
+                    <span class="label">Ngày kết thúc:</span>
+                    <div class="value">
+                        @Model.NgayKetThuc?.ToString("dd/MM/yyyy")
+                    </div>
+                </div>
+
+                <div class="row-item">
+                    <span class="label">Số lượng:</span>
+                    <div class="value">@Model.SoLuong</div>
+                </div>
+
+                <div class="row-item">
+                    <span class="label">Trạng thái:</span>
+                    <div class="value">
+                        @if (Model.TrangThai == true)
+                        {
+                            <span class="badge-status active">Đang hoạt động</span>
+                        }
+                        else
+                        {
+                            <span class="badge-status inactive">Ngừng</span>
+                        }
+                    </div>
+                </div>
+
+                <br />
+
+                <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn-custom btn-edit">
+                    ✏️ Sửa
+                </a>
+
+                <a asp-action="Index" class="btn-custom btn-back">
+                    ← Quay lại
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+    ```
+
+</div>

@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Đổi mật khẩu";
+}
+
+<style>
+    .box {
+        max-width: 400px;
+        margin: 80px auto;
+        padding: 30px;
+        border-radius: 15px;
+        background: white;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .title {
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+</style>
+
+<div class="box">
+    <h3 class="title">🔒 Đổi mật khẩu</h3>
+
+    <form method="post">
+        <input type="hidden" name="TenDangNhap" value="@ViewBag.User" />
+
+        <input name="MatKhauMoi"
+               type="password"
+               class="form-control mb-3"
+               placeholder="Mật khẩu mới"
+               required />
+
+        <button class="btn btn-danger w-100">
+            Đổi mật khẩu
+        </button>
+    </form>
+</div>

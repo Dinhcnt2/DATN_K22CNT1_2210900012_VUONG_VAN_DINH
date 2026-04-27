@@ -1,0 +1,32 @@
+﻿<div class="box">
+
+    <div class="title">💳 Thanh toán QR</div>
+
+    <div class="info">
+        Mã đơn: <b>@ViewBag.MaDon</b>
+    </div>
+
+    <div class="info">
+        Số tiền:
+        <div class="money">
+            @(((decimal)ViewBag.TongTien).ToString("N0")) đ
+        </div>
+    </div>
+
+    <img src="@ViewBag.QR" />
+
+    <div class="note">
+        Nội dung CK: @ViewBag.MaDon
+    </div>
+    <a asp-controller="DonHang"
+       asp-action="ThanhCong"
+       asp-route-id="@ViewBag.Id"
+       class="btn btn-success w-100 mt-3">
+
+        ✅ Xác nhận mua
+
+    </a>
+
+    </a>
+
+</div>

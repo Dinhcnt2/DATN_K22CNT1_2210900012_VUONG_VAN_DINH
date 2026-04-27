@@ -1,0 +1,24 @@
+﻿@model VVD_2210900012_DATN.Models.NgonNgu
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>NgonNgu</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TenNgonNgu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TenNgonNgu)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.MaNgonNgu">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

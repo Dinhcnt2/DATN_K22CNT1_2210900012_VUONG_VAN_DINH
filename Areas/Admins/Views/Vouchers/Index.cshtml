@@ -1,0 +1,193 @@
+﻿@model IEnumerable<VVD_2210900012_DATN.Models.Voucher>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    body {
+        background: #f5f6fa;
+    }
+
+    h1 {
+        font-size: 26px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .card-box {
+        background: #fff;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .btn-create {
+        background: linear-gradient(45deg, #ff6a00, #ff914d);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .table-custom thead {
+        background: linear-gradient(45deg, #007bff, #00c6ff);
+        color: white;
+    }
+
+    .table-custom th,
+    .table-custom td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .table-custom tbody tr:hover {
+        background: #f1f1f1;
+    }
+
+    .code {
+        font-weight: bold;
+        color: #ff4d4f;
+    }
+
+    .discount {
+        color: #28a745;
+        font-weight: bold;
+    }
+
+    .badge {
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .active {
+        background: #28a745;
+        color: white;
+    }
+
+    .inactive {
+        background: #dc3545;
+        color: white;
+    }
+
+    .date {
+        font-size: 13px;
+        color: #666;
+    }
+
+    .btn-action {
+        padding: 5px 10px;
+        border-radius: 6px;
+        font-size: 13px;
+        text-decoration: none;
+        margin: 2px;
+        display: inline-block;
+    }
+
+    .edit {
+        background: #ffc107;
+        color: black;
+    }
+
+    .detail {
+        background: #17a2b8;
+        color: white;
+    }
+
+    .delete {
+        background: #dc3545;
+        color: white;
+    }
+</style>
+
+<h1>🎟 Danh sách Voucher</h1>
+
+<p>
+    <a asp-action="Create" class="btn-create">➕ Tạo voucher</a>
+</p>
+
+<div class="card-box">
+
+    <table class="table table-hover table-custom">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.MaCode)</th>
+                <th>Giảm giá</th>
+                <th>@Html.DisplayNameFor(model => model.Loai)</th>
+                <th>Bắt đầu</th>
+                <th>Kết thúc</th>
+                <th>@Html.DisplayNameFor(model => model.SoLuong)</th>
+                <th>@Html.DisplayNameFor(model => model.TrangThai)</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="code">@item.MaCode</td>
+
+                    <td class="discount">
+                        @if (item.Loai == "PhanTram")
+                        {
+                            <span>-@item.GiamGia %</span>
+                        }
+                        else
+                        {
+                            <span>-@item.GiamGia?.ToString("N0") đ</span>
+                        }
+                    </td>
+
+                    <td>@item.Loai</td>
+
+                    <td class="date">
+                        @item.NgayBatDau?.ToString("dd/MM/yyyy")
+                    </td>
+
+                    <td class="date">
+                        @item.NgayKetThuc?.ToString("dd/MM/yyyy")
+                    </td>
+
+                    <td>@item.SoLuong</td>
+
+                    <td>
+                        @if (item.TrangThai == true)
+                        {
+                            <span class="badge active">Hoạt động</span>
+                        }
+                        else
+                        {
+                            <span class="badge inactive">Ngừng</span>
+                        }
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit"
+                           asp-route-id="@item.Id"
+                           class="btn-action edit">
+                            ✏️ Sửa
+                        </a>
+
+                        <a asp-action="Details"
+                           asp-route-id="@item.Id"
+                           class="btn-action detail">
+                            👁 Xem
+                        </a>
+
+                        <a asp-action="Delete"
+                           asp-route-id="@item.Id"
+                           class="btn-action delete"
+                           onclick="return confirm('Xoá voucher này?')">
+                            🗑 Xoá
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,196 @@
+﻿@model IEnumerable<VVD_2210900012_DATN.Models.DonHang>
+
+@{
+    ViewData["Title"] = "Quản lý đơn hàng";
+}
+
+<style>
+    body {
+        background: #f5f6fa;
+    }
+
+    h1 {
+        font-size: 26px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .card-box {
+        background: #fff;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .btn-create {
+        background: linear-gradient(45deg, #ff6a00, #ff914d);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 8px;
+        text-decoration: none;
+    }
+
+    .table-custom thead {
+        background: linear-gradient(45deg, #ff6a00, #ff914d);
+        color: white;
+    }
+
+    .table-custom th, .table-custom td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .price {
+        color: red;
+        font-weight: bold;
+    }
+
+    .badge {
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .waiting {
+        background: orange;
+        color: white;
+    }
+
+    .processing {
+        background: #17a2b8;
+        color: white;
+    }
+
+    .done {
+        background: #28a745;
+        color: white;
+    }
+
+    .cancel {
+        background: #dc3545;
+        color: white;
+    }
+
+    .btn-action {
+        padding: 4px 8px;
+        border-radius: 6px;
+        font-size: 13px;
+        text-decoration: none;
+    }
+
+    .edit {
+        background: #ffc107;
+        color: black;
+    }
+
+    .detail {
+        background: #17a2b8;
+        color: white;
+    }
+
+    .delete {
+        background: #dc3545;
+        color: white;
+    }
+</style>
+
+<h1>📦 Quản lý đơn hàng</h1>
+
+<p>
+    <a asp-action="Create" class="btn-create">➕ Tạo đơn</a>
+</p>
+
+<div class="card-box">
+
+    <table class="table table-hover table-custom">
+        <thead>
+            <tr>
+                <th>Mã</th>
+                <th>Khách</th>
+                <th>SĐT</th>
+                <th>Tổng</th>
+                <th>Voucher</th>
+                <th>Thanh toán</th>
+                <th>Trạng thái</th>
+                <th>Ngày</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><b>@item.MaDonHangCode</b></td>
+                    <td>@item.HoTen</td>
+                    <td>@item.SoDienThoai</td>
+                    <td class="price">@item.TongTien?.ToString("N0") đ</td>
+                    <td>@(item.Voucher != null ? item.Voucher.MaCode : "Không")</td>
+
+                    <!-- 🔥 THANH TOÁN -->
+                    <td>
+                        @if (item.TrangThaiThanhToan == "ChuaThanhToan")
+                        {
+                            <a asp-action="CapNhatThanhToan"
+                               asp-route-id="@item.MaDonHang"
+                               asp-route-status="DaThanhToan"
+                               class="badge cancel">
+                                💳 Xác nhận TT
+                            </a>
+                        }
+                        else
+                        {
+                            <span class="badge done">Đã TT</span>
+                        }
+                    </td>
+
+                    <!-- 🔥 TRẠNG THÁI (FIX LỖI RAZOR) -->
+                    <td>
+                        @if (item.TrangThaiThanhToan == "ChuaThanhToan")
+                        {
+                            <span class="badge cancel">Chưa TT</span>
+                        }
+                        else if (item.TrangThai == "ChoXacNhan")
+                        {
+                            <a asp-action="CapNhatTrangThai"
+                               asp-route-id="@item.MaDonHang"
+                               asp-route-status="DangXuLy"
+                               class="badge waiting">
+                                ⚙️ Xử lý
+                            </a>
+                        }
+                        else if (item.TrangThai == "DangXuLy")
+                        {
+                            <a asp-action="CapNhatTrangThai"
+                               asp-route-id="@item.MaDonHang"
+                               asp-route-status="HoanThanh"
+                               class="badge processing">
+                                ✅ Hoàn thành
+                            </a>
+                        }
+                        else if (item.TrangThai == "HoanThanh")
+                        {
+                            <span class="badge done">Hoàn thành</span>
+                        }
+                        else
+                        {
+                            <span class="badge cancel">Huỷ</span>
+                        }
+                    </td>
+
+                    <td>@item.NgayDat?.ToString("dd/MM/yyyy")</td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.MaDonHang" class="btn-action edit">Sửa</a>
+                        <a asp-action="Details" asp-route-id="@item.MaDonHang" class="btn-action detail">Xem</a>
+                        <a asp-action="Delete" asp-route-id="@item.MaDonHang" class="btn-action delete">Xoá</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

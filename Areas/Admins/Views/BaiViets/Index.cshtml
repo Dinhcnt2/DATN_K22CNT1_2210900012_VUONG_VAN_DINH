@@ -1,0 +1,196 @@
+﻿@model IEnumerable<VVD_2210900012_DATN.Models.BaiViet>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    body {
+        background: #f5f6fa;
+    }
+
+    h1 {
+        font-size: 26px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .card-box {
+        background: #fff;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .btn-create {
+        background: linear-gradient(45deg, #ff6a00, #ff914d);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .table-custom thead {
+        background: linear-gradient(45deg, #007bff, #00c6ff);
+        color: white;
+    }
+
+    .table-custom th,
+    .table-custom td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .table-custom tbody tr:hover {
+        background: #f1f1f1;
+    }
+
+    .img-thumb {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .content-box {
+        max-width: 250px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .badge {
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .published {
+        background: #28a745;
+        color: white;
+    }
+
+    .draft {
+        background: #dc3545;
+        color: white;
+    }
+
+    .date {
+        font-size: 13px;
+        color: #666;
+    }
+
+    .btn-action {
+        padding: 5px 10px;
+        border-radius: 6px;
+        font-size: 13px;
+        text-decoration: none;
+        margin: 2px;
+        display: inline-block;
+    }
+
+    .edit {
+        background: #ffc107;
+        color: black;
+    }
+
+    .detail {
+        background: #17a2b8;
+        color: white;
+    }
+
+    .delete {
+        background: #dc3545;
+        color: white;
+    }
+</style>
+
+<h1>📰 Danh sách Bài Viết</h1>
+
+<p>
+    <a asp-action="Create" class="btn-create">➕ Tạo bài viết</a>
+</p>
+
+<div class="card-box">
+
+    <table class="table table-hover table-custom">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.TieuDe)</th>
+                <th>Slug</th>
+                <th>Ảnh</th>
+                <th>Nội dung</th>
+                <th>Trạng thái</th>
+                <th>Ngày tạo</th>
+                <th>Người tạo</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><b>@item.TieuDe</b></td>
+
+                    <td>@item.Slug</td>
+
+                    <td>
+                        <img src="~/images/@item.HinhAnh"
+                             class="img-thumb"
+                             onerror="this.src='/images/no-image.png'" />
+                    </td>
+
+                    <td>
+                        <div class="content-box" title="@item.NoiDung">
+                            @item.NoiDung
+                        </div>
+                    </td>
+
+                    <td>
+                        @if (item.IsPublished == true)
+                        {
+                            <span class="badge published">Đã đăng</span>
+                        }
+                        else
+                        {
+                            <span class="badge draft">Nháp</span>
+                        }
+                    </td>
+
+                    <td class="date">
+                        @item.CreatedAt?.ToString("dd/MM/yyyy HH:mm")
+                    </td>
+
+                    <td>
+                        User #@item.CreatedByNavigation?.MaNguoiDung
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit"
+                           asp-route-id="@item.Id"
+                           class="btn-action edit">
+                            ✏️ Sửa
+                        </a>
+
+                        <a asp-action="Details"
+                           asp-route-id="@item.Id"
+                           class="btn-action detail">
+                            👁 Xem
+                        </a>
+
+                        <a asp-action="Delete"
+                           asp-route-id="@item.Id"
+                           class="btn-action delete"
+                           onclick="return confirm('Xoá bài viết này?')">
+                            🗑 Xoá
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

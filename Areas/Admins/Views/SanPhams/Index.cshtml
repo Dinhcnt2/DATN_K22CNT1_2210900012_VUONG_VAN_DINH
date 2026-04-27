@@ -1,0 +1,130 @@
+﻿@model IEnumerable<VVD_2210900012_DATN.Models.SanPham>
+
+@{
+    ViewData["Title"] = "Quản lý sách";
+}
+
+<div class="card shadow-sm">
+
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">📚 Danh sách sản phẩm</h5>
+
+        <a asp-action="Create" class="btn btn-primary">
+            ➕ Thêm sách
+        </a>
+    </div>
+
+    <div class="card-body">
+
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-warning">@TempData["Error"]</div>
+        }
+
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success">@TempData["Success"]</div>
+        }
+
+        <table class="table table-bordered table-hover align-middle">
+
+            <thead class="table-dark text-center">
+                <tr>
+                    <th>ID</th>
+                    <th>Tên sách</th>
+                    <th>Tác giả</th>
+                    <th>Nhà xuất bản</th>
+                    <th>Giá</th>
+                    <th>Ảnh</th>
+                    <th>Danh mục</th>
+                    <th>Trạng thái</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr class="text-center">
+
+                        <td>@item.Id</td>
+                        <td>@item.TenSach</td>
+                        <td>@item.TacGia</td>
+                        <td>@item.NhaXuatBan</td>
+
+                        <td class="text-danger fw-bold">
+                            @item.GiaGoc.ToString("N0") đ
+                        </td>
+
+                        <td>
+                            <img src="~/images/@item.AnhBia"
+                                 width="60"
+                                 class="rounded shadow-sm" />
+                        </td>
+
+                        <td>@item.DanhMuc?.TenDanhMuc</td>
+
+                        <!-- ✅ TRẠNG THÁI ĐÚNG -->
+                        <td>
+                            @if (item.IsActive == true)
+                            {
+                                <span class="badge bg-success">Đang bán</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger">Ngừng bán</span>
+                            }
+                        </td>
+
+                        <!-- ✅ THAO TÁC -->
+                        <td>
+
+                            <a asp-action="Edit"
+                               asp-route-id="@item.Id"
+                               class="btn btn-sm btn-warning">
+                                ✏️ Sửa
+                            </a>
+
+                            <a asp-action="Details"
+                               asp-route-id="@item.Id"
+                               class="btn btn-sm btn-info">
+                                👁 Xem
+                            </a>
+
+                            @if (item.IsActive == true)
+                            {
+                                <!-- 🔥 XOÁ -->
+                                <form asp-action="Delete"
+                                      asp-route-id="@item.Id"
+                                      method="post"
+                                      style="display:inline;">
+                                    <button type="submit"
+                                            class="btn btn-sm btn-danger"
+                                            onclick="return confirm('Bạn có chắc muốn xóa sách này không?');">
+                                        🗑 Xóa
+                                    </button>
+                                </form>
+                            }
+                            else
+                            {
+                                <!-- 🔥 KHÔI PHỤC -->
+                                <a asp-action="Restore"
+                                   asp-route-id="@item.Id"
+                                   class="btn btn-sm btn-success">
+                                    🔄 Khôi phục
+                                </a>
+                            }
+
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

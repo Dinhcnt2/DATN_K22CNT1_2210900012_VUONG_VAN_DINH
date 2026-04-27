@@ -1,0 +1,168 @@
+﻿@model VVD_2210900012_DATN.Models.BienTheSach
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<style>
+    body {
+        background: linear-gradient(135deg, #eef2ff, #f8fafc);
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    h1 {
+        font-size: 28px;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 5px;
+    }
+
+    h4 {
+        color: #64748b;
+        margin-bottom: 20px;
+    }
+
+    hr {
+        border: none;
+        height: 1px;
+        background: #e2e8f0;
+        margin-bottom: 25px;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .col-md-4 {
+        width: 100%;
+        max-width: 450px;
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        transition: 0.3s;
+    }
+
+    .col-md-4:hover {
+        transform: translateY(-3px);
+    }
+
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+    .control-label {
+        font-weight: 600;
+        margin-bottom: 6px;
+        display: block;
+        color: #334155;
+    }
+
+    .form-control {
+        width: 100%;
+        border-radius: 10px;
+        padding: 10px 12px;
+        border: 1px solid #cbd5e1;
+        transition: all 0.25s ease;
+        background: #f8fafc;
+    }
+
+    .form-control:focus {
+        border-color: #6366f1;
+        background: #fff;
+        box-shadow: 0 0 0 3px rgba(99,102,241,0.2);
+        outline: none;
+    }
+
+    select.form-control {
+        cursor: pointer;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 11px;
+        border-radius: 10px;
+        background: linear-gradient(45deg, #6366f1, #4f46e5);
+        border: none;
+        font-weight: 600;
+        color: white;
+        transition: 0.3s;
+    }
+
+    .btn-primary:hover {
+        transform: scale(1.03);
+        background: linear-gradient(45deg, #4f46e5, #4338ca);
+    }
+
+    .text-danger {
+        font-size: 13px;
+        margin-top: 3px;
+        display: block;
+    }
+
+    div > a {
+        display: inline-block;
+        margin-top: 20px;
+        color: #6366f1;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    div > a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<h1>✏️ Chỉnh sửa biến thể sách</h1>
+
+<h4>Cập nhật thông tin</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label asp-for="SanPhamId" class="control-label"></label>
+                <select asp-for="SanPhamId" class="form-control" asp-items="ViewBag.SanPhamId"></select>
+                <span asp-validation-for="SanPhamId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LoaiBiaId" class="control-label"></label>
+                <select asp-for="LoaiBiaId" class="form-control" asp-items="ViewBag.LoaiBiaId"></select>
+                <span asp-validation-for="LoaiBiaId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="NgonNguId" class="control-label"></label>
+                <select asp-for="NgonNguId" class="form-control" asp-items="ViewBag.NgonNguId"></select>
+                <span asp-validation-for="NgonNguId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SoLuongTon" class="control-label"></label>
+                <input asp-for="SoLuongTon" class="form-control" />
+                <span asp-validation-for="SoLuongTon" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="💾 Lưu thay đổi" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">⬅ Quay lại danh sách</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,98 @@
+﻿@model List<VVD_2210900012_DATN.Models.SanPham>
+
+@{
+ViewData["Title"] = "Trang chủ";
+}
+
+<style>
+
+.hero{
+    background: linear-gradient(120deg,#ff9800,#ff5722);
+    color:white;
+    padding:80px 20px;
+    border-radius:10px;
+}
+
+.book-card{
+    transition:0.3s;
+}
+
+.book-card:hover{
+    transform:translateY(-5px);
+}
+
+.book-img{
+    height:220px;
+    object-fit:cover;
+}
+
+</style>
+
+<div class="container">
+
+<!-- Banner -->
+<div class="hero text-center mb-5">
+
+    <h1 class="display-4">📚 BookStore</h1>
+
+    <p class="lead">
+        Kho sách online với hàng nghìn đầu sách hay
+    </p>
+
+</div>
+
+<!-- Sách nổi bật -->
+<h3 class="mb-4">🔥 Sách nổi bật</h3>
+
+<div class="row">
+
+    @foreach(var item in Model)
+    {
+
+    <div class="col-md-3 mb-4">
+
+        <div class="card book-card">
+
+            <img class="card-img-top book-img"
+                 src="~/images/@item.AnhBia"
+                 alt="@item.TenSach"/>
+
+            <div class="card-body">
+
+                <h5 class="card-title">
+                    @item.TenSach
+                </h5>
+
+                <p class="text-danger fw-bold">
+
+                    @if(item.GiaSauGiam != null)
+                    {
+                        @item.GiaSauGiam.Value.ToString("N0") <span>đ</span>
+                    }
+                    else
+                    {
+                        @item.GiaGoc.ToString("N0") <span>đ</span>
+                    }
+
+                </p>
+
+                <a class="btn btn-primary w-100"
+                   asp-controller="Sach"
+                   asp-action="ChiTiet"
+                   asp-route-id="@item.Id">
+
+                    Xem chi tiết
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    }
+
+</div>
+
+</div>
