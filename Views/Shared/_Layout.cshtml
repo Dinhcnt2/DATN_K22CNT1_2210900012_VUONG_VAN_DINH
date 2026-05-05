@@ -72,51 +72,74 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
             <div class="container">
 
-                <a class="navbar-brand logo" asp-controller="Home" asp-action="Index">
+                <a class="navbar-brand logo"
+                   asp-controller="Home"
+                   asp-action="Index">
                     📚 BookStore
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#menu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="menu">
 
+                    <!-- MENU -->
                     <ul class="navbar-nav me-auto">
 
+                        <!-- TRANG CHỦ -->
                         <li class="nav-item">
                             <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString()=="Home"?"nav-active":"")"
-                               asp-controller="Home" asp-action="Index">
+                               asp-controller="Home"
+                               asp-action="Index">
                                 Trang chủ
                             </a>
                         </li>
 
+                        <!-- SÁCH -->
                         <li class="nav-item">
                             <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString()=="Sach"?"nav-active":"")"
-                               asp-controller="Sach" asp-action="Index">
-                                Sách
+                               asp-controller="Sach"
+                               asp-action="Index">
+                                📚 Sách
                             </a>
                         </li>
 
+                        <!-- BÀI VIẾT -->
                         <li class="nav-item">
                             <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString()=="BaiViet"?"nav-active":"")"
-                               asp-controller="BaiViet" asp-action="Index">
+                               asp-controller="BaiViet"
+                               asp-action="Index">
                                 📰 Bài viết
                             </a>
                         </li>
 
+                        <!-- GIỎ HÀNG -->
                         <li class="nav-item">
                             <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString()=="GioHang"?"nav-active":"")"
-                               asp-controller="GioHang" asp-action="Index">
+                               asp-controller="GioHang"
+                               asp-action="Index">
                                 🛒 Giỏ hàng
                             </a>
                         </li>
 
-                        <!-- 🔥 THÊM LIÊN HỆ (NEW) -->
+                        <!-- LIÊN HỆ -->
                         <li class="nav-item">
                             <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString()=="LienHe"?"nav-active":"")"
-                               asp-controller="LienHe" asp-action="Index">
+                               asp-controller="LienHe"
+                               asp-action="Index">
                                 📩 Liên hệ
+                            </a>
+                        </li>
+
+                        <!-- ĐƠN HÀNG ĐÃ MUA -->
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString()=="DonHang"?"nav-active":"")"
+                               href="/DonHang/DonHangDaMua">
+                                📦 Đơn hàng đã mua
                             </a>
                         </li>
 
@@ -124,21 +147,33 @@
 
                     <!-- SEARCH -->
                     <div class="search-wrapper me-3">
-                        <input id="searchBox" class="form-control" placeholder="🔍 Tìm sách..." autocomplete="off" />
+
+                        <input id="searchBox"
+                               class="form-control"
+                               placeholder="🔍 Tìm sách..."
+                               autocomplete="off" />
+
                         <div id="goiY"></div>
+
                     </div>
 
                     <!-- USER -->
                     <ul class="navbar-nav">
+
                         @if (Context.Session.GetString("TenNguoiDung") == null)
                         {
                             <li class="nav-item">
-                                <a class="btn btn-outline-primary me-2" asp-controller="TaiKhoan" asp-action="DangNhap">
+                                <a class="btn btn-outline-primary me-2"
+                                   asp-controller="TaiKhoan"
+                                   asp-action="DangNhap">
                                     Đăng nhập
                                 </a>
                             </li>
+
                             <li class="nav-item">
-                                <a class="btn btn-primary" asp-controller="TaiKhoan" asp-action="DangKy">
+                                <a class="btn btn-primary"
+                                   asp-controller="TaiKhoan"
+                                   asp-action="DangKy">
                                     Đăng ký
                                 </a>
                             </li>
@@ -151,11 +186,14 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="btn btn-danger" asp-controller="TaiKhoan" asp-action="DangXuat">
+                                <a class="btn btn-danger"
+                                   asp-controller="TaiKhoan"
+                                   asp-action="DangXuat">
                                     Đăng xuất
                                 </a>
                             </li>
                         }
+
                     </ul>
 
                 </div>
@@ -163,38 +201,52 @@
         </nav>
     </header>
 
+    <!-- BODY -->
     <div class="container mt-4">
         @RenderBody()
     </div>
 
+    <!-- SCRIPT -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-            $("#searchBox").keyup(function () {
 
-                var keyword = $(this).val();
+        $("#searchBox").keyup(function () {
 
-                if (keyword.length === 0) {
-                    $("#goiY").html("");
-                    return;
-                }
+            var keyword = $(this).val();
 
-                $.get("/Sach/TimKiemAjax", { keyword: keyword }, function (data) {
+            if (keyword.length === 0) {
+                $("#goiY").html("");
+                return;
+            }
+
+            $.get("/Sach/TimKiemAjax",
+                { keyword: keyword },
+                function (data) {
 
                     var html = "";
 
                     data.forEach(function (item) {
+
                         html += `
                             <a href="/Sach/ChiTiet/${item.id}">
-        <img src="/images/${item.anh}" width="40"/>
-                                ${item.ten} - ${item.gia.toLocaleString()} đ
+                                <img src="/images/${item.anh}"
+                                     width="40"
+                                     height="50"
+                                     style="object-fit:cover"/>
+
+                                ${item.ten}
+                                - ${item.gia.toLocaleString()} đ
                             </a>
                         `;
                     });
 
                     $("#goiY").html(html);
                 });
-            });
+
+        });
+
     </script>
 
 </body>

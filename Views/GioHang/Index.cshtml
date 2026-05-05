@@ -2,8 +2,8 @@
 
 @{
     ViewData["Title"] = "Giỏ hàng";
-    var voucherId = Context.Session.GetInt32("VoucherId");
-    var tongTien = Model.Sum(x => x.Gia * x.SoLuong);
+    var voucherId = Context.Session.GetInt32("VoucherId"); // lấy voucher đã chọn trong session
+    var tongTien = Model.Sum(x => x.Gia * x.SoLuong); // tính tổng tiền ban đầu
 }
 
 <div class="container mt-4">
@@ -29,7 +29,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model)
+                @foreach (var item in Model)// duyệt sản phẩm từ controller sang view
                 {
                     <tr>
                         <td>@item.TenSach</td>
@@ -44,6 +44,7 @@
                                    value="@item.SoLuong"
                                    class="form-control quantity"
                                    data-id="@item.Id" />
+                            @* input này để update số lượng realtime *@
                         </td>
 
                         <td class="fw-bold text-success item-total">
@@ -55,6 +56,7 @@
                                class="btn btn-danger btn-sm">
                                 Xoá
                             </a>
+                            @* xoá item khỏi session *@
                         </td>
                     </tr>
                 }
@@ -85,6 +87,7 @@
                     onclick="applyVoucher()">
                 Áp dụng
             </button>
+            @* gọi API NhapVoucher *@
         </div>
 
         <!-- chọn voucher -->
@@ -92,6 +95,7 @@
                 onclick="openVoucherModal()">
             🎟 Chọn Voucher
         </button>
+        @* mở modal load voucher *@
 
         <!-- hiển thị -->
         <div id="voucher-selected" class="text-success mb-3">
@@ -105,21 +109,9 @@
         <h4 class="mb-3">📦 Thông tin nhận hàng</h4>
 
         <form method="post" action="/GioHang/DatHang">
-
-            <input name="ten"
-                   class="form-control mb-2"
-                   placeholder="👤 Tên người nhận"
-                   required />
-
-            <input name="sdt"
-                   class="form-control mb-2"
-                   placeholder="📞 SĐT"
-                   required />
-
-            <input name="diachi"
-                   class="form-control mb-3"
-                   placeholder="🏠 Địa chỉ"
-                   required />
+            <input name="ten" class="form-control mb-2" placeholder="👤 Tên người nhận" required />
+            <input name="sdt" class="form-control mb-2" placeholder="📞 SĐT" required />
+            <input name="diachi" class="form-control mb-3" placeholder="🏠 Địa chỉ" required />
 
             <button class="btn btn-success w-100 btn-lg">
                 ✅ Đặt hàng ngay
@@ -139,8 +131,9 @@
             </div>
 
             <div class="modal-body" id="voucherList">
-                Loading...
+                Đang tải...
             </div>
+            @* chỗ này sẽ inject HTML từ PartialView *@
 
         </div>
     </div>
@@ -151,6 +144,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
+
         // ===== UPDATE REALTIME =====
         $(".quantity").on("change", function () {
 
@@ -172,6 +166,7 @@
                     );
                 });
         });
+        //  đổi số lượng → gọi API → update tiền
 
         // ===== NHẬP VOUCHER =====
         function applyVoucher() {
@@ -195,21 +190,36 @@
                     }
                 });
         }
+        //  nhập code voucher
 
-        // ===== MỞ MODAL =====
+        // ===== MỞ MODAL + LOAD VOUCHER (FIX CHUẨN) =====
         function openVoucherModal() {
-            var modal = new bootstrap.Modal(document.getElementById('voucherModal'));
+    var modal = new bootstrap.Modal(document.getElementById('voucherModal'));
             modal.show();
 
-            $("#voucherList").load("/GioHang/GetVoucherList");
-        }
+            $("#voucherList").html("⏳ Đang tải...");
 
-        // ===== CHỌN VOUCHER (FIX LỖI) =====
+            $.ajax({
+                url: "/GioHang/GetVoucherList",
+                type: "GET",
+                success: function (data) {
+                    $("#voucherList").html(data);
+                },
+                error: function () {
+                    $("#voucherList").html("<span class='text-danger'>Lỗi load voucher</span>");
+                }
+            });
+        }
+        // dùng ajax thay vì .load()
+
+        // ===== CHỌN VOUCHER =====
         function chonVoucher(id) {
             $.post("/GioHang/ChonVoucher",
-    { id: id },
+                { id: id },
                 function () {
                     location.reload();
                 });
         }
+        // click voucher → lưu session → reload
+
 </script>

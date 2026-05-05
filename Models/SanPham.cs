@@ -62,4 +62,7 @@ public partial class SanPham
     public virtual DanhMuc? DanhMuc { get; set; }
 
     public virtual NguoiDung? UpdatedByNavigation { get; set; }
+    public int? VoucherId { get; set; }
+    public Voucher? Voucher { get; set; }
+
 }

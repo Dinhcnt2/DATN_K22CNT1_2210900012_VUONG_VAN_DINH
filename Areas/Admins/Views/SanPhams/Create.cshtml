@@ -18,13 +18,15 @@
 
             <div class="row">
 
+                <!-- LEFT -->
                 <div class="col-md-6">
 
                     <div class="mb-3">
                         <label class="form-label">Danh mục</label>
                         <select asp-for="DanhMucId"
                                 class="form-control"
-                                asp-items="ViewBag.DanhMucId"></select>
+                                asp-items="ViewBag.DanhMucId">
+                        </select>
                     </div>
 
                     <div class="mb-3">
@@ -60,7 +62,7 @@
 
                 </div>
 
-
+                <!-- RIGHT -->
                 <div class="col-md-6">
 
                     <div class="mb-3">
@@ -78,13 +80,32 @@
                         <input asp-for="PhanTramGiam" class="form-control" />
                     </div>
 
+                    <!-- 🔥 VOUCHER (MỚI THÊM) -->
+                    <div class="mb-3">
+                        <label class="form-label">Voucher áp dụng</label>
+
+                        <select asp-for="VoucherId"
+                                class="form-control"
+                                asp-items="ViewBag.VoucherId ?? new List<SelectListItem>()">
+
+                            <option value="">-- Không áp dụng --</option>
+
+                        </select>
+
+                        @if (ViewBag.VoucherId == null)
+                        {
+                            <small class="text-danger">
+                                ⚠ Chưa load được voucher
+                            </small>
+                        }
+                    </div>
+
                     <div class="mb-3">
                         <label class="form-label">Ảnh bìa sách</label>
 
                         <input type="file"
                                name="uploadImage"
                                class="form-control" />
-
                     </div>
 
                     <div class="mb-3">
@@ -105,7 +126,7 @@
 
             </div>
 
-
+            <!-- BUTTON -->
             <div class="mt-3">
 
                 <button type="submit" class="btn btn-success">
@@ -123,7 +144,6 @@
     </div>
 
 </div>
-
 
 @section Scripts {
     @{

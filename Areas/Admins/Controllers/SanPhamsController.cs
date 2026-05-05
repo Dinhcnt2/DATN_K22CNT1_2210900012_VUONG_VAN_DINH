@@ -41,7 +41,15 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
         // ===== CREATE =====
         public IActionResult Create()
         {
-            ViewBag.DanhMucId = new SelectList(_context.DanhMucs, "Id", "TenDanhMuc");
+            ViewData["DanhMucId"] = new SelectList(_context.DanhMucs, "Id", "TenDanhMuc");
+
+            //  THÊM VOUCHER
+            ViewBag.VoucherId = new SelectList(
+                _context.Vouchers.Where(x => x.TrangThai == true),
+                "Id",
+                "MaCode"
+            );
+
             return View();
         }
 

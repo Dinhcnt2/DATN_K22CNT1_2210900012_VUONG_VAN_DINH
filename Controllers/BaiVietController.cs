@@ -17,7 +17,7 @@ namespace VVD_2210900012_DATN.Controllers
         public IActionResult Index()
         {
             var list = _context.BaiViets
-                .Where(x => x.IsPublished == true) // 🔥 đúng DB
+                .Where(x => x.IsPublished == true) // 
                 .OrderByDescending(x => x.CreatedAt)
                 .ToList();
 

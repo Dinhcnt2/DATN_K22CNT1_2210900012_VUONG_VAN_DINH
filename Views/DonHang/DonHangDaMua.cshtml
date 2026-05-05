@@ -1,0 +1,130 @@
+﻿@model List<VVD_2210900012_DATN.Models.DonHang>
+
+@inject VVD_2210900012_DATN.Models.BookstoreContext _context
+
+@{
+    ViewData["Title"] = "Đơn hàng đã mua";
+}
+
+<div class="container mt-4">
+
+    <h2 class="fw-bold mb-4">
+        ĐƠN HÀNG ĐÃ MUA
+    </h2>
+
+    <!-- FILTER -->
+    <div class="mb-4 d-flex gap-2 flex-wrap">
+
+        <a href="/DonHang/DonHangDaMua"
+           class="btn btn-outline-primary">
+            Tất cả
+        </a>
+
+        <a href="/DonHang/DonHangDaMua?status=ChoXacNhan"
+           class="btn btn-outline-warning">
+            Chờ xử lý
+        </a>
+
+        <a href="/DonHang/DonHangDaMua?status=DaXacNhan"
+           class="btn btn-outline-info">
+            Đã xác nhận
+        </a>
+
+        <a href="/DonHang/DonHangDaMua?status=DaGiao"
+           class="btn btn-outline-success">
+            Đã giao
+        </a>
+
+    </div>
+
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-warning">
+            Chưa có đơn hàng nào
+        </div>
+    }
+    else
+    {
+        @foreach (var don in Model)
+        {
+            var chiTiet = _context.ChiTietDonHangs
+            .FirstOrDefault(x => x.MaDonHang == don.MaDonHang);
+
+            var bienThe = chiTiet != null
+            ? _context.BienTheSaches.FirstOrDefault(x => x.Id == chiTiet.BienTheId)
+            : null;
+
+            var sach = bienThe != null
+            ? _context.SanPhams.FirstOrDefault(x => x.Id == bienThe.SanPhamId)
+            : null;
+
+            <div class="card mb-4 shadow-sm border-0 rounded-4">
+
+                <div class="card-body">
+
+                    <div class="d-flex justify-content-between">
+
+                        <div class="fw-bold text-primary">
+                            Đơn hàng:
+                            #@don.MaDonHangCode
+                        </div>
+
+                        <div class="text-success fw-bold">
+                            @don.TrangThai
+                        </div>
+
+                    </div>
+
+                    <hr />
+
+                    <div class="row align-items-center">
+
+                        <!-- ẢNH -->
+                        <div class="col-md-2 text-center">
+
+                            <img src="~/images/@(sach?.AnhBia ?? "no-image.png")"
+                                 style="width:100px;height:120px;object-fit:cover;" />
+
+                        </div>
+
+                        <!-- INFO -->
+                        <div class="col-md-7">
+
+                            <h5 class="fw-bold">
+                                @(sach?.TenSach ?? "Sản phẩm")
+                            </h5>
+
+                            <div class="text-muted">
+                                Ngày đặt:
+                                @(don.NgayDat?.ToString("dd/MM/yyyy"))
+                            </div>
+
+                            <div class="mt-2 fs-5">
+                                Tổng tiền:
+                                <span class="fw-bold text-danger">
+                                    @((don.TongTien ?? 0).ToString("N0")) đ
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <!-- BUTTON -->
+                        <div class="col-md-3 text-end">
+
+                            <a href="/DonHang/ThanhToan/@don.MaDonHang"
+                               class="btn btn-primary rounded-pill px-4">
+                                Xem chi tiết
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        }
+    }
+
+</div>

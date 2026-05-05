@@ -30,7 +30,9 @@ namespace VVD_2210900012_DATN.Controllers
             }
 
             var user = _context.NguoiDungs
-                .FirstOrDefault(x => x.TenDangNhap == TenDangNhap && x.MatKhau == MatKhau);
+                .FirstOrDefault(x =>
+                    x.TenDangNhap == TenDangNhap
+                    && x.MatKhau == MatKhau);
 
             if (user == null)
             {
@@ -38,16 +40,44 @@ namespace VVD_2210900012_DATN.Controllers
                 return View();
             }
 
-            HttpContext.Session.SetString("TenNguoiDung", user.TenDangNhap ?? "");
-            HttpContext.Session.SetString("VaiTro", user.VaiTro ?? "khachhang");
-            HttpContext.Session.SetInt32("UserId", user.MaNguoiDung);
+            // ===== LƯU SESSION =====
+            HttpContext.Session.SetString(
+                "TenNguoiDung",
+                user.TenDangNhap ?? ""
+            );
 
+            HttpContext.Session.SetString(
+                "VaiTro",
+                user.VaiTro ?? "khachhang"
+            );
+
+            // ===== GIỮ CODE CŨ =====
+            HttpContext.Session.SetInt32(
+                "UserId",
+                user.MaNguoiDung
+            );
+
+            // ===== FIX ĐƠN HÀNG ĐÃ MUA =====
+            HttpContext.Session.SetInt32(
+                "MaNguoiDung",
+                user.MaNguoiDung
+            );
+
+            // ===== ADMIN =====
             if (user.VaiTro == "admin")
             {
-                return RedirectToAction("Index", "Home", new { area = "Admins" });
+                return RedirectToAction(
+                    "Index",
+                    "Home",
+                    new { area = "Admins" }
+                );
             }
 
-            return RedirectToAction("Index", "Home");
+            // ===== USER =====
+            return RedirectToAction(
+                "Index",
+                "Home"
+            );
         }
 
         // ================= ĐĂNG KÝ =================
@@ -66,15 +96,17 @@ namespace VVD_2210900012_DATN.Controllers
                 return View();
             }
 
-            if (string.IsNullOrEmpty(model.TenDangNhap) || string.IsNullOrEmpty(model.MatKhau))
+            if (string.IsNullOrEmpty(model.TenDangNhap)
+                || string.IsNullOrEmpty(model.MatKhau))
             {
                 ViewBag.Error = "Vui lòng nhập đầy đủ thông tin";
                 return View(model);
             }
 
-            // 🔥 CHECK USERNAME TRÙNG (CODE CŨ)
+            // ===== CHECK USERNAME TRÙNG =====
             var check = _context.NguoiDungs
-                .FirstOrDefault(x => x.TenDangNhap == model.TenDangNhap);
+                .FirstOrDefault(x =>
+x.TenDangNhap == model.TenDangNhap);
 
             if (check != null)
             {
@@ -82,31 +114,31 @@ namespace VVD_2210900012_DATN.Controllers
                 return View(model);
             }
 
-            // ================= THÊM VALIDATE =================
-
-            // 🔥 CHECK EMAIL PHẢI @gmail.com
-            if (string.IsNullOrEmpty(model.Email) || !model.Email.EndsWith("@gmail.com"))
+            // ===== CHECK EMAIL =====
+            if (string.IsNullOrEmpty(model.Email)
+                || !model.Email.EndsWith("@gmail.com"))
             {
                 ViewBag.Error = "Email phải có dạng @gmail.com";
                 return View(model);
             }
 
-            // 🔥 CHECK EMAIL TRÙNG
-            if (_context.NguoiDungs.Any(x => x.Email == model.Email))
+            // ===== CHECK EMAIL TRÙNG =====
+            if (_context.NguoiDungs.Any(x =>
+                x.Email == model.Email))
             {
                 ViewBag.Error = "Email đã tồn tại";
                 return View(model);
             }
 
-            // 🔥 CHECK SĐT TRÙNG
-            if (_context.NguoiDungs.Any(x => x.Sdt == model.Sdt))
+            // ===== CHECK SĐT =====
+            if (_context.NguoiDungs.Any(x =>
+                x.Sdt == model.Sdt))
             {
                 ViewBag.Error = "Số điện thoại đã tồn tại";
                 return View(model);
             }
 
-            // =================================================
-
+            // ===== THÊM USER =====
             model.VaiTro = "khachhang";
             model.NgayTao = DateTime.Now;
 
@@ -118,6 +150,7 @@ namespace VVD_2210900012_DATN.Controllers
             _context.SaveChanges();
 
             TempData["Success"] = "Đăng ký thành công!";
+
             return RedirectToAction("DangNhap");
         }
 
@@ -126,6 +159,7 @@ namespace VVD_2210900012_DATN.Controllers
         public IActionResult DangXuat()
         {
             HttpContext.Session.Clear();
+
             return RedirectToAction("DangNhap");
         }
 
@@ -140,7 +174,8 @@ namespace VVD_2210900012_DATN.Controllers
         public IActionResult QuenMatKhau(string TenDangNhap)
         {
             var user = _context.NguoiDungs
-                .FirstOrDefault(x => x.TenDangNhap == TenDangNhap);
+                .FirstOrDefault(x =>
+                    x.TenDangNhap == TenDangNhap);
 
             if (user == null)
             {
@@ -149,7 +184,9 @@ namespace VVD_2210900012_DATN.Controllers
             }
 
             var random = new Random();
-            string code = random.Next(100000, 999999).ToString();
+
+            string code =
+                random.Next(100000, 999999).ToString();
 
             user.ResetCode = code;
             user.ResetTime = DateTime.Now.AddMinutes(5);
@@ -158,7 +195,10 @@ namespace VVD_2210900012_DATN.Controllers
 
             TempData["Code"] = code;
 
-            return RedirectToAction("XacNhanMa", new { user = TenDangNhap });
+            return RedirectToAction(
+                "XacNhanMa",
+                new { user = TenDangNhap }
+            );
         }
 
         // ================= XÁC NHẬN MÃ =================
@@ -167,26 +207,37 @@ namespace VVD_2210900012_DATN.Controllers
         {
             ViewBag.User = user;
             ViewBag.Code = TempData["Code"];
+
             return View();
         }
 
         [HttpPost]
-        public IActionResult XacNhanMa(string TenDangNhap, string code)
+        public IActionResult XacNhanMa(
+            string TenDangNhap,
+            string code)
         {
             var user = _context.NguoiDungs
-                .FirstOrDefault(x => x.TenDangNhap == TenDangNhap);
+                            .FirstOrDefault(x =>
+                                x.TenDangNhap == TenDangNhap);
 
             if (user == null)
+            {
                 return RedirectToAction("QuenMatKhau");
+            }
 
-            if (user.ResetCode != code || user.ResetTime < DateTime.Now)
+            if (user.ResetCode != code
+                || user.ResetTime < DateTime.Now)
             {
                 ViewBag.Error = "Mã sai hoặc hết hạn";
                 ViewBag.User = TenDangNhap;
+
                 return View();
             }
 
-            return RedirectToAction("DoiMatKhau", new { user = TenDangNhap });
+            return RedirectToAction(
+                "DoiMatKhau",
+                new { user = TenDangNhap }
+            );
         }
 
         // ================= ĐỔI MẬT KHẨU =================
@@ -194,17 +245,23 @@ namespace VVD_2210900012_DATN.Controllers
         public IActionResult DoiMatKhau(string user)
         {
             ViewBag.User = user;
+
             return View();
         }
 
         [HttpPost]
-        public IActionResult DoiMatKhau(string TenDangNhap, string MatKhauMoi)
+        public IActionResult DoiMatKhau(
+            string TenDangNhap,
+            string MatKhauMoi)
         {
             var user = _context.NguoiDungs
-                .FirstOrDefault(x => x.TenDangNhap == TenDangNhap);
+                .FirstOrDefault(x =>
+                    x.TenDangNhap == TenDangNhap);
 
             if (user == null)
+            {
                 return RedirectToAction("QuenMatKhau");
+            }
 
             user.MatKhau = MatKhauMoi;
             user.ResetCode = null;

@@ -1028,3 +1028,4 @@ D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\refint\VVD_2210900012_DATN.dll
 D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\VVD_2210900012_DATN.pdb
 D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\VVD_2210900012_DATN.genruntimeconfig.cache
 D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\ref\VVD_2210900012_DATN.dll
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\VVD_2210900012_DATN.sourcelink.json
