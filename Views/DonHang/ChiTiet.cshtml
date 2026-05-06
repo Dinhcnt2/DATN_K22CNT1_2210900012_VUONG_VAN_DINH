@@ -1,0 +1,233 @@
+﻿@model VVD_2210900012_DATN.Models.DonHang
+
+@{
+    ViewData["Title"] = "Chi tiết đơn hàng";
+}
+
+<style>
+
+    body {
+        background: #f5f5f5;
+    }
+
+    .order-container {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .order-card {
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        background: white;
+    }
+
+    .section-title {
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 25px;
+        color: #333;
+    }
+
+    .order-title {
+        font-size: 32px;
+        font-weight: 800;
+        color: #0d6efd;
+    }
+
+    .badge-status {
+        font-size: 15px;
+        padding: 10px 18px;
+        border-radius: 30px;
+    }
+
+    .product-item {
+        padding: 20px 0;
+    }
+
+    .product-img {
+        width: 110px;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 1px solid #eee;
+    }
+
+    .book-name {
+        font-size: 20px;
+        font-weight: 700;
+        color: #222;
+    }
+
+    .price {
+        color: #dc3545;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .total-price {
+        color: #dc3545;
+        font-size: 32px;
+        font-weight: 800;
+    }
+
+    .btn-back {
+        border-radius: 30px;
+        padding: 10px 28px;
+        font-weight: 600;
+    }
+
+</style>
+
+<div class="container mt-5 mb-5 order-container">
+
+    <!-- HEADER -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <h1 class="order-title">
+            Chi tiết đơn hàng
+            #@(Model.MaDonHangCode ?? ("DH" + Model.MaDonHang))
+        </h1>
+
+        <span class="badge bg-success badge-status">
+            @(Model.TrangThai ?? "Đang xử lý")
+        </span>
+
+    </div>
+
+    <!-- THÔNG TIN -->
+    <div class="row">
+
+        <!-- NHẬN HÀNG -->
+        <div class="col-md-7">
+
+            <div class="card order-card mb-4">
+
+                <div class="card-body p-4">
+
+                    <div class="section-title">
+                        📍 Thông tin nhận hàng
+                    </div>
+
+                    <p>
+                        <strong>Người nhận:</strong>
+                        @Model.HoTen
+                    </p>
+
+                    <p>
+                        <strong>Số điện thoại:</strong>
+                        @Model.SoDienThoai
+                    </p>
+
+                    <p>
+                        <strong>Địa chỉ:</strong>
+                        @Model.DiaChi
+                    </p>
+
+                    <p>
+                        <strong>Ngày đặt:</strong>
+                        @(Model.NgayDat?.ToString("dd/MM/yyyy HH:mm"))
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- THANH TOÁN -->
+        <div class="col-md-5">
+
+            <div class="card order-card mb-4">
+
+                <div class="card-body p-4">
+
+                    <div class="section-title">
+                        💳 Thanh toán
+                    </div>
+
+                    <p class="fs-5">
+                        @(Model.PhuongThucThanhToan ?? "Thanh toán khi nhận hàng")
+                    </p>
+
+                    <hr />
+
+                    <h5>Tổng tiền</h5>
+
+                    <div class="total-price">
+                        @String.Format("{0:N0} đ", Model.TongTien)
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- SẢN PHẨM -->
+    <div class="card order-card">
+
+        <div class="card-body p-4">
+
+            <div class="section-title">
+                🛍 Sản phẩm đã mua
+            </div>
+
+            @foreach (var item in Model.ChiTietDonHangs)
+            {
+                <div class="row align-items-center border-bottom product-item">
+
+                    <!-- ẢNH -->
+                    <div class="col-md-2 text-center">
+
+                        <img src="~/images/@item.BienThe?.SanPham?.AnhBia"
+                             class="product-img" />
+
+                    </div>
+
+                    <!-- INFO -->
+                    <div class="col-md-7">
+
+                        <div class="book-name">
+                            @item.BienThe?.SanPham?.TenSach
+                        </div>
+
+                        <div class="mt-2 text-muted">
+                            Số lượng:
+                            <strong>@item.SoLuong</strong>
+                        </div>
+
+                    </div>
+
+                    <!-- PRICE -->
+                    <div class="col-md-3 text-end">
+
+                        <div class="price">
+                            @String.Format("{0:N0} đ", item.ThanhTien)
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+    <!-- BUTTON -->
+    <div class="mt-4">
+
+        <a asp-controller="DonHang"
+           asp-action="DonHangDaMua"
+           class="btn btn-outline-primary btn-back">
+
+            ← Quay lại đơn hàng
+
+        </a>
+
+    </div>
+
+</div>

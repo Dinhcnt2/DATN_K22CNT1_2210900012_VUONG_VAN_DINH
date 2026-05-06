@@ -1,225 +1,426 @@
 ﻿@model List<VVD_2210900012_DATN.Controllers.GioHangItem>
 
+@inject VVD_2210900012_DATN.Models.BookstoreContext _context
+
 @{
     ViewData["Title"] = "Giỏ hàng";
-    var voucherId = Context.Session.GetInt32("VoucherId"); // lấy voucher đã chọn trong session
-    var tongTien = Model.Sum(x => x.Gia * x.SoLuong); // tính tổng tiền ban đầu
+
+    // ===== LẤY VOUCHER =====
+    var voucherId = Context.Session.GetInt32("VoucherId");
+
+    // ===== TÍNH TỔNG TIỀN =====
+    decimal tongTien = Model.Sum(x => x.Gia * x.SoLuong);
+
+    VVD_2210900012_DATN.Models.Voucher? voucher = null;
+
+    if (voucherId != null)
+    {
+        voucher = _context.Vouchers
+            .FirstOrDefault(x => x.Id == voucherId);
+
+        if (voucher != null)
+        {
+            decimal giamGia = voucher.GiamGia ?? 0;
+
+            // ===== GIẢM THEO % =====
+            if (voucher.Loai == "PhanTram")
+            {
+                tongTien -= tongTien * (giamGia / 100);
+            }
+            else
+            {
+                // ===== GIẢM TIỀN =====
+                tongTien -= giamGia;
+            }
+
+            if (tongTien < 0)
+            {
+                tongTien = 0;
+            }
+        }
+    }
 }
 
-<div class="container mt-4">
+<style>
 
-    <h2 class="mb-4">🛒 Giỏ hàng của bạn</h2>
+    body {
+        background: #f5f5f5;
+    }
+
+    .cart-title {
+        font-size: 42px;
+        font-weight: 800;
+        color: #222;
+    }
+
+    .cart-table {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    }
+
+    .book-name {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .price {
+        color: #dc3545;
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .total-price {
+        color: #0d6efd;
+        font-size: 36px;
+        font-weight: 800;
+    }
+
+    .voucher-box {
+        background: white;
+        border-radius: 20px;
+        padding: 25px;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    }
+
+    .order-box {
+        background: white;
+        border-radius: 20px;
+        padding: 25px;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    }
+
+    .main-btn {
+        border-radius: 30px;
+        padding: 12px 30px;
+        font-weight: 700;
+    }
+</style>
+
+<div class="container mt-5 mb-5">
+
+    <h1 class="cart-title mb-4">
+        🛒 Giỏ hàng của bạn
+    </h1>
 
     @if (!Model.Any())
     {
-        <div class="alert alert-warning">
+        <div class="alert alert-warning shadow-sm rounded-4 p-4 fs-5">
+
             Giỏ hàng trống!
+
         </div>
     }
     else
     {
-        <table class="table table-bordered align-middle text-center">
-            <thead class="table-warning">
-                <tr>
-                    <th>Sách</th>
-                    <th>Giá</th>
-                    <th>Số lượng</th>
-                    <th>Tổng</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)// duyệt sản phẩm từ controller sang view
-                {
+        <!-- TABLE -->
+        <div class="cart-table mb-4">
+
+            <table class="table align-middle text-center mb-0">
+
+                <thead class="table-warning">
+
                     <tr>
-                        <td>@item.TenSach</td>
-
-                        <td class="text-danger fw-bold">
-                            @item.Gia.ToString("N0") đ
-                        </td>
-
-                        <td style="width:200px;">
-                            <input type="number"
-                                   min="1"
-                                   value="@item.SoLuong"
-                                   class="form-control quantity"
-                                   data-id="@item.Id" />
-                            @* input này để update số lượng realtime *@
-                        </td>
-
-                        <td class="fw-bold text-success item-total">
-                            @((item.Gia * item.SoLuong).ToString("N0")) đ
-                        </td>
-
-                        <td>
-                            <a href="/GioHang/Xoa/@item.Id"
-                               class="btn btn-danger btn-sm">
-                                Xoá
-                            </a>
-                            @* xoá item khỏi session *@
-                        </td>
+                        <th>Sách</th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                        <th>Tổng</th>
+                        <th></th>
                     </tr>
-                }
-            </tbody>
-        </table>
 
-        <!-- 🔥 TỔNG -->
-        <h4 class="text-end text-primary">
-            Tổng tiền:
-            <span id="cart-total">
-                @tongTien.ToString("N0") đ
-            </span>
-        </h4>
+                </thead>
 
-        <hr />
+                <tbody>
 
-        <!-- 🔥 VOUCHER -->
-        <h5>🎟 Voucher</h5>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
 
-        <!-- nhập code -->
-        <div class="mb-3 d-flex">
-            <input type="text"
-                   id="voucherCode"
-                   class="form-control"
-                   placeholder="Nhập mã voucher..." />
+                            <!-- TÊN -->
+                            <td class="book-name">
+                                @item.TenSach
+                            </td>
 
-            <button class="btn btn-primary ms-2"
-                    onclick="applyVoucher()">
-                Áp dụng
-            </button>
-            @* gọi API NhapVoucher *@
+                            <!-- GIÁ -->
+                            <td class="price">
+                                @item.Gia.ToString("N0") đ
+                            </td>
+
+                            <!-- SỐ LƯỢNG -->
+                            <td style="width:220px;">
+
+                                <input type="number"
+                                       min="1"
+                                       value="@item.SoLuong"
+                                       class="form-control quantity"
+                                       data-id="@item.Id" />
+
+                            </td>
+
+                            <!-- TỔNG -->
+                            <td class="fw-bold text-success item-total fs-5">
+
+                                @((item.Gia * item.SoLuong).ToString("N0")) đ
+
+                            </td>
+
+                            <!-- XOÁ -->
+                            <td>
+
+                                <a href="/GioHang/Xoa/@item.Id"
+                                   class="btn btn-danger btn-sm rounded-pill px-3">
+
+                                    Xoá
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
         </div>
 
-        <!-- chọn voucher -->
-        <button class="btn btn-warning mb-3"
-                onclick="openVoucherModal()">
-            🎟 Chọn Voucher
-        </button>
-        @* mở modal load voucher *@
+        <!-- TỔNG -->
+        <div class="text-end mb-4">
 
-        <!-- hiển thị -->
-        <div id="voucher-selected" class="text-success mb-3">
-            @if (voucherId != null)
+            @if (voucher != null)
             {
-                <text>✅ Đã áp dụng voucher</text>
+                <div class="text-success mb-2 fs-5">
+
+                    ✅ Đã áp dụng voucher:
+                    <strong>@voucher.MaCode</strong>
+
+                </div>
             }
+
+            <div class="total-price">
+
+                Tổng tiền:
+                <span id="cart-total">
+                    @tongTien.ToString("N0") đ
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- VOUCHER -->
+        <div class="voucher-box mb-4">
+
+            <h4 class="mb-4">
+                🎟 Voucher
+            </h4>
+
+            <!-- NHẬP CODE -->
+            <div class="d-flex mb-3">
+
+                <input type="text"
+                       id="voucherCode"
+                       class="form-control"
+                       placeholder="Nhập mã voucher..." />
+
+                <button class="btn btn-primary ms-2 main-btn"
+                        onclick="applyVoucher()">
+
+                    Áp dụng
+
+                </button>
+
+            </div>
+
+            <!-- CHỌN -->
+            <button class="btn btn-warning main-btn"
+                    onclick="openVoucherModal()">
+
+                🎟 Chọn Voucher
+
+            </button>
+
         </div>
 
         <!-- FORM -->
-        <h4 class="mb-3">📦 Thông tin nhận hàng</h4>
+        <div class="order-box">
 
-        <form method="post" action="/GioHang/DatHang">
-            <input name="ten" class="form-control mb-2" placeholder="👤 Tên người nhận" required />
-            <input name="sdt" class="form-control mb-2" placeholder="📞 SĐT" required />
-            <input name="diachi" class="form-control mb-3" placeholder="🏠 Địa chỉ" required />
+            <h3 class="mb-4">
+                📦 Thông tin nhận hàng
+            </h3>
 
-            <button class="btn btn-success w-100 btn-lg">
-                ✅ Đặt hàng ngay
-            </button>
-        </form>
+            <form method="post" action="/GioHang/DatHang">
+
+                <input name="ten"
+                       class="form-control mb-3"
+                       placeholder="👤 Tên người nhận"
+                       required />
+
+                <input name="sdt"
+                       class="form-control mb-3"
+                       placeholder="📞 Số điện thoại"
+                       required />
+
+                <input name="diachi"
+                       class="form-control mb-4"
+                       placeholder="🏠 Địa chỉ"
+                       required />
+
+                <button class="btn btn-success w-100 btn-lg main-btn">
+
+                    ✅ Đặt hàng ngay
+
+                </button>
+
+            </form>
+
+        </div>
     }
+
 </div>
 
-<!-- 🔥 MODAL -->
+<!-- MODAL -->
 <div class="modal fade" id="voucherModal">
+
     <div class="modal-dialog">
+
         <div class="modal-content">
 
             <div class="modal-header">
-                <h5>🎟 Chọn Voucher</h5>
-                <button class="btn-close" data-bs-dismiss="modal"></button>
+
+                <h5>
+                    🎟 Chọn Voucher
+                </h5>
+
+                <button class="btn-close"
+                        data-bs-dismiss="modal">
+                </button>
+
             </div>
 
             <div class="modal-body" id="voucherList">
-                Đang tải...
+
+                ⏳ Đang tải...
+
             </div>
-            @* chỗ này sẽ inject HTML từ PartialView *@
 
         </div>
+
     </div>
+
 </div>
 
-<!-- 🔥 SCRIPT -->
+<!-- SCRIPT -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
 
-        // ===== UPDATE REALTIME =====
-        $(".quantity").on("change", function () {
+    // ===== UPDATE REALTIME =====
+    $(".quantity").on("change", function () {
 
-            var input = $(this);
-            var id = input.data("id");
-            var soluong = input.val();
-            var row = input.closest("tr");
+        var input = $(this);
 
-            $.post("/GioHang/UpdateAjax",
-                { id: id, soluong: soluong },
-                function (res) {
+        var id = input.data("id");
 
-                    row.find(".item-total").text(
-                        res.itemTotal.toLocaleString() + " đ"
-                    );
+        var soluong = input.val();
 
-                    $("#cart-total").text(
-                        res.cartTotal.toLocaleString() + " đ"
-                    );
-                });
-        });
-        //  đổi số lượng → gọi API → update tiền
+        var row = input.closest("tr");
 
-        // ===== NHẬP VOUCHER =====
-        function applyVoucher() {
+        $.post("/GioHang/UpdateAjax",
+            {
+                id: id,
+                soluong: soluong
+            },
+            function (res) {
 
-            var code = $("#voucherCode").val();
+                row.find(".item-total").text(
+                    res.itemTotal.toLocaleString() + " đ"
+                );
 
-            if (!code) {
-                alert("Nhập mã voucher!");
-                return;
-            }
+                $("#cart-total").text(
+                    res.cartTotal.toLocaleString() + " đ"
+                );
+            });
+    });
 
-            $.post("/GioHang/NhapVoucher",
-                { code: code },
-                function (res) {
+    // ===== NHẬP VOUCHER =====
+    function applyVoucher() {
 
-                    if (res.success) {
-                        alert("Áp dụng thành công!");
-                        location.reload();
-                    } else {
-                        alert(res.message);
-                    }
-                });
+        var code = $("#voucherCode").val();
+
+        if (!code) {
+
+            alert("Nhập mã voucher!");
+
+            return;
         }
-        //  nhập code voucher
 
-        // ===== MỞ MODAL + LOAD VOUCHER (FIX CHUẨN) =====
-        function openVoucherModal() {
-    var modal = new bootstrap.Modal(document.getElementById('voucherModal'));
-            modal.show();
+        $.post("/GioHang/NhapVoucher",
+            {
+                code: code
+            },
+            function (res) {
 
-            $("#voucherList").html("⏳ Đang tải...");
+                if (res.success) {
 
-            $.ajax({
-                url: "/GioHang/GetVoucherList",
-                type: "GET",
-                success: function (data) {
-                    $("#voucherList").html(data);
-                },
-                error: function () {
-                    $("#voucherList").html("<span class='text-danger'>Lỗi load voucher</span>");
+                    alert("Áp dụng thành công!");
+
+                    location.reload();
+
+                } else {
+
+                    alert(res.message);
                 }
             });
-        }
-        // dùng ajax thay vì .load()
+    }
 
-        // ===== CHỌN VOUCHER =====
-        function chonVoucher(id) {
-            $.post("/GioHang/ChonVoucher",
-                { id: id },
-                function () {
-                    location.reload();
-                });
-        }
-        // click voucher → lưu session → reload
+    // ===== MODAL =====
+    function openVoucherModal() {
+
+        var modal =
+            new bootstrap.Modal(
+                document.getElementById('voucherModal')
+            );
+
+        modal.show();
+
+        $("#voucherList").html("⏳ Đang tải...");
+
+        $.ajax({
+
+            url: "/GioHang/GetVoucherList",
+
+            type: "GET",
+
+            success: function (data) {
+
+                $("#voucherList").html(data);
+            },
+
+            error: function () {
+
+                $("#voucherList").html(
+                    "<span class='text-danger'>Lỗi load voucher</span>"
+                );
+            }
+        });
+    }
+
+    // ===== CHỌN VOUCHER =====
+    function chonVoucher(id) {
+
+        $.post("/GioHang/ChonVoucher",
+            {
+                id: id
+            },
+            function () {
+
+                location.reload();
+            });
+    }
 
 </script>
