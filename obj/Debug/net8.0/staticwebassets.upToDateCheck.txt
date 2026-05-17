@@ -6,6 +6,7 @@ wwwroot\images\2c6f33a1-9b0d-4d6d-a9a6-9192294448db.jpg
 wwwroot\images\31d553ca-0f5d-43d3-a345-44abed578a68.jpg
 wwwroot\images\5bcbd361-65bb-4f5f-ab8f-9adcee8278bd.jpg
 wwwroot\images\5dfdbbd8-9355-43e0-a1c4-e8c67d118035.jpg
+wwwroot\images\8011e9cc-6039-445e-b447-4c51baa413f1.jpg
 wwwroot\images\98da1234-a426-40a4-aa34-a3fa53f60ec8.jpg
 wwwroot\images\anh6.jpg
 wwwroot\images\d62e6a3a-eca7-4d83-8ee3-eb029c66658a.jpg

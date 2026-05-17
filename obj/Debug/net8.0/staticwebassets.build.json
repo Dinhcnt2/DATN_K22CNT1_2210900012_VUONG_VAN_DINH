@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GCW1CTy3g6aLJ7jxJl+04Wu4VwqT4h6pnWPKrDNilQ0=",
+  "Hash": "C+uhSemEQmUJs2qkZdmHrYfB7ljI6NQ9R4uwCvEwJZM=",
   "Source": "VVD_2210900012_DATN",
   "BasePath": "_content/VVD_2210900012_DATN",
   "Mode": "Default",
@@ -225,6 +225,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\5dfdbbd8-9355-43e0-a1c4-e8c67d118035.jpg"
+    },
+    {
+      "Identity": "D:\\DATN-VVD_2210900012-main\\wwwroot\\images\\8011e9cc-6039-445e-b447-4c51baa413f1.jpg",
+      "SourceId": "VVD_2210900012_DATN",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DATN-VVD_2210900012-main\\wwwroot\\",
+      "BasePath": "_content/VVD_2210900012_DATN",
+      "RelativePath": "images/8011e9cc-6039-445e-b447-4c51baa413f1#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "i82jpkcm33",
+      "Integrity": "EltwBsqLxDJou3Ptg+g4Jr3ehlAj37Sd8lEOC9Kb1H8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\8011e9cc-6039-445e-b447-4c51baa413f1.jpg"
     },
     {
       "Identity": "D:\\DATN-VVD_2210900012-main\\wwwroot\\images\\98da1234-a426-40a4-aa34-a3fa53f60ec8.jpg",
@@ -2330,6 +2351,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-ffuUCaQAVlQdsLA8egS/bDiKY3/DpzTOj4zd6CUpc2w="
+        }
+      ]
+    },
+    {
+      "Route": "images/8011e9cc-6039-445e-b447-4c51baa413f1.i82jpkcm33.jpg",
+      "AssetFile": "D:\\DATN-VVD_2210900012-main\\wwwroot\\images\\8011e9cc-6039-445e-b447-4c51baa413f1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "62192"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EltwBsqLxDJou3Ptg+g4Jr3ehlAj37Sd8lEOC9Kb1H8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 05 May 2026 10:40:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "i82jpkcm33"
+        },
+        {
+          "Name": "label",
+          "Value": "images/8011e9cc-6039-445e-b447-4c51baa413f1.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-EltwBsqLxDJou3Ptg+g4Jr3ehlAj37Sd8lEOC9Kb1H8="
+        }
+      ]
+    },
+    {
+      "Route": "images/8011e9cc-6039-445e-b447-4c51baa413f1.jpg",
+      "AssetFile": "D:\\DATN-VVD_2210900012-main\\wwwroot\\images\\8011e9cc-6039-445e-b447-4c51baa413f1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "62192"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EltwBsqLxDJou3Ptg+g4Jr3ehlAj37Sd8lEOC9Kb1H8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 05 May 2026 10:40:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-EltwBsqLxDJou3Ptg+g4Jr3ehlAj37Sd8lEOC9Kb1H8="
         }
       ]
     },
@@ -8014,7 +8117,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 05 May 2026 10:38:27 GMT"
+          "Value": "Fri, 15 May 2026 14:49:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8051,7 +8154,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 05 May 2026 10:38:27 GMT"
+          "Value": "Fri, 15 May 2026 14:49:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8096,7 +8199,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 05 May 2026 10:38:27 GMT"
+          "Value": "Fri, 15 May 2026 14:49:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8141,7 +8244,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 05 May 2026 10:38:27 GMT"
+          "Value": "Fri, 15 May 2026 14:49:45 GMT"
         },
         {
           "Name": "Cache-Control",

@@ -144,6 +144,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\5dfdbbd8-9355-43e0-a1c4-e8c67d118035.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\8011e9cc-6039-445e-b447-4c51baa413f1.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>VVD_2210900012_DATN</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/VVD_2210900012_DATN</BasePath>
+      <RelativePath>images/8011e9cc-6039-445e-b447-4c51baa413f1.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>i82jpkcm33</Fingerprint>
+      <Integrity>EltwBsqLxDJou3Ptg+g4Jr3ehlAj37Sd8lEOC9Kb1H8=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\8011e9cc-6039-445e-b447-4c51baa413f1.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\98da1234-a426-40a4-aa34-a3fa53f60ec8.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>VVD_2210900012_DATN</SourceId>

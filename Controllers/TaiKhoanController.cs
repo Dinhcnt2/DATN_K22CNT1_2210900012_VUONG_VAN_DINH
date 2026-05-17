@@ -23,9 +23,12 @@ namespace VVD_2210900012_DATN.Controllers
         [HttpPost]
         public IActionResult DangNhap(string TenDangNhap, string MatKhau)
         {
-            if (string.IsNullOrEmpty(TenDangNhap) || string.IsNullOrEmpty(MatKhau))
+            if (string.IsNullOrEmpty(TenDangNhap)
+                || string.IsNullOrEmpty(MatKhau))
             {
-                ViewBag.Error = "Vui lòng nhập đầy đủ thông tin";
+                ViewBag.Error =
+                    "Vui lòng nhập đầy đủ thông tin";
+
                 return View();
             }
 
@@ -36,11 +39,14 @@ namespace VVD_2210900012_DATN.Controllers
 
             if (user == null)
             {
-                ViewBag.Error = "Sai tài khoản hoặc mật khẩu";
+                ViewBag.Error =
+                    "Sai tài khoản hoặc mật khẩu";
+
                 return View();
             }
 
             // ===== LƯU SESSION =====
+
             HttpContext.Session.SetString(
                 "TenNguoiDung",
                 user.TenDangNhap ?? ""
@@ -51,19 +57,18 @@ namespace VVD_2210900012_DATN.Controllers
                 user.VaiTro ?? "khachhang"
             );
 
-            // ===== GIỮ CODE CŨ =====
             HttpContext.Session.SetInt32(
                 "UserId",
                 user.MaNguoiDung
             );
 
-            // ===== FIX ĐƠN HÀNG ĐÃ MUA =====
             HttpContext.Session.SetInt32(
                 "MaNguoiDung",
                 user.MaNguoiDung
             );
 
             // ===== ADMIN =====
+
             if (user.VaiTro == "admin")
             {
                 return RedirectToAction(
@@ -74,6 +79,7 @@ namespace VVD_2210900012_DATN.Controllers
             }
 
             // ===== USER =====
+
             return RedirectToAction(
                 "Index",
                 "Home"
@@ -92,54 +98,72 @@ namespace VVD_2210900012_DATN.Controllers
         {
             if (model == null)
             {
-                ViewBag.Error = "Dữ liệu không hợp lệ";
+                ViewBag.Error =
+                    "Dữ liệu không hợp lệ";
+
                 return View();
             }
 
             if (string.IsNullOrEmpty(model.TenDangNhap)
                 || string.IsNullOrEmpty(model.MatKhau))
             {
-                ViewBag.Error = "Vui lòng nhập đầy đủ thông tin";
+                ViewBag.Error =
+                    "Vui lòng nhập đầy đủ thông tin";
+
                 return View(model);
             }
 
-            // ===== CHECK USERNAME TRÙNG =====
+            // ===== CHECK USERNAME =====
+
             var check = _context.NguoiDungs
                 .FirstOrDefault(x =>
-x.TenDangNhap == model.TenDangNhap);
+                    x.TenDangNhap == model.TenDangNhap);
 
             if (check != null)
             {
-                ViewBag.Error = "Tên đăng nhập đã tồn tại";
+                ViewBag.Error =
+                    "Tên đăng nhập đã tồn tại";
+
                 return View(model);
             }
 
             // ===== CHECK EMAIL =====
+
             if (string.IsNullOrEmpty(model.Email)
                 || !model.Email.EndsWith("@gmail.com"))
             {
-                ViewBag.Error = "Email phải có dạng @gmail.com";
+                ViewBag.Error =
+                    "Email phải có dạng @gmail.com";
+
                 return View(model);
             }
 
             // ===== CHECK EMAIL TRÙNG =====
+
             if (_context.NguoiDungs.Any(x =>
                 x.Email == model.Email))
             {
-                ViewBag.Error = "Email đã tồn tại";
+                ViewBag.Error =
+                    "Email đã tồn tại";
+
                 return View(model);
             }
 
             // ===== CHECK SĐT =====
+
             if (_context.NguoiDungs.Any(x =>
                 x.Sdt == model.Sdt))
             {
-                ViewBag.Error = "Số điện thoại đã tồn tại";
+                ViewBag.Error =
+                    "Số điện thoại đã tồn tại";
+
                 return View(model);
             }
 
             // ===== THÊM USER =====
+
             model.VaiTro = "khachhang";
+
             model.NgayTao = DateTime.Now;
 
             model.HoTen ??= "";
@@ -147,11 +171,15 @@ x.TenDangNhap == model.TenDangNhap);
             model.Sdt ??= "";
 
             _context.NguoiDungs.Add(model);
+
             _context.SaveChanges();
 
-            TempData["Success"] = "Đăng ký thành công!";
+            TempData["Success"] =
+                "Đăng ký thành công!";
 
-            return RedirectToAction("DangNhap");
+            return RedirectToAction(
+                "DangNhap"
+            );
         }
 
         // ================= ĐĂNG XUẤT =================
@@ -160,7 +188,97 @@ x.TenDangNhap == model.TenDangNhap);
         {
             HttpContext.Session.Clear();
 
-            return RedirectToAction("DangNhap");
+            return RedirectToAction(
+                "DangNhap"
+            );
+        }
+
+        // ================= THÔNG TIN TÀI KHOẢN =================
+
+        public IActionResult ThongTinTaiKhoan()
+        {
+            var maNguoiDung =
+                HttpContext.Session.GetInt32(
+                    "MaNguoiDung"
+                );
+
+            if (maNguoiDung == null)
+            {
+                return RedirectToAction(
+                    "DangNhap"
+                );
+            }
+
+            var user = _context.NguoiDungs
+                .FirstOrDefault(x =>
+                    x.MaNguoiDung == maNguoiDung);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return View(user);
+        }
+
+        // ================= FORM CẬP NHẬT THÔNG TIN =================
+
+        public IActionResult CapNhatThongTin()
+        {
+            var maNguoiDung =
+                HttpContext.Session.GetInt32(
+                    "MaNguoiDung"
+                );
+
+            if (maNguoiDung == null)
+            {
+                return RedirectToAction(
+                    "DangNhap"
+                );
+            }
+
+            var user = _context.NguoiDungs
+                .FirstOrDefault(x =>
+                    x.MaNguoiDung == maNguoiDung);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return View(user);
+        }
+
+        // ================= LƯU CẬP NHẬT =================
+
+        [HttpPost]
+        public IActionResult CapNhatThongTin(
+            NguoiDung model)
+        {
+            var user = _context.NguoiDungs
+                .FirstOrDefault(x =>
+                    x.MaNguoiDung
+                    == model.MaNguoiDung);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            user.HoTen = model.HoTen;
+
+            user.Email = model.Email;
+
+            user.Sdt = model.Sdt;
+
+            _context.SaveChanges();
+
+            TempData["Success"] =
+                "Cập nhật thông tin thành công";
+
+            return RedirectToAction(
+                "ThongTinTaiKhoan"
+            );
         }
 
         // ================= QUÊN MẬT KHẨU =================
@@ -171,25 +289,34 @@ x.TenDangNhap == model.TenDangNhap);
         }
 
         [HttpPost]
-        public IActionResult QuenMatKhau(string TenDangNhap)
+        public IActionResult QuenMatKhau(
+            string TenDangNhap)
         {
             var user = _context.NguoiDungs
                 .FirstOrDefault(x =>
-                    x.TenDangNhap == TenDangNhap);
+                    x.TenDangNhap
+                    == TenDangNhap);
 
             if (user == null)
             {
-                ViewBag.Error = "Không tìm thấy tài khoản";
+                ViewBag.Error =
+                    "Không tìm thấy tài khoản";
+
                 return View();
             }
 
             var random = new Random();
 
             string code =
-                random.Next(100000, 999999).ToString();
+                random.Next(
+                    100000,
+                    999999
+                ).ToString();
 
             user.ResetCode = code;
-            user.ResetTime = DateTime.Now.AddMinutes(5);
+
+            user.ResetTime =
+                DateTime.Now.AddMinutes(5);
 
             _context.SaveChanges();
 
@@ -203,10 +330,13 @@ x.TenDangNhap == model.TenDangNhap);
 
         // ================= XÁC NHẬN MÃ =================
 
-        public IActionResult XacNhanMa(string user)
+        public IActionResult XacNhanMa(
+            string user)
         {
             ViewBag.User = user;
-            ViewBag.Code = TempData["Code"];
+
+            ViewBag.Code =
+                TempData["Code"];
 
             return View();
         }
@@ -217,19 +347,25 @@ x.TenDangNhap == model.TenDangNhap);
             string code)
         {
             var user = _context.NguoiDungs
-                            .FirstOrDefault(x =>
-                                x.TenDangNhap == TenDangNhap);
+                .FirstOrDefault(x =>
+                    x.TenDangNhap
+                    == TenDangNhap);
 
             if (user == null)
             {
-                return RedirectToAction("QuenMatKhau");
+                return RedirectToAction(
+                    "QuenMatKhau"
+                );
             }
 
             if (user.ResetCode != code
                 || user.ResetTime < DateTime.Now)
             {
-                ViewBag.Error = "Mã sai hoặc hết hạn";
-                ViewBag.User = TenDangNhap;
+                ViewBag.Error =
+                    "Mã sai hoặc hết hạn";
+
+                ViewBag.User =
+                    TenDangNhap;
 
                 return View();
             }
@@ -242,7 +378,8 @@ x.TenDangNhap == model.TenDangNhap);
 
         // ================= ĐỔI MẬT KHẨU =================
 
-        public IActionResult DoiMatKhau(string user)
+        public IActionResult DoiMatKhau(
+            string user)
         {
             ViewBag.User = user;
 
@@ -256,19 +393,25 @@ x.TenDangNhap == model.TenDangNhap);
         {
             var user = _context.NguoiDungs
                 .FirstOrDefault(x =>
-                    x.TenDangNhap == TenDangNhap);
+                    x.TenDangNhap
+                    == TenDangNhap);
 
             if (user == null)
             {
-                return RedirectToAction("QuenMatKhau");
+                return RedirectToAction(
+                    "QuenMatKhau"
+                );
             }
 
             user.MatKhau = MatKhauMoi;
+
             user.ResetCode = null;
 
             _context.SaveChanges();
 
-            return RedirectToAction("DangNhap");
+            return RedirectToAction(
+                "DangNhap"
+            );
         }
     }
 }
