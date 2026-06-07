@@ -336,6 +336,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFpVmlldFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/DATN-VVD_2210900012-main/Views/DanhGia/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFuaEdpYVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/DATN-VVD_2210900012-main/Views/DanhGia/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFuaEdpYVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -382,6 +386,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/DATN-VVD_2210900012-main/Views/Sach/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FjaFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DATN-VVD_2210900012-main/Views/Sach/TimKiem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FjaFxUaW1LaWVtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/DATN-VVD_2210900012-main/Views/Shared/Error.cshtml]

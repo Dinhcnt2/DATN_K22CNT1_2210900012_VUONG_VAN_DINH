@@ -1,46 +1,249 @@
 ﻿@model VVD_2210900012_DATN.Models.DanhGia
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Tạo đánh giá";
 }
 
-<h1>Create</h1>
+<style>
 
-<h4>DanhGia</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+    body {
+        background: #f5f6fa;
+    }
+
+    .create-container {
+        max-width: 800px;
+        margin: 40px auto;
+    }
+
+    .create-card {
+        background: white;
+        border-radius: 25px;
+        padding: 40px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    /* ===== TITLE ===== */
+
+    .page-title {
+        text-align: center;
+        font-size: 40px;
+        font-weight: 800;
+        margin-bottom: 10px;
+        color: #222;
+    }
+
+    .sub-title {
+        text-align: center;
+        color: #777;
+        margin-bottom: 35px;
+        font-size: 16px;
+    }
+
+    /* ===== FORM ===== */
+
+    .form-group {
+        margin-bottom: 22px;
+    }
+
+    .form-label {
+        display: block;
+        font-size: 18px;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .form-control {
+        border-radius: 14px;
+        padding: 14px;
+        border: 1px solid #ddd;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+        .form-control:focus {
+            border-color: #ff9800;
+            box-shadow: 0 0 0 0.2rem rgba(255,152,0,0.2);
+        }
+
+    textarea.form-control {
+        min-height: 150px;
+        resize: none;
+    }
+
+    .text-danger {
+        font-size: 14px;
+    }
+
+    /* ===== BUTTON ===== */
+
+    .btn-create {
+        width: 100%;
+        border: none;
+        padding: 14px;
+        border-radius: 35px;
+        font-size: 18px;
+        font-weight: 700;
+        color: white;
+        background: linear-gradient(120deg,#28a745,#5cd65c);
+        transition: 0.3s;
+    }
+
+        .btn-create:hover {
+            transform: translateY(-2px);
+            opacity: 0.95;
+        }
+
+    .btn-back {
+        display: inline-block;
+        margin-top: 25px;
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: 700;
+        color: #007bff;
+        transition: 0.3s;
+    }
+
+        .btn-back:hover {
+            color: #0056b3;
+        }
+</style>
+
+<div class="create-container">
+
+    <div class="create-card">
+
+        <!-- TITLE -->
+
+        <div class="page-title">
+
+            ⭐ Tạo đánh giá
+
+        </div>
+
+        <div class="sub-title">
+
+            Thêm đánh giá mới cho sản phẩm
+
+        </div>
+
+        <!-- FORM -->
+
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="SanPhamId" class="control-label"></label>
-                <select asp-for="SanPhamId" class ="form-control" asp-items="ViewBag.SanPhamId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="MaNguoiDung" class="control-label"></label>
-                <select asp-for="MaNguoiDung" class ="form-control" asp-items="ViewBag.MaNguoiDung"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="SoSao" class="control-label"></label>
-                <input asp-for="SoSao" class="form-control" />
-                <span asp-validation-for="SoSao" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NoiDung" class="control-label"></label>
-                <input asp-for="NoiDung" class="form-control" />
-                <span asp-validation-for="NoiDung" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+            <div asp-validation-summary="ModelOnly"
+                 class="text-danger mb-3">
+            </div>
+
+            <!-- SẢN PHẨM -->
+
+            <div class="form-group">
+
+                <label class="form-label">
+
+                    📚 Sản phẩm
+
+                </label>
+
+                <select asp-for="SanPhamId"
+                        class="form-control"
+                        asp-items="ViewBag.SanPhamId">
+                </select>
+
+                <span asp-validation-for="SanPhamId"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <!-- NGƯỜI DÙNG -->
+
+            <div class="form-group">
+
+                <label class="form-label">
+
+                    👤 Người dùng
+
+                </label>
+
+                <select asp-for="MaNguoiDung"
+                        class="form-control"
+                        asp-items="ViewBag.MaNguoiDung">
+                </select>
+
+                <span asp-validation-for="MaNguoiDung"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <!-- SỐ SAO -->
+
+            <div class="form-group">
+
+                <label class="form-label">
+
+                    ⭐ Số sao
+
+                </label>
+
+                <input asp-for="SoSao"
+                       class="form-control" />
+
+                <span asp-validation-for="SoSao"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <!-- NỘI DUNG -->
+
+            <div class="form-group">
+
+                <label class="form-label">
+
+                    📝 Nội dung đánh giá
+
+                </label>
+
+                <textarea asp-for="NoiDung"
+                          class="form-control">
+                </textarea>
+
+                <span asp-validation-for="NoiDung"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <!-- BUTTON -->
+
+            <button type="submit"
+                    class="btn-create">
+
+                ➕ Tạo đánh giá
+
+            </button>
+
+        </form>
+
+        <!-- BACK -->
+
+        <a asp-action="Index"
+           class="btn-back">
+
+            ← Quay lại danh sách
+
+        </a>
+
+    </div>
+
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
 }

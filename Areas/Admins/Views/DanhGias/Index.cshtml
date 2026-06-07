@@ -1,59 +1,329 @@
 ﻿@model IEnumerable<VVD_2210900012_DATN.Models.DanhGia>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh sách đánh giá";
 }
 
-<h1>Index</h1>
+<style>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.SoSao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NoiDung)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayDanhGia)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MaNguoiDungNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SanPham)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.SoSao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NoiDung)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayDanhGia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaNguoiDungNavigation.MaNguoiDung)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SanPham.Id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    body {
+        background: #f5f6fa;
+    }
+
+    .page-title {
+        font-size: 40px;
+        font-weight: 800;
+        margin-bottom: 25px;
+        color: #222;
+    }
+
+    .card-box {
+        background: white;
+        padding: 30px;
+        border-radius: 25px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    /* ===== CREATE BUTTON ===== */
+
+    .btn-create {
+        background: linear-gradient(120deg,#28a745,#5cd65c);
+        color: white;
+        padding: 12px 20px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 700;
+        display: inline-block;
+        margin-bottom: 25px;
+        transition: 0.3s;
+    }
+
+        .btn-create:hover {
+            transform: translateY(-2px);
+            color: white;
+            opacity: 0.95;
+        }
+
+    /* ===== TABLE ===== */
+
+    .table-custom {
+        overflow: hidden;
+        border-radius: 20px;
+    }
+
+        .table-custom thead {
+            background: linear-gradient(120deg,#007bff,#00c6ff);
+            color: white;
+        }
+
+        .table-custom th {
+            text-align: center;
+            vertical-align: middle;
+            padding: 18px;
+            font-size: 16px;
+            font-weight: 700;
+            border: none;
+        }
+
+        .table-custom td {
+            text-align: center;
+            vertical-align: middle;
+            padding: 18px;
+            border-color: #f1f1f1;
+        }
+
+        .table-custom tbody tr {
+            transition: 0.2s;
+        }
+
+            .table-custom tbody tr:hover {
+                background: #f8fbff;
+            }
+
+    /* ===== STAR ===== */
+
+    .star {
+        color: #ffc107;
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    /* ===== CONTENT ===== */
+
+    .content-box {
+        max-width: 260px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #555;
+    }
+
+    /* ===== DATE ===== */
+
+    .date {
+        color: #666;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    /* ===== USER ===== */
+
+    .user-box {
+        font-weight: 700;
+        color: #007bff;
+    }
+
+    /* ===== PRODUCT ===== */
+
+    .product-box {
+        font-weight: 700;
+        color: #ff5722;
+    }
+
+    /* ===== BUTTON ===== */
+
+    .btn-action {
+        padding: 8px 14px;
+        border-radius: 10px;
+        font-size: 14px;
+        text-decoration: none;
+        margin: 2px;
+        display: inline-block;
+        font-weight: 700;
+        transition: 0.3s;
+    }
+
+        .btn-action:hover {
+            transform: translateY(-2px);
+        }
+
+    .edit {
+        background: #ffc107;
+        color: black;
+    }
+
+    .detail {
+        background: #17a2b8;
+        color: white;
+    }
+
+    .delete {
+        background: #dc3545;
+        color: white;
+    }
+
+    /* ===== EMPTY ===== */
+
+    .empty-box {
+        background: white;
+        padding: 50px;
+        text-align: center;
+        border-radius: 20px;
+        color: #666;
+        font-size: 20px;
+        font-weight: 700;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+</style>
+
+<div class="container mt-4 mb-5">
+
+    <!-- TITLE -->
+
+    <div class="page-title">
+
+        ⭐ Danh sách đánh giá
+
+    </div>
+
+    <!-- CREATE -->
+
+    <a asp-action="Create"
+       class="btn-create">
+
+        ➕ Thêm đánh giá
+
+    </a>
+
+    @if (!Model.Any())
+    {
+        <div class="empty-box">
+
+            😢 Chưa có đánh giá nào
+
+        </div>
+    }
+    else
+    {
+        <div class="card-box">
+
+            <table class="table table-hover table-custom">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Số sao
+                        </th>
+
+                        <th>
+                            Nội dung
+                        </th>
+
+                        <th>
+                            Ngày đánh giá
+                        </th>
+
+                        <th>
+                            Người dùng
+                        </th>
+
+                        <th>
+                            Sản phẩm
+                        </th>
+
+                        <th>
+                            Hành động
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <!-- STAR -->
+
+                            <td class="star">
+
+                                @for (int i = 0; i < item.SoSao; i++)
+                                {
+                                    <span>⭐</span>
+                                }
+
+                            </td>
+
+                            <!-- CONTENT -->
+
+                            <td>
+
+                                <div class="content-box"
+                                     title="@item.NoiDung">
+
+                                    @item.NoiDung
+
+                                </div>
+
+                            </td>
+
+                            <!-- DATE -->
+
+                            <td class="date">
+
+                                @item.NgayDanhGia?.ToString("dd/MM/yyyy HH:mm")
+
+                            </td>
+
+                            <!-- USER -->
+
+                            <td class="user-box">
+
+                                User #@item.MaNguoiDungNavigation?.MaNguoiDung
+
+                            </td>
+
+                            <!-- PRODUCT -->
+
+                            <td class="product-box">
+
+                                SP #@item.SanPham?.Id
+
+                            </td>
+
+                            <!-- ACTION -->
+
+                            <td>
+
+                                <a asp-action="Edit"
+                                   asp-route-id="@item.Id"
+                                   class="btn-action edit">
+
+                                    ✏️ Sửa
+
+                                </a>
+
+                                <a asp-action="Details"
+                                   asp-route-id="@item.Id"
+                                   class="btn-action detail">
+
+                                    👁 Xem
+
+                                </a>
+
+                                <a asp-action="Delete"
+                                   asp-route-id="@item.Id"
+                                   class="btn-action delete"
+                                   onclick="return confirm('Xoá đánh giá này?')">
+
+                                    🗑 Xoá
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+    }
+
+</div>

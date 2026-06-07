@@ -1,48 +1,235 @@
 ﻿@model VVD_2210900012_DATN.Models.LienHe
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Chi tiết liên hệ";
 }
 
-<h1>Details</h1>
+<style>
 
-<div>
-    <h4>LienHe</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.HoTen)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.HoTen)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TieuDe)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TieuDe)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NoiDung)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NoiDung)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NgayGui)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NgayGui)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    body {
+        background: #f5f6fa;
+    }
+
+    .details-container {
+        max-width: 850px;
+        margin: 40px auto;
+    }
+
+    .details-card {
+        background: white;
+        border-radius: 25px;
+        padding: 40px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    /* ===== TITLE ===== */
+
+    .page-title {
+        font-size: 40px;
+        font-weight: 800;
+        color: #222;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .sub-title {
+        text-align: center;
+        color: #777;
+        margin-bottom: 35px;
+        font-size: 16px;
+    }
+
+    /* ===== INFO ===== */
+
+    .info-item {
+        margin-bottom: 25px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .info-label {
+        font-size: 18px;
+        font-weight: 700;
+        color: #ff5722;
+        margin-bottom: 8px;
+    }
+
+    .info-value {
+        font-size: 18px;
+        color: #333;
+        word-break: break-word;
+    }
+
+    .content-box {
+        background: #f8f9fa;
+        padding: 18px;
+        border-radius: 15px;
+        line-height: 1.8;
+        white-space: pre-wrap;
+    }
+
+    /* ===== BUTTON ===== */
+
+    .btn-group-custom {
+        margin-top: 35px;
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .btn-custom {
+        padding: 12px 22px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: 0.3s;
+        display: inline-block;
+    }
+
+        .btn-custom:hover {
+            transform: translateY(-2px);
+        }
+
+    .btn-edit {
+        background: linear-gradient(120deg,#ffc107,#ff9800);
+        color: black;
+    }
+
+    .btn-back {
+        background: linear-gradient(120deg,#007bff,#00c6ff);
+        color: white;
+    }
+</style>
+
+<div class="details-container">
+
+    <div class="details-card">
+
+        <!-- TITLE -->
+
+        <div class="page-title">
+
+            📩 Chi tiết liên hệ
+
+        </div>
+
+        <div class="sub-title">
+
+            Thông tin chi tiết phản hồi khách hàng
+
+        </div>
+
+        <!-- HỌ TÊN -->
+
+        <div class="info-item">
+
+            <div class="info-label">
+
+                👤 Họ tên
+
+            </div>
+
+            <div class="info-value">
+
+                @Model.HoTen
+
+            </div>
+
+        </div>
+
+        <!-- EMAIL -->
+
+        <div class="info-item">
+
+            <div class="info-label">
+
+                📧 Email
+
+            </div>
+
+            <div class="info-value">
+
+                @Model.Email
+
+            </div>
+
+        </div>
+
+        <!-- TIÊU ĐỀ -->
+
+        <div class="info-item">
+
+            <div class="info-label">
+
+                📝 Tiêu đề
+
+            </div>
+
+            <div class="info-value">
+
+                @Model.TieuDe
+
+            </div>
+
+        </div>
+
+        <!-- NỘI DUNG -->
+
+        <div class="info-item">
+
+            <div class="info-label">
+
+                📄 Nội dung
+
+            </div>
+
+            <div class="content-box">
+
+                @Model.NoiDung
+
+            </div>
+
+        </div>
+
+        <!-- NGÀY GỬI -->
+
+        <div class="info-item">
+
+            <div class="info-label">
+
+                📅 Ngày gửi
+
+            </div>
+
+            <div class="info-value">
+
+                @Model.NgayGui?.ToString("dd/MM/yyyy HH:mm")
+
+            </div>
+
+        </div>
+
+        <!-- BUTTON -->
+
+        <div class="btn-group-custom">
+
+            <a asp-action="Edit"
+               asp-route-id="@Model?.Id"
+               class="btn-custom btn-edit">
+
+                ✏️ Chỉnh sửa
+
+            </a>
+
+            <a asp-action="Index"
+               class="btn-custom btn-back">
+
+                ← Quay lại danh sách
+
+            </a>
+
+        </div>
+
+    </div>
+
 </div>

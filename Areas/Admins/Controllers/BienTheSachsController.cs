@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using VVD_2210900012_DATN.Models;
@@ -29,7 +30,8 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
         // ===== DETAILS =====
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null) return NotFound();
+            if (id == null)
+                return NotFound();
 
             var item = await _context.BienTheSaches
                 .Include(x => x.SanPham)
@@ -37,7 +39,8 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
                 .Include(x => x.NgonN)
                 .FirstOrDefaultAsync(m => m.Id == id);
 
-            if (item == null) return NotFound();
+            if (item == null)
+                return NotFound();
 
             return View(item);
         }
@@ -48,8 +51,6 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
             LoadDropdown();
             return View();
         }
-
-        // ===== CREATE POST =====
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(BienTheSach model)
@@ -60,11 +61,11 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
                 return View(model);
             }
 
-            var exist = await _context.BienTheSaches.FirstOrDefaultAsync(x =>
-                x.SanPhamId == model.SanPhamId &&
-                x.LoaiBiaId == model.LoaiBiaId &&
-                x.NgonNguId == model.NgonNguId
-            );
+            var exist = await _context.BienTheSaches
+                .FirstOrDefaultAsync(x =>
+                    x.SanPhamId == model.SanPhamId &&
+                    x.LoaiBiaId == model.LoaiBiaId &&
+                    x.NgonNguId == model.NgonNguId);
 
             if (exist != null)
             {
@@ -73,21 +74,32 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
                 return View(model);
             }
 
+            // Giá bán mặc định
+            if (model.GiaBan == null)
+            {
+                model.GiaBan = 0;
+            }
+
             _context.BienTheSaches.Add(model);
             await _context.SaveChangesAsync();
 
+            TempData["Success"] = "✅ Thêm biến thể thành công!";
+
             return RedirectToAction(nameof(Index));
         }
-
         // ===== EDIT GET =====
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null) return NotFound();
+            if (id == null)
+                return NotFound();
 
             var item = await _context.BienTheSaches.FindAsync(id);
-            if (item == null) return NotFound();
+
+            if (item == null)
+                return NotFound();
 
             LoadDropdown(item);
+
             return View(item);
         }
 
@@ -96,7 +108,8 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, BienTheSach model)
         {
-            if (id != model.Id) return NotFound();
+            if (id != model.Id)
+                return NotFound();
 
             if (!ModelState.IsValid)
             {
@@ -106,15 +119,22 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
 
             try
             {
+                if (model.GiaBan == null)
+                {
+                    model.GiaBan = 0;
+                }
+
                 _context.Update(model);
                 await _context.SaveChangesAsync();
+
+                TempData["Success"] = "✅ Cập nhật biến thể thành công!";
             }
             catch (DbUpdateConcurrencyException)
             {
                 if (!_context.BienTheSaches.Any(e => e.Id == model.Id))
                     return NotFound();
-                else
-                    throw;
+
+                throw;
             }
 
             return RedirectToAction(nameof(Index));
@@ -123,7 +143,8 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
         // ===== DELETE GET =====
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null) return NotFound();
+            if (id == null)
+                return NotFound();
 
             var item = await _context.BienTheSaches
                 .Include(x => x.SanPham)
@@ -131,7 +152,8 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
                 .Include(x => x.NgonN)
                 .FirstOrDefaultAsync(m => m.Id == id);
 
-            if (item == null) return NotFound();
+            if (item == null)
+                return NotFound();
 
             return View(item);
         }
@@ -147,6 +169,8 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
             {
                 _context.BienTheSaches.Remove(item);
                 await _context.SaveChangesAsync();
+
+                TempData["Success"] = "🗑️ Đã xoá biến thể!";
             }
 
             return RedirectToAction(nameof(Index));
@@ -178,3 +202,4 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
         }
     }
 }
+

@@ -19,15 +19,53 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
             _context = context;
         }
 
-        // GET: Admins/BaiViets
-        public async Task<IActionResult> Index()
+        // ================= INDEX + SEARCH + FILTER =================
+
+        public async Task<IActionResult> Index(
+            string keyword,
+            bool? status)
         {
-            var bookstoreContext = _context.BaiViets.Include(b => b.CreatedByNavigation);
-            return View(await bookstoreContext.ToListAsync());
+            var data = _context.BaiViets
+                .Include(b => b.CreatedByNavigation)
+                .AsQueryable();
+
+            // ================= SEARCH =================
+
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                data = data.Where(x =>
+
+                    (x.TieuDe != null
+                    && x.TieuDe.Contains(keyword))
+
+                    ||
+
+                    (x.Slug != null
+                    && x.Slug.Contains(keyword))
+                );
+            }
+
+            // ================= FILTER =================
+
+            if (status != null)
+            {
+                data = data.Where(x =>
+                    x.IsPublished == status);
+            }
+
+            // ================= VIEWBAG =================
+
+            ViewBag.Keyword = keyword;
+
+            ViewBag.Status = status;
+
+            return View(await data.ToListAsync());
         }
 
-        // GET: Admins/BaiViets/Details/5
-        public async Task<IActionResult> Details(int? id)
+        // ================= DETAILS =================
+
+        public async Task<IActionResult> Details(
+            int? id)
         {
             if (id == null)
             {
@@ -35,8 +73,13 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
             }
 
             var baiViet = await _context.BaiViets
-                .Include(b => b.CreatedByNavigation)
-                .FirstOrDefaultAsync(m => m.Id == id);
+
+                .Include(b =>
+                    b.CreatedByNavigation)
+
+                .FirstOrDefaultAsync(m =>
+                    m.Id == id);
+
             if (baiViet == null)
             {
                 return NotFound();
@@ -45,53 +88,106 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
             return View(baiViet);
         }
 
-        // GET: Admins/BaiViets/Create
+        // ================= CREATE =================
+
         public IActionResult Create()
         {
-            ViewData["CreatedBy"] = new SelectList(_context.NguoiDungs, "MaNguoiDung", "MaNguoiDung");
+            ViewData["CreatedBy"] =
+                new SelectList(
+                    _context.NguoiDungs,
+                    "MaNguoiDung",
+                    "MaNguoiDung"
+                );
+
             return View();
         }
 
-        // POST: Admins/BaiViets/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // ================= CREATE POST =================
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TieuDe,Slug,HinhAnh,NoiDung,IsPublished,CreatedAt,CreatedBy")] BaiViet baiViet)
+
+        public async Task<IActionResult> Create(
+
+            [Bind(
+                "Id,TieuDe,Slug,HinhAnh,NoiDung,IsPublished,CreatedAt,CreatedBy"
+            )]
+
+            BaiViet baiViet)
         {
             if (ModelState.IsValid)
             {
+                // ================= AUTO DATE =================
+
+                baiViet.CreatedAt =
+                    DateTime.Now;
+
                 _context.Add(baiViet);
+
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+
+                TempData["msg"] =
+                    "Thêm bài viết thành công!";
+
+                return RedirectToAction(
+                    nameof(Index));
             }
-            ViewData["CreatedBy"] = new SelectList(_context.NguoiDungs, "MaNguoiDung", "MaNguoiDung", baiViet.CreatedBy);
+
+            ViewData["CreatedBy"] =
+                new SelectList(
+                    _context.NguoiDungs,
+                    "MaNguoiDung",
+                    "MaNguoiDung",
+                    baiViet.CreatedBy
+                );
+
             return View(baiViet);
         }
 
-        // GET: Admins/BaiViets/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        // ================= EDIT =================
+
+        public async Task<IActionResult> Edit(
+            int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var baiViet = await _context.BaiViets.FindAsync(id);
+            var baiViet =
+                await _context.BaiViets
+                    .FindAsync(id);
+
             if (baiViet == null)
             {
                 return NotFound();
             }
-            ViewData["CreatedBy"] = new SelectList(_context.NguoiDungs, "MaNguoiDung", "MaNguoiDung", baiViet.CreatedBy);
+
+            ViewData["CreatedBy"] =
+                new SelectList(
+                    _context.NguoiDungs,
+                    "MaNguoiDung",
+                    "MaNguoiDung",
+                    baiViet.CreatedBy
+                );
+
             return View(baiViet);
         }
 
-        // POST: Admins/BaiViets/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // ================= EDIT POST =================
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TieuDe,Slug,HinhAnh,NoiDung,IsPublished,CreatedAt,CreatedBy")] BaiViet baiViet)
+
+        public async Task<IActionResult> Edit(
+
+            int id,
+
+            [Bind(
+                "Id,TieuDe,Slug,HinhAnh,NoiDung,IsPublished,CreatedAt,CreatedBy"
+            )]
+
+            BaiViet baiViet)
         {
             if (id != baiViet.Id)
             {
@@ -103,11 +199,16 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
                 try
                 {
                     _context.Update(baiViet);
+
                     await _context.SaveChangesAsync();
+
+                    TempData["msg"] =
+                        "Cập nhật bài viết thành công!";
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!BaiVietExists(baiViet.Id))
+                    if (!BaiVietExists(
+                        baiViet.Id))
                     {
                         return NotFound();
                     }
@@ -116,14 +217,26 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+
+                return RedirectToAction(
+                    nameof(Index));
             }
-            ViewData["CreatedBy"] = new SelectList(_context.NguoiDungs, "MaNguoiDung", "MaNguoiDung", baiViet.CreatedBy);
+
+            ViewData["CreatedBy"] =
+                new SelectList(
+                    _context.NguoiDungs,
+                    "MaNguoiDung",
+                    "MaNguoiDung",
+                    baiViet.CreatedBy
+                );
+
             return View(baiViet);
         }
 
-        // GET: Admins/BaiViets/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        // ================= DELETE =================
+
+        public async Task<IActionResult> Delete(
+            int? id)
         {
             if (id == null)
             {
@@ -131,8 +244,13 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
             }
 
             var baiViet = await _context.BaiViets
-                .Include(b => b.CreatedByNavigation)
-                .FirstOrDefaultAsync(m => m.Id == id);
+
+                .Include(b =>
+                    b.CreatedByNavigation)
+
+                .FirstOrDefaultAsync(m =>
+                    m.Id == id);
+
             if (baiViet == null)
             {
                 return NotFound();
@@ -141,24 +259,43 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
             return View(baiViet);
         }
 
-        // POST: Admins/BaiViets/Delete/5
+        // ================= DELETE POST =================
+
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+
+        public async Task<IActionResult>
+            DeleteConfirmed(int id)
         {
-            var baiViet = await _context.BaiViets.FindAsync(id);
+            var baiViet =
+                await _context.BaiViets
+                    .FindAsync(id);
+
             if (baiViet != null)
             {
-                _context.BaiViets.Remove(baiViet);
+                // 🔥 XOÁ MỀM
+
+                baiViet.IsPublished = false;
+
+                _context.BaiViets
+                    .Update(baiViet);
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+
+            TempData["msg"] =
+                "Đã ẩn bài viết!";
+
+            return RedirectToAction(
+                nameof(Index));
         }
+
+        // ================= CHECK =================
 
         private bool BaiVietExists(int id)
         {
-            return _context.BaiViets.Any(e => e.Id == id);
+            return _context.BaiViets
+                .Any(e => e.Id == id);
         }
     }
 }

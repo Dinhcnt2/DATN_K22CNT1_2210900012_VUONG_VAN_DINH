@@ -1008,6 +1008,7 @@ D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\VVD_2210900012_DATN.csproj.CoreComp
 D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\VVD_2210900012_DATN.MvcApplicationPartsAssemblyInfo.cache
 D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\VVD_2210900012_DATN.RazorAssemblyInfo.cache
 D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\VVD_2210900012_DATN.RazorAssemblyInfo.cs
+D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\VVD_2210900012_DATN.sourcelink.json
 D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\scopedcss\Areas\Admins\Views\Shared\_AdminLayout.cshtml.rz.scp.css
 D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\scopedcss\bundle\VVD_2210900012_DATN.styles.css
@@ -1028,4 +1029,3 @@ D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\refint\VVD_2210900012_DATN.dll
 D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\VVD_2210900012_DATN.pdb
 D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\VVD_2210900012_DATN.genruntimeconfig.cache
 D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\ref\VVD_2210900012_DATN.dll
-D:\DATN-VVD_2210900012-main\obj\Debug\net8.0\VVD_2210900012_DATN.sourcelink.json

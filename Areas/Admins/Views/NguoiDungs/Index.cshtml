@@ -5,7 +5,9 @@
 }
 
 @section Styles {
+
     <style>
+
         .page-title {
             font-size: 26px;
             font-weight: bold;
@@ -36,7 +38,8 @@
                 color: white;
             }
 
-            .table-custom th, .table-custom td {
+            .table-custom th,
+            .table-custom td {
                 vertical-align: middle;
                 text-align: center;
             }
@@ -88,56 +91,203 @@
             background: #c82333;
         }
     </style>
+
 }
 
-<div class="page-title">👤 Quản lý người dùng</div>
+<div class="page-title">
+    👤 Quản lý người dùng
+</div>
 
-<p>
-    <a asp-action="Create" class="btn-create">+ Thêm người dùng</a>
-</p>
+<!-- ================= BUTTON + SEARCH ================= -->
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+
+    <!-- THÊM -->
+
+    <p class="mb-0">
+
+        <a asp-action="Create"
+           class="btn-create">
+
+            + Thêm người dùng
+
+        </a>
+
+    </p>
+
+    <!-- SEARCH -->
+
+    <form method="get"
+          class="d-flex">
+
+        <input type="text"
+               name="keyword"
+               value="@ViewBag.Keyword"
+               class="form-control me-2"
+               placeholder="🔍 Tìm người dùng..." />
+
+        <button type="submit"
+                class="btn btn-primary">
+
+            Tìm
+
+        </button>
+
+    </form>
+
+</div>
+
+<!-- ================= TABLE ================= -->
 
 <div class="table-responsive table-custom">
+
     <table class="table table-bordered mb-0">
+
         <thead>
+
             <tr>
+
                 <th>Tên đăng nhập</th>
+
                 <th>Mật khẩu</th>
+
                 <th>Họ tên</th>
+
                 <th>Email</th>
+
                 <th>SĐT</th>
+
                 <th>Vai trò</th>
+
                 <th>Ngày tạo</th>
+
                 <th>Thao tác</th>
+
             </tr>
+
         </thead>
+
         <tbody>
-            @foreach (var item in Model)
+
+            @if (Model.Any())
+            {
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <!-- USERNAME -->
+
+                        <td>
+                            @item.TenDangNhap
+                        </td>
+
+                        <!-- PASSWORD -->
+
+                        <td>
+                            ••••••
+                        </td>
+
+                        <!-- HOTEN -->
+
+                        <td>
+                            @item.HoTen
+                        </td>
+
+                        <!-- EMAIL -->
+
+                        <td>
+                            @item.Email
+                        </td>
+
+                        <!-- SDT -->
+
+                        <td>
+                            @item.Sdt
+                        </td>
+
+                        <!-- ROLE -->
+
+                        <td>
+
+                            @if (item.VaiTro == "admin")
+                            {
+                                <span class="badge-admin">
+                                    Admin
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="badge-user">
+                                    User
+                                </span>
+                            }
+
+                        </td>
+
+                        <!-- NGÀY -->
+
+                        <td>
+
+                            @(item.NgayTao?.ToString("dd/MM/yyyy"))
+
+                        </td>
+
+                        <!-- ACTION -->
+
+                        <td>
+
+                            <!-- EDIT -->
+
+                            <a asp-action="Edit"
+                               asp-route-id="@item.MaNguoiDung"
+                               class="action-btn btn-edit">
+
+                                Sửa
+
+                            </a>
+
+                            <!-- DETAILS -->
+
+                            <a asp-action="Details"
+                               asp-route-id="@item.MaNguoiDung"
+                               class="action-btn btn-detail">
+
+                                Xem
+
+                            </a>
+
+                            <!-- DELETE -->
+
+                            <a asp-action="Delete"
+                               asp-route-id="@item.MaNguoiDung"
+                               class="action-btn btn-delete"
+                               onclick="return confirm('Xoá người dùng này?')">
+
+                                Xoá
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+                }
+            }
+            else
             {
                 <tr>
-                    <td>@item.TenDangNhap</td>
-                    <td>••••••</td> <!--  ẨN mật khẩu -->
-                    <td>@item.HoTen</td>
-                    <td>@item.Email</td>
-                    <td>@item.Sdt</td>
-                    <td>
-                        @if (item.VaiTro == "admin")
-                        {
-                            <span class="badge-admin">Admin</span>
-                        }
-                        else
-                        {
-                            <span class="badge-user">User</span>
-                        }
+
+                    <td colspan="8"
+                        class="text-center text-danger fw-bold">
+
+                        Không tìm thấy người dùng
+
                     </td>
-                    <td>@item.NgayTao?.ToString("dd/MM/yyyy")</td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.MaNguoiDung" class="action-btn btn-edit">Sửa</a>
-                        <a asp-action="Details" asp-route-id="@item.MaNguoiDung" class="action-btn btn-detail">Xem</a>
-                        <a asp-action="Delete" asp-route-id="@item.MaNguoiDung" class="action-btn btn-delete"
-                           onclick="return confirm('Xoá người dùng này?')">Xoá</a>
-                    </td>
+
                 </tr>
             }
+
         </tbody>
+
     </table>
+
 </div>

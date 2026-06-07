@@ -19,14 +19,40 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
             _context = context;
         }
 
-        // GET: Admins/GioHangChiTiets
+        // =====================================================
+        // DANH SÁCH CHI TIẾT GIỎ HÀNG
+        // =====================================================
+
         public async Task<IActionResult> Index()
         {
-            var bookstoreContext = _context.GioHangChiTiets.Include(g => g.BienThe).Include(g => g.GioHang);
-            return View(await bookstoreContext.ToListAsync());
+            var data = _context.GioHangChiTiets
+
+                // ===== GIỎ HÀNG =====
+
+                .Include(x => x.GioHang)
+
+                    .ThenInclude(x =>
+                        x.MaNguoiDungNavigation)
+
+                // ===== BIẾN THỂ =====
+
+                .Include(x => x.BienThe)
+
+                    .ThenInclude(x =>
+                        x.SanPham)
+
+                // ===== MỚI NHẤT =====
+
+                .OrderByDescending(x =>
+                    x.GioHang.NgayTao);
+
+            return View(await data.ToListAsync());
         }
 
-        // GET: Admins/GioHangChiTiets/Details/5
+        // =====================================================
+        // CHI TIẾT
+        // =====================================================
+
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -35,9 +61,20 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
             }
 
             var gioHangChiTiet = await _context.GioHangChiTiets
-                .Include(g => g.BienThe)
-                .Include(g => g.GioHang)
-                .FirstOrDefaultAsync(m => m.Id == id);
+
+                .Include(x => x.GioHang)
+
+                    .ThenInclude(x =>
+                        x.MaNguoiDungNavigation)
+
+                .Include(x => x.BienThe)
+
+                    .ThenInclude(x =>
+                        x.SanPham)
+
+                .FirstOrDefaultAsync(x =>
+                    x.Id == id);
+
             if (gioHangChiTiet == null)
             {
                 return NotFound();
@@ -46,33 +83,101 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
             return View(gioHangChiTiet);
         }
 
-        // GET: Admins/GioHangChiTiets/Create
+        // =====================================================
+        // CREATE
+        // =====================================================
+
         public IActionResult Create()
         {
-            ViewData["BienTheId"] = new SelectList(_context.BienTheSaches, "Id", "Id");
-            ViewData["GioHangId"] = new SelectList(_context.GioHangs, "MaGioHang", "MaGioHang");
+            // ===== DROPDOWN SÁCH =====
+
+            ViewData["BienTheId"] =
+                new SelectList(
+
+                    _context.BienTheSaches
+                        .Include(x => x.SanPham),
+
+                    "Id",
+
+                    "SanPham.TenSach"
+                );
+
+            // ===== DROPDOWN GIỎ =====
+
+            ViewData["GioHangId"] =
+                new SelectList(
+
+                    _context.GioHangs,
+
+                    "MaGioHang",
+
+                    "MaGioHang"
+                );
+
             return View();
         }
 
-        // POST: Admins/GioHangChiTiets/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // =====================================================
+        // POST CREATE
+        // =====================================================
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,GioHangId,BienTheId,SoLuong,DonGia,ThanhTien")] GioHangChiTiet gioHangChiTiet)
+
+        public async Task<IActionResult> Create(
+            [Bind("Id,GioHangId,BienTheId,SoLuong,DonGia,ThanhTien")]
+            GioHangChiTiet gioHangChiTiet)
         {
             if (ModelState.IsValid)
             {
+                // ===== TÍNH THÀNH TIỀN =====
+
+                gioHangChiTiet.ThanhTien =
+                    gioHangChiTiet.SoLuong
+                    *
+                    gioHangChiTiet.DonGia;
+
                 _context.Add(gioHangChiTiet);
+
                 await _context.SaveChangesAsync();
+
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BienTheId"] = new SelectList(_context.BienTheSaches, "Id", "Id", gioHangChiTiet.BienTheId);
-            ViewData["GioHangId"] = new SelectList(_context.GioHangs, "MaGioHang", "MaGioHang", gioHangChiTiet.GioHangId);
+
+            // ===== LOAD LẠI DROPDOWN =====
+
+            ViewData["BienTheId"] =
+                new SelectList(
+
+                    _context.BienTheSaches
+                        .Include(x => x.SanPham),
+
+                    "Id",
+
+                    "SanPham.TenSach",
+
+                    gioHangChiTiet.BienTheId
+                );
+
+            ViewData["GioHangId"] =
+                new SelectList(
+
+                    _context.GioHangs,
+
+                    "MaGioHang",
+
+                    "MaGioHang",
+
+                    gioHangChiTiet.GioHangId
+                );
+
             return View(gioHangChiTiet);
         }
 
-        // GET: Admins/GioHangChiTiets/Edit/5
+        // =====================================================
+        // EDIT
+        // =====================================================
+
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -80,22 +185,59 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
                 return NotFound();
             }
 
-            var gioHangChiTiet = await _context.GioHangChiTiets.FindAsync(id);
+            var gioHangChiTiet =
+                await _context.GioHangChiTiets
+                    .FindAsync(id);
+
             if (gioHangChiTiet == null)
             {
                 return NotFound();
             }
-            ViewData["BienTheId"] = new SelectList(_context.BienTheSaches, "Id", "Id", gioHangChiTiet.BienTheId);
-            ViewData["GioHangId"] = new SelectList(_context.GioHangs, "MaGioHang", "MaGioHang", gioHangChiTiet.GioHangId);
+
+            // ===== DROPDOWN SÁCH =====
+
+            ViewData["BienTheId"] =
+                new SelectList(
+
+                    _context.BienTheSaches
+                        .Include(x => x.SanPham),
+
+                    "Id",
+
+                    "SanPham.TenSach",
+
+                    gioHangChiTiet.BienTheId
+                );
+
+            // ===== DROPDOWN GIỎ =====
+
+            ViewData["GioHangId"] =
+                new SelectList(
+
+                    _context.GioHangs,
+
+                    "MaGioHang",
+
+                    "MaGioHang",
+
+                    gioHangChiTiet.GioHangId
+                );
+
             return View(gioHangChiTiet);
         }
 
-        // POST: Admins/GioHangChiTiets/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // =====================================================
+        // POST EDIT
+        // =====================================================
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,GioHangId,BienTheId,SoLuong,DonGia,ThanhTien")] GioHangChiTiet gioHangChiTiet)
+
+        public async Task<IActionResult> Edit(
+            int id,
+
+            [Bind("Id,GioHangId,BienTheId,SoLuong,DonGia,ThanhTien")]
+            GioHangChiTiet gioHangChiTiet)
         {
             if (id != gioHangChiTiet.Id)
             {
@@ -106,7 +248,15 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
             {
                 try
                 {
+                    // ===== UPDATE THÀNH TIỀN =====
+
+                    gioHangChiTiet.ThanhTien =
+                        gioHangChiTiet.SoLuong
+                        *
+                        gioHangChiTiet.DonGia;
+
                     _context.Update(gioHangChiTiet);
+
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -120,14 +270,44 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
                         throw;
                     }
                 }
+
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BienTheId"] = new SelectList(_context.BienTheSaches, "Id", "Id", gioHangChiTiet.BienTheId);
-            ViewData["GioHangId"] = new SelectList(_context.GioHangs, "MaGioHang", "MaGioHang", gioHangChiTiet.GioHangId);
+
+            // ===== LOAD LẠI DROPDOWN =====
+
+            ViewData["BienTheId"] =
+                new SelectList(
+
+                    _context.BienTheSaches
+                        .Include(x => x.SanPham),
+
+                    "Id",
+
+                    "SanPham.TenSach",
+
+                    gioHangChiTiet.BienTheId
+                );
+
+            ViewData["GioHangId"] =
+                new SelectList(
+
+                    _context.GioHangs,
+
+                    "MaGioHang",
+
+                    "MaGioHang",
+
+                    gioHangChiTiet.GioHangId
+                );
+
             return View(gioHangChiTiet);
         }
 
-        // GET: Admins/GioHangChiTiets/Delete/5
+        // =====================================================
+        // DELETE
+        // =====================================================
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -136,9 +316,20 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
             }
 
             var gioHangChiTiet = await _context.GioHangChiTiets
-                .Include(g => g.BienThe)
-                .Include(g => g.GioHang)
-                .FirstOrDefaultAsync(m => m.Id == id);
+
+                .Include(x => x.GioHang)
+
+                    .ThenInclude(x =>
+                        x.MaNguoiDungNavigation)
+
+                .Include(x => x.BienThe)
+
+                    .ThenInclude(x =>
+                        x.SanPham)
+
+                .FirstOrDefaultAsync(x =>
+                    x.Id == id);
+
             if (gioHangChiTiet == null)
             {
                 return NotFound();
@@ -147,24 +338,38 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
             return View(gioHangChiTiet);
         }
 
-        // POST: Admins/GioHangChiTiets/Delete/5
+        // =====================================================
+        // POST DELETE
+        // =====================================================
+
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var gioHangChiTiet = await _context.GioHangChiTiets.FindAsync(id);
+            var gioHangChiTiet =
+                await _context.GioHangChiTiets
+                    .FindAsync(id);
+
             if (gioHangChiTiet != null)
             {
-                _context.GioHangChiTiets.Remove(gioHangChiTiet);
+                _context.GioHangChiTiets
+                    .Remove(gioHangChiTiet);
             }
 
             await _context.SaveChangesAsync();
+
             return RedirectToAction(nameof(Index));
         }
 
+        // =====================================================
+        // CHECK EXISTS
+        // =====================================================
+
         private bool GioHangChiTietExists(int id)
         {
-            return _context.GioHangChiTiets.Any(e => e.Id == id);
+            return _context.GioHangChiTiets
+                .Any(e => e.Id == id);
         }
     }
 }

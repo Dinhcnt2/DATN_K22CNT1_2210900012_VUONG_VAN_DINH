@@ -1,103 +1,253 @@
 ﻿@model VVD_2210900012_DATN.Models.SanPham
 
-<h2>Chi tiết sách</h2>
+@{
+    ViewData["Title"] = "Chi tiết sách";
+}
 
-<div class="row">
+<style>
 
-    <div class="col-md-4">
-        <img src="~/images/@Model.AnhBia" style="width:100%" />
-    </div>
-
-    <div class="col-md-8">
-
-        <h3>@Model.TenSach</h3>
-
-        <p><b>Tác giả:</b> @Model.TacGia</p>
-        <p><b>NXB:</b> @Model.NhaXuatBan</p>
-
-        <h4 style="color:red">
-            @Model.GiaGoc.ToString("N0") đ
-        </h4>
-
-        <p>@Model.MoTaChiTiet</p>
-
-        <!-- NÚT -->
-        <a href="/Sach/MuaNgay/@Model.Id" class="btn btn-success">
-            🛒 Mua ngay
-        </a>
-
-        <a href="/Sach/Index" class="btn btn-secondary">
-            ← Quay lại
-        </a>
-
-    </div>
-
-</div>
-
-<!-- ================= ĐÁNH GIÁ ================= -->
-
-<hr />
-
-<h4>⭐ Đánh giá sản phẩm</h4>
-
-<!-- FORM -->
-<div class="mb-3">
-
-    <select id="soSao" class="form-control mb-2" style="width:150px;">
-        <option value="5">⭐⭐⭐⭐⭐</option>
-        <option value="4">⭐⭐⭐⭐</option>
-        <option value="3">⭐⭐⭐</option>
-        <option value="2">⭐⭐</option>
-        <option value="1">⭐</option>
-    </select>
-
-    <textarea id="noiDung"
-              class="form-control mb-2"
-              placeholder="Nhập đánh giá..."></textarea>
-
-    <button class="btn btn-success"
-            onclick="guiDanhGia(@Model.Id)">
-        Gửi đánh giá
-    </button>
-
-</div>
-
-<!-- DANH SÁCH -->
-<div id="danhGiaList"></div>
-
-<!-- ================= SCRIPT ================= -->
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<script>
-    function loadDanhGia() {
-        $("#danhGiaList").load("/DanhGia/List?sanPhamId=@Model.Id");
+    body {
+        background: #f5f5f5;
     }
 
-    function guiDanhGia(id) {
+    /* ===== ANIMATION ===== */
 
-        var soSao = $("#soSao").val();
-        var noiDung = $("#noiDung").val();
+    @@keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
 
-        $.post("/DanhGia/Create",
-            {
-                sanPhamId: id,
-                soSao: soSao,
-                noiDung: noiDung
-            },
-            function (res) {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 
-                if (res.success) {
-                    alert("Đánh giá thành công!");
-                    $("#noiDung").val("");
-                    loadDanhGia();
-                } else {
-                    alert(res.message);
+    .book-box {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        animation: fadeUp .8s ease;
+    }
+
+    /* ===== IMAGE ===== */
+
+    .book-img {
+        width: 100%;
+        border-radius: 15px;
+        object-fit: cover;
+        transition: .4s;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+        .book-img:hover {
+            transform: scale(1.03);
+        }
+
+    /* ===== TITLE ===== */
+
+    .book-title {
+        font-size: 36px;
+        font-weight: 800;
+        color: #222;
+        margin-bottom: 20px;
+    }
+
+    /* ===== INFO ===== */
+
+    .info-item {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+        .info-item b {
+            color: #ff5722;
+        }
+
+    /* ===== PRICE ===== */
+
+    .price {
+        color: red;
+        font-size: 36px;
+        font-weight: 800;
+        margin-top: 20px;
+    }
+
+    /* ===== DESCRIPTION ===== */
+
+    .description {
+        margin-top: 20px;
+        line-height: 1.8;
+        font-size: 17px;
+        color: #555;
+    }
+
+    /* ===== BUTTON ===== */
+
+    .btn-custom {
+        padding: 12px 22px;
+        border-radius: 30px;
+        text-decoration: none;
+        color: white;
+        display: inline-block;
+        margin-right: 10px;
+        font-weight: 700;
+        transition: .3s;
+    }
+
+        .btn-custom:hover {
+            transform: translateY(-3px);
+            color: white;
+        }
+
+    .btn-buy {
+        background: linear-gradient(120deg,#28a745,#20c997);
+    }
+
+    .btn-back {
+        background: linear-gradient(120deg,#6c757d,#495057);
+    }
+
+    /* ===== BADGE ===== */
+
+    .badge-stop {
+        background: red;
+        color: white;
+        padding: 10px 18px;
+        border-radius: 10px;
+        display: inline-block;
+        margin-bottom: 20px;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    /* ===== REVIEW ===== */
+
+    .review-box {
+        margin-top: 30px;
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .review-title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+</style>
+
+<div class="container mt-4 mb-5">
+
+    <h2 class="mb-4">
+
+        📚 Chi tiết sách
+
+    </h2>
+
+    <div class="book-box">
+
+        <div class="row">
+
+            <!-- IMAGE -->
+
+            <div class="col-lg-4">
+
+                <img src="~/images/@(Model.AnhBia ?? "no-image.png")"
+                     class="book-img" />
+
+            </div>
+
+            <!-- INFO -->
+
+            <div class="col-lg-8">
+
+                @if (ViewBag.NgungBan == true)
+                {
+                    <div class="badge-stop">
+
+                        ❌ Sản phẩm đã ngừng bán
+
+                    </div>
                 }
-            });
-    }
 
-    $(document).ready(function () {
-        loadDanhGia(); // 🔥 QUAN TRỌNG
-    });
-</script>
+                <div class="book-title">
+
+                    @Model.TenSach
+
+                </div>
+
+                <div class="info-item">
+
+                    <b>✍ Tác giả:</b>
+                    @Model.TacGia
+
+                </div>
+
+                <div class="info-item">
+
+                    <b>🏢 Nhà xuất bản:</b>
+                    @Model.NhaXuatBan
+
+               </div>
+                <div class="price">
+
+                    @(Convert.ToDecimal(ViewBag.GiaBienThe).ToString("N0")) đ
+
+                </div>
+
+                <div style="
+                    margin-top:10px;
+                    font-size:18px;
+                    font-weight:700;
+                    color:#16a34a;">
+
+                    📦 Tồn kho:
+                    @ViewBag.SoLuongTon
+
+                </div>
+                <div class="description">
+
+                    @Model.MoTaChiTiet
+
+                </div>
+
+                <div class="mt-4">
+
+                    @if (ViewBag.NgungBan == true)
+                    {
+                        <span class="btn-custom btn-back">
+
+                            Ngừng bán
+
+                        </span>
+                    }
+                    else
+                    {
+                        <a href="/Sach/MuaNgay/@Model.Id"
+                           class="btn-custom btn-buy">
+
+                            🛒 Mua ngay
+
+                        </a>
+                    }
+
+                    <a href="/Sach/Index"
+                       class="btn-custom btn-back">
+
+                        ← Quay lại
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

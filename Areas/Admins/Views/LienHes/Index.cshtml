@@ -1,76 +1,133 @@
 ﻿@model IEnumerable<VVD_2210900012_DATN.Models.LienHe>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh sách liên hệ";
 }
 
 <style>
+
     body {
         background: #f5f6fa;
     }
 
-    h1 {
-        font-size: 26px;
-        font-weight: bold;
-        margin-bottom: 20px;
+    .page-title {
+        font-size: 38px;
+        font-weight: 800;
+        margin-bottom: 25px;
+        color: #222;
     }
 
     .card-box {
         background: #fff;
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        padding: 30px;
+        border-radius: 25px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     }
+
+    /* ===== BUTTON CREATE ===== */
 
     .btn-create {
-        background: linear-gradient(45deg, #28a745, #5cd65c);
+        background: linear-gradient(120deg,#28a745,#5cd65c);
         color: white;
-        padding: 8px 15px;
-        border-radius: 8px;
+        padding: 12px 20px;
+        border-radius: 30px;
         text-decoration: none;
-        font-weight: bold;
+        font-weight: 700;
+        display: inline-block;
+        margin-bottom: 25px;
+        transition: 0.3s;
     }
 
-    .table-custom thead {
-        background: linear-gradient(45deg, #007bff, #00c6ff);
-        color: white;
+        .btn-create:hover {
+            transform: translateY(-2px);
+            color: white;
+            opacity: 0.95;
+        }
+
+    /* ===== TABLE ===== */
+
+    .table-custom {
+        overflow: hidden;
+        border-radius: 20px;
     }
 
-    .table-custom th,
-    .table-custom td {
-        text-align: center;
-        vertical-align: middle;
-    }
+        .table-custom thead {
+            background: linear-gradient(120deg,#007bff,#00c6ff);
+            color: white;
+        }
 
-    .table-custom tbody tr:hover {
-        background: #f1f1f1;
-    }
+        .table-custom th {
+            text-align: center;
+            vertical-align: middle;
+            padding: 18px;
+            font-size: 16px;
+            font-weight: 700;
+            border: none;
+        }
+
+        .table-custom td {
+            text-align: center;
+            vertical-align: middle;
+            padding: 18px;
+            border-color: #f1f1f1;
+        }
+
+        .table-custom tbody tr {
+            transition: 0.2s;
+        }
+
+            .table-custom tbody tr:hover {
+                background: #f8fbff;
+            }
+
+    /* ===== EMAIL ===== */
 
     .email {
         color: #007bff;
-        font-weight: bold;
+        font-weight: 700;
     }
 
+    /* ===== TITLE ===== */
+
+    .mail-title {
+        font-weight: 700;
+        color: #222;
+    }
+
+    /* ===== CONTENT ===== */
+
     .content-box {
-        max-width: 250px;
+        max-width: 260px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        color: #555;
     }
+
+    /* ===== DATE ===== */
 
     .date {
-        font-size: 13px;
+        font-size: 14px;
         color: #666;
+        font-weight: 600;
     }
 
+    /* ===== ACTION BUTTON ===== */
+
     .btn-action {
-        padding: 5px 10px;
-        border-radius: 6px;
-        font-size: 13px;
+        padding: 8px 14px;
+        border-radius: 10px;
+        font-size: 14px;
         text-decoration: none;
         margin: 2px;
         display: inline-block;
+        font-weight: 700;
+        transition: 0.3s;
     }
+
+        .btn-action:hover {
+            transform: translateY(-2px);
+        }
 
     .edit {
         background: #ffc107;
@@ -86,75 +143,180 @@
         background: #dc3545;
         color: white;
     }
+
+    /* ===== EMPTY ===== */
+
+    .empty-box {
+        background: white;
+        padding: 50px;
+        text-align: center;
+        border-radius: 20px;
+        color: #666;
+        font-size: 20px;
+        font-weight: 700;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
 </style>
 
-<h1>📩 Danh sách Liên hệ</h1>
+<div class="container mt-4 mb-5">
 
-<p>
-    <a asp-action="Create" class="btn-create">➕ Thêm mới</a>
-</p>
+    <!-- TITLE -->
 
-<div class="card-box">
+    <div class="page-title">
 
-    <table class="table table-hover table-custom">
-        <thead>
-            <tr>
-                <th>@Html.DisplayNameFor(model => model.HoTen)</th>
-                <th>@Html.DisplayNameFor(model => model.Email)</th>
-                <th>@Html.DisplayNameFor(model => model.TieuDe)</th>
-                <th>Nội dung</th>
-                <th>@Html.DisplayNameFor(model => model.NgayGui)</th>
-                <th>Hành động</th>
-            </tr>
-        </thead>
+        📩 Danh sách liên hệ
 
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.HoTen</td>
+    </div>
 
-                    <td class="email">
-                        @item.Email
-                    </td>
+    <!-- CREATE -->
 
-                    <td>
-                        <b>@item.TieuDe</b>
-                    </td>
+    <a asp-action="Create"
+       class="btn-create">
 
-                    <td>
-                        <div class="content-box" title="@item.NoiDung">
-                            @item.NoiDung
-                        </div>
-                    </td>
+        ➕ Thêm liên hệ mới
 
-                    <td class="date">
-                        @item.NgayGui?.ToString("dd/MM/yyyy HH:mm")
-                    </td>
+    </a>
 
-                    <td>
-                        <a asp-action="Edit"
-                           asp-route-id="@item.Id"
-                           class="btn-action edit">
-                            ✏️ Sửa
-                        </a>
+    @if (!Model.Any())
+    {
+        <div class="empty-box">
 
-                        <a asp-action="Details"
-                           asp-route-id="@item.Id"
-                           class="btn-action detail">
-                            👁 Xem
-                        </a>
+            😢 Chưa có liên hệ nào
 
-                        <a asp-action="Delete"
-                           asp-route-id="@item.Id"
-                           class="btn-action delete"
-                           onclick="return confirm('Xoá liên hệ này?')">
-                            🗑 Xoá
-                        </a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+        </div>
+    }
+    else
+    {
+        <div class="card-box">
+
+            <table class="table table-hover table-custom">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Họ tên
+                        </th>
+
+                        <th>
+                            Email
+                        </th>
+
+                        <th>
+                            Tiêu đề
+                        </th>
+
+                        <th>
+                            Nội dung
+                        </th>
+
+                        <th>
+                            Ngày gửi
+                        </th>
+
+                        <th>
+                            Hành động
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <!-- HỌ TÊN -->
+
+                            <td>
+
+                                @item.HoTen
+
+                            </td>
+
+                            <!-- EMAIL -->
+
+                            <td class="email">
+
+                                @item.Email
+
+                            </td>
+
+                            <!-- TIÊU ĐỀ -->
+
+                            <td>
+
+                                <div class="mail-title">
+
+                                    @item.TieuDe
+
+                                </div>
+
+                            </td>
+
+                            <!-- NỘI DUNG -->
+
+                            <td>
+
+                                <div class="content-box"
+                                     title="@item.NoiDung">
+
+                                    @item.NoiDung
+
+                                </div>
+
+                            </td>
+
+                            <!-- NGÀY GỬI -->
+
+                            <td class="date">
+
+                                @item.NgayGui?.ToString("dd/MM/yyyy HH:mm")
+
+                            </td>
+
+                            <!-- ACTION -->
+
+                            <td>
+
+                                <a asp-action="Edit"
+                                   asp-route-id="@item.Id"
+                                   class="btn-action edit">
+
+                                    ✏️ Sửa
+
+                                </a>
+
+                                <a asp-action="Details"
+                                   asp-route-id="@item.Id"
+                                   class="btn-action detail">
+
+                                    👁 Xem
+
+                                </a>
+
+                                <a asp-action="Delete"
+                                   asp-route-id="@item.Id"
+                                   class="btn-action delete"
+                                   onclick="return confirm('Xoá liên hệ này?')">
+
+                                    🗑 Xoá
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+    }
 
 </div>

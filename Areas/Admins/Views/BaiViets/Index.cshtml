@@ -5,6 +5,7 @@
 }
 
 <style>
+
     body {
         background: #f5f6fa;
     }
@@ -109,88 +110,278 @@
 
 <h1>📰 Danh sách Bài Viết</h1>
 
-<p>
-    <a asp-action="Create" class="btn-create">➕ Tạo bài viết</a>
-</p>
+<!-- ================= BUTTON + FILTER ================= -->
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+
+    <!-- CREATE -->
+
+    <p class="mb-0">
+
+        <a asp-action="Create"
+           class="btn-create">
+
+            ➕ Tạo bài viết
+
+        </a>
+
+    </p>
+
+    <!-- SEARCH + FILTER -->
+
+    <form method="get"
+          class="d-flex">
+
+        <!-- SEARCH -->
+
+        <input type="text"
+               name="keyword"
+               value="@ViewBag.Keyword"
+               class="form-control me-2"
+               placeholder="🔍 Tìm bài viết..." />
+
+        <!-- FILTER -->
+
+        <select name="status"
+                class="form-control me-2">
+
+            <option value="">
+                Tất cả
+            </option>
+
+            @if (ViewBag.Status != null
+            && ViewBag.Status == true)
+            {
+                <option value="true" selected>
+                    Đã đăng
+                </option>
+            }
+            else
+            {
+                <option value="true">
+                    Đã đăng
+                </option>
+            }
+
+            @if (ViewBag.Status != null
+            && ViewBag.Status == false)
+            {
+                <option value="false" selected>
+                    Nháp
+                </option>
+            }
+            else
+            {
+                <option value="false">
+                    Nháp
+                </option>
+            }
+
+        </select>
+
+        <!-- BUTTON -->
+
+        <button type="submit"
+                class="btn btn-primary">
+
+            Tìm
+
+        </button>
+
+    </form>
+
+</div>
+
+<!-- ================= TABLE ================= -->
 
 <div class="card-box">
 
     <table class="table table-hover table-custom">
+
         <thead>
+
             <tr>
-                <th>@Html.DisplayNameFor(model => model.TieuDe)</th>
-                <th>Slug</th>
-                <th>Ảnh</th>
-                <th>Nội dung</th>
-                <th>Trạng thái</th>
-                <th>Ngày tạo</th>
-                <th>Người tạo</th>
-                <th>Hành động</th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.TieuDe)
+                </th>
+
+                <th>
+                    Slug
+                </th>
+
+                <th>
+                    Ảnh
+                </th>
+
+                <th>
+                    Nội dung
+                </th>
+
+                <th>
+                    Trạng thái
+                </th>
+
+                <th>
+                    Ngày tạo
+                </th>
+
+                <th>
+                    Người tạo
+                </th>
+
+                <th>
+                    Hành động
+                </th>
+
             </tr>
+
         </thead>
 
         <tbody>
-            @foreach (var item in Model)
+
+            @if (Model.Any())
+            {
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <!-- TITLE -->
+
+                        <td>
+
+                            <b>
+                                @item.TieuDe
+                            </b>
+
+                        </td>
+
+                        <!-- SLUG -->
+
+                        <td>
+
+                            @item.Slug
+
+                        </td>
+
+                        <!-- IMAGE -->
+
+                        <td>
+
+                            <img src="~/images/@item.HinhAnh"
+                                 class="img-thumb"
+                                 onerror="this.src='/images/no-image.png'" />
+
+                        </td>
+
+                        <!-- CONTENT -->
+
+                        <td>
+
+                            <div class="content-box"
+                                 title="@item.NoiDung">
+
+                                @item.NoiDung
+
+                            </div>
+
+                        </td>
+
+                        <!-- STATUS -->
+
+                        <td>
+
+                            @if (item.IsPublished == true)
+                            {
+                                <span class="badge published">
+
+                                    Đã đăng
+
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="badge draft">
+
+                                    Nháp
+
+                                </span>
+                            }
+
+                        </td>
+
+                        <!-- DATE -->
+
+                        <td class="date">
+
+                            @(item.CreatedAt?.ToString("dd/MM/yyyy HH:mm"))
+
+                        </td>
+
+                        <!-- USER -->
+
+                        <td>
+
+                            User #@item.CreatedByNavigation?.MaNguoiDung
+
+                        </td>
+
+                        <!-- ACTION -->
+
+                        <td>
+
+                            <!-- EDIT -->
+
+                            <a asp-action="Edit"
+                               asp-route-id="@item.Id"
+                               class="btn-action edit">
+
+                                ✏️ Sửa
+
+                            </a>
+
+                            <!-- DETAIL -->
+
+                            <a asp-action="Details"
+                               asp-route-id="@item.Id"
+                               class="btn-action detail">
+
+                                👁 Xem
+
+                            </a>
+
+                            <!-- DELETE -->
+
+                            <a asp-action="Delete"
+                               asp-route-id="@item.Id"
+                               class="btn-action delete"
+                               onclick="return confirm('Ẩn bài viết này?')">
+
+                                🗑 Xoá
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+                }
+            }
+            else
             {
                 <tr>
-                    <td><b>@item.TieuDe</b></td>
 
-                    <td>@item.Slug</td>
+                    <td colspan="8"
+                        class="text-center text-danger fw-bold">
 
-                    <td>
-                        <img src="~/images/@item.HinhAnh"
-                             class="img-thumb"
-                             onerror="this.src='/images/no-image.png'" />
+                        Không tìm thấy bài viết
+
                     </td>
 
-                    <td>
-                        <div class="content-box" title="@item.NoiDung">
-                            @item.NoiDung
-                        </div>
-                    </td>
-
-                    <td>
-                        @if (item.IsPublished == true)
-                        {
-                            <span class="badge published">Đã đăng</span>
-                        }
-                        else
-                        {
-                            <span class="badge draft">Nháp</span>
-                        }
-                    </td>
-
-                    <td class="date">
-                        @item.CreatedAt?.ToString("dd/MM/yyyy HH:mm")
-                    </td>
-
-                    <td>
-                        User #@item.CreatedByNavigation?.MaNguoiDung
-                    </td>
-
-                    <td>
-                        <a asp-action="Edit"
-                           asp-route-id="@item.Id"
-                           class="btn-action edit">
-                            ✏️ Sửa
-                        </a>
-
-                        <a asp-action="Details"
-                           asp-route-id="@item.Id"
-                           class="btn-action detail">
-                            👁 Xem
-                        </a>
-
-                        <a asp-action="Delete"
-                           asp-route-id="@item.Id"
-                           class="btn-action delete"
-                           onclick="return confirm('Xoá bài viết này?')">
-                            🗑 Xoá
-                        </a>
-                    </td>
                 </tr>
             }
+
         </tbody>
+
     </table>
 
 </div>

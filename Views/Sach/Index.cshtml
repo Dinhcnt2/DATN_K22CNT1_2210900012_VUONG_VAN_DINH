@@ -5,6 +5,7 @@
 }
 
 <style>
+
     .grid {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
@@ -52,6 +53,7 @@
     }
 
     /* 🔥 BADGE NGỪNG BÁN */
+
     .badge-stop {
         position: absolute;
         top: 10px;
@@ -67,41 +69,229 @@
         background: gray !important;
         cursor: not-allowed;
     }
+
+    /* 🔥 SEARCH */
+
+    .search-box {
+        margin-bottom: 25px;
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        outline: none;
+        font-size: 15px;
+    }
+
+    .search-result {
+        background: white;
+        border-radius: 10px;
+        margin-top: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+
+    .search-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+        text-decoration: none;
+        color: black;
+    }
+
+        .search-item:hover {
+            background: #f5f5f5;
+        }
+
+        .search-item img {
+            width: 50px;
+            height: 60px;
+            object-fit: cover;
+        }
+
+    .search-empty {
+        padding: 15px;
+        color: red;
+        font-weight: bold;
+    }
 </style>
 
 <h2>🔥 Sách bán chạy</h2>
 
+<!-- 🔥 SEARCH -->
+
+<div class="search-box">
+
+    <input type="text"
+           id="keyword"
+           class="search-input"
+           placeholder="🔍 Tìm kiếm sách..." />
+
+    <div id="searchResult"
+         class="search-result">
+    </div>
+
+</div>
+
+<!-- 🔥 LIST -->
+
 <div class="grid">
+
     @foreach (var item in Model)
     {
         <div class="card">
 
-            <!-- 🔥 HIỂN THỊ NGỪNG BÁN (nếu có IsActive) -->
-            @if (item.IsActive != null && item.IsActive == false)
+            <!-- 🔥 NGỪNG BÁN -->
+            @if (item.IsActive != null
+           && item.IsActive == false)
             {
-                <div class="badge-stop">Ngừng bán</div>
+                <div class="badge-stop">
+
+                    Ngừng bán
+
+                </div>
             }
+
+            <!-- 🔥 IMAGE -->
 
             <img src="~/images/@(item.AnhBia ?? "no-image.png")" />
 
-            <h5>@item.TenSach</h5>
+            <!-- 🔥 NAME -->
+
+            <h5>
+
+                @item.TenSach
+
+            </h5>
+
+            <!-- 🔥 PRICE -->
 
             <p class="price">
-                @(item.Gia != null ? item.Gia.ToString("N0") : "0") đ
+
+                @(item.Gia != null
+                    ? item.Gia.ToString("N0")
+                    : "0")
+
+                đ
+
             </p>
 
-            <p class="sold">Đã bán: @item.LuotBan</p>
+            <!-- 🔥 SOLD -->
 
-            <!-- 🔥 NÚT -->
-            @if (item.IsActive != null && item.IsActive == false)
+            <p class="sold">
+
+                Đã bán:
+                @item.LuotBan
+
+            </p>
+
+            <!-- 🔥 BUTTON -->
+            @if (item.IsActive != null
+           && item.IsActive == false)
             {
-                <span class="btn btn-disable">Ngừng bán</span>
+                <span class="btn btn-disable">
+
+                    Ngừng bán
+
+                </span>
             }
             else
             {
-                <a href="/Sach/ChiTiet/@item.Id" class="btn">Xem chi tiết</a>
+                <a href="/Sach/ChiTiet/@item.Id"
+                   class="btn">
+
+                    Xem chi tiết
+
+                </a>
             }
 
         </div>
     }
+
 </div>
+
+<!-- 🔥 AJAX -->
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+
+    $("#keyword").keyup(function () {
+
+        var keyword = $(this).val();
+
+        // 🔥 RỖNG
+
+        if (keyword.trim() == "") {
+
+            $("#searchResult").html("");
+
+            return;
+        }
+
+        $.get(
+
+            "/Sach/TimKiemAjax",
+
+            { keyword: keyword },
+
+            function (res) {
+
+                // 🔥 KHÔNG TÌM THẤY
+
+                if (res.success == false) {
+
+                    $("#searchResult").html(
+
+                        `<div class="search-empty">
+                            ${res.message}
+                        </div>`
+
+                    );
+
+                    return;
+                }
+
+                // 🔥 CÓ KẾT QUẢ
+
+                var html = "";
+
+                $.each(res.data,
+                    function (i, item) {
+
+                    html += `
+
+                        <a href="/Sach/ChiTiet/${item.id}"
+                           class="search-item">
+
+                            <img src="/images/${item.anh}" />
+
+                            <div>
+
+                                <div>
+                                    ${item.ten}
+                                </div>
+
+                                <div style="color:red;font-weight:bold">
+
+                                    ${item.gia.toLocaleString()} đ
+
+                                </div>
+
+                            </div>
+
+                        </a>
+
+                    `;
+                });
+
+                $("#searchResult").html(html);
+            }
+        );
+    });
+
+</script>

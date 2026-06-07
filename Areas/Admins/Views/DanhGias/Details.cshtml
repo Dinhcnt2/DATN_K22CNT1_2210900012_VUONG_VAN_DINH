@@ -1,48 +1,244 @@
 ﻿@model VVD_2210900012_DATN.Models.DanhGia
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Chi tiết đánh giá";
 }
 
-<h1>Details</h1>
+<style>
 
-<div>
-    <h4>DanhGia</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SoSao)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SoSao)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NoiDung)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NoiDung)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NgayDanhGia)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NgayDanhGia)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MaNguoiDungNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MaNguoiDungNavigation.MaNguoiDung)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SanPham)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SanPham.Id)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    body {
+        background: #f5f6fa;
+    }
+
+    .details-container {
+        max-width: 850px;
+        margin: 40px auto;
+    }
+
+    .details-card {
+        background: white;
+        border-radius: 25px;
+        padding: 40px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    /* ===== TITLE ===== */
+
+    .page-title {
+        text-align: center;
+        font-size: 40px;
+        font-weight: 800;
+        margin-bottom: 10px;
+        color: #222;
+    }
+
+    .sub-title {
+        text-align: center;
+        color: #777;
+        margin-bottom: 35px;
+        font-size: 16px;
+    }
+
+    /* ===== INFO ===== */
+
+    .info-item {
+        margin-bottom: 25px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .info-label {
+        font-size: 18px;
+        font-weight: 700;
+        color: #ff5722;
+        margin-bottom: 8px;
+    }
+
+    .info-value {
+        font-size: 18px;
+        color: #333;
+        word-break: break-word;
+    }
+
+    .content-box {
+        background: #f8f9fa;
+        padding: 18px;
+        border-radius: 15px;
+        line-height: 1.8;
+        white-space: pre-wrap;
+    }
+
+    /* ===== STAR ===== */
+
+    .star-box {
+        font-size: 24px;
+    }
+
+    /* ===== BUTTON ===== */
+
+    .btn-group-custom {
+        margin-top: 35px;
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .btn-custom {
+        padding: 12px 22px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: 0.3s;
+        display: inline-block;
+    }
+
+        .btn-custom:hover {
+            transform: translateY(-2px);
+        }
+
+    .btn-edit {
+        background: linear-gradient(120deg,#ffc107,#ff9800);
+        color: black;
+    }
+
+    .btn-back {
+        background: linear-gradient(120deg,#007bff,#00c6ff);
+        color: white;
+    }
+</style>
+
+<div class="details-container">
+
+    <div class="details-card">
+
+        <!-- TITLE -->
+
+        <div class="page-title">
+
+            ⭐ Chi tiết đánh giá
+
+        </div>
+
+        <div class="sub-title">
+
+            Thông tin chi tiết đánh giá sản phẩm
+
+        </div>
+
+        <!-- SỐ SAO -->
+
+        <div class="info-item">
+
+            <div class="info-label">
+
+                ⭐ Số sao
+
+            </div>
+
+            <div class="info-value star-box">
+
+                @for (int i = 0; i < Model.SoSao; i++)
+                {
+                    <span>⭐</span>
+                }
+
+            </div>
+
+        </div>
+
+        <!-- NỘI DUNG -->
+
+        <div class="info-item">
+
+            <div class="info-label">
+
+                📝 Nội dung đánh giá
+
+            </div>
+
+            <div class="content-box">
+
+                @Model.NoiDung
+
+            </div>
+
+        </div>
+
+        <!-- NGÀY ĐÁNH GIÁ -->
+
+        <div class="info-item">
+
+            <div class="info-label">
+
+                📅 Ngày đánh giá
+
+            </div>
+
+            <div class="info-value">
+
+                @Model.NgayDanhGia?.ToString("dd/MM/yyyy HH:mm")
+
+            </div>
+
+        </div>
+
+        <!-- NGƯỜI DÙNG -->
+
+        <div class="info-item">
+
+            <div class="info-label">
+
+                👤 Người dùng
+
+            </div>
+
+            <div class="info-value">
+
+                User #@Model.MaNguoiDungNavigation?.MaNguoiDung
+
+            </div>
+
+        </div>
+
+        <!-- SẢN PHẨM -->
+
+        <div class="info-item">
+
+            <div class="info-label">
+
+                📚 Sản phẩm
+
+            </div>
+
+            <div class="info-value">
+
+                SP #@Model.SanPham?.Id
+
+            </div>
+
+        </div>
+
+        <!-- BUTTON -->
+
+        <div class="btn-group-custom">
+
+            <a asp-action="Edit"
+               asp-route-id="@Model?.Id"
+               class="btn-custom btn-edit">
+
+                ✏️ Chỉnh sửa
+
+            </a>
+
+            <a asp-action="Index"
+               class="btn-custom btn-back">
+
+                ← Quay lại danh sách
+
+            </a>
+
+        </div>
+
+    </div>
+
 </div>

@@ -1,98 +1,288 @@
-﻿@model List<VVD_2210900012_DATN.Models.SanPham>
+﻿@model dynamic
 
 @{
-ViewData["Title"] = "Trang chủ";
+    ViewData["Title"] = "Trang chủ";
 }
 
 <style>
 
-.hero{
-    background: linear-gradient(120deg,#ff9800,#ff5722);
-    color:white;
-    padding:80px 20px;
-    border-radius:10px;
-}
+    body {
+        background: #f5f5f5;
+    }
 
-.book-card{
-    transition:0.3s;
-}
+    /* =========================
+           ANIMATION
+        ========================= */
 
-.book-card:hover{
-    transform:translateY(-5px);
-}
+    @@keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
 
-.book-img{
-    height:220px;
-    object-fit:cover;
-}
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 
+    @@keyframes heroZoom {
+        from {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    /* =========================
+           HERO
+        ========================= */
+
+    .hero {
+        background: linear-gradient(120deg,#ff9800,#ff5722);
+        color: white;
+        padding: 90px 20px;
+        border-radius: 25px;
+        text-align: center;
+        margin-bottom: 50px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        animation: heroZoom 1s ease;
+    }
+
+        .hero h1 {
+            font-size: 60px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 22px;
+            opacity: 0.95;
+        }
+
+    /* =========================
+           TITLE
+        ========================= */
+
+    .section-title {
+        font-size: 38px;
+        font-weight: 800;
+        margin-bottom: 30px;
+        color: #222;
+        animation: fadeUp .8s ease;
+    }
+
+    /* =========================
+           CARD
+        ========================= */
+
+    .book-card {
+        border: none;
+        border-radius: 20px;
+        overflow: hidden;
+        background: white;
+        box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+        height: 100%;
+        transition: all .35s ease;
+        animation: fadeUp .8s ease;
+    }
+
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+        }
+
+    /* =========================
+           IMAGE
+        ========================= */
+
+    .book-img {
+        height: 320px;
+        width: 100%;
+        object-fit: cover;
+        transition: .5s;
+    }
+
+    .book-card:hover .book-img {
+        transform: scale(1.08);
+    }
+
+    /* =========================
+           BODY
+        ========================= */
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .card-title {
+        font-size: 22px;
+        font-weight: 700;
+        min-height: 65px;
+        color: #222;
+        transition: .3s;
+    }
+
+    .book-card:hover .card-title {
+        color: #ff5722;
+    }
+
+    /* =========================
+           PRICE
+        ========================= */
+
+    .book-price {
+        color: red;
+        font-size: 28px;
+        font-weight: 800;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    /* =========================
+           STOCK
+        ========================= */
+
+    .book-stock {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 18px;
+    }
+
+    .con-hang {
+        color: #16a34a;
+    }
+
+    .het-hang {
+        color: red;
+    }
+
+    /* =========================
+           BUTTON
+        ========================= */
+
+    .detail-btn {
+        border-radius: 30px;
+        padding: 10px;
+        font-weight: 700;
+        transition: .3s;
+    }
+
+        .detail-btn:hover {
+            transform: translateY(-3px);
+        }
 </style>
 
-<div class="container">
+<div class="container mt-4 mb-5">
 
-<!-- Banner -->
-<div class="hero text-center mb-5">
+    <!-- HERO -->
 
-    <h1 class="display-4">📚 BookStore</h1>
+    <div class="hero">
 
-    <p class="lead">
-        Kho sách online với hàng nghìn đầu sách hay
-    </p>
+        <h1>
+            📚 BookStore
+        </h1>
 
-</div>
-
-<!-- Sách nổi bật -->
-<h3 class="mb-4">🔥 Sách nổi bật</h3>
-
-<div class="row">
-
-    @foreach(var item in Model)
-    {
-
-    <div class="col-md-3 mb-4">
-
-        <div class="card book-card">
-
-            <img class="card-img-top book-img"
-                 src="~/images/@item.AnhBia"
-                 alt="@item.TenSach"/>
-
-            <div class="card-body">
-
-                <h5 class="card-title">
-                    @item.TenSach
-                </h5>
-
-                <p class="text-danger fw-bold">
-
-                    @if(item.GiaSauGiam != null)
-                    {
-                        @item.GiaSauGiam.Value.ToString("N0") <span>đ</span>
-                    }
-                    else
-                    {
-                        @item.GiaGoc.ToString("N0") <span>đ</span>
-                    }
-
-                </p>
-
-                <a class="btn btn-primary w-100"
-                   asp-controller="Sach"
-                   asp-action="ChiTiet"
-                   asp-route-id="@item.Id">
-
-                    Xem chi tiết
-
-                </a>
-
-            </div>
-
-        </div>
+        <p>
+            Kho sách online với hàng nghìn đầu sách hay
+        </p>
 
     </div>
 
-    }
+    <!-- TITLE -->
 
-</div>
+    <div class="section-title">
+
+        🔥 Sách nổi bật
+
+    </div>
+
+    <!-- LIST -->
+
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+
+                <div class="card book-card">
+
+                    <!-- IMAGE -->
+
+                    <img class="book-img"
+                         src="~/images/@item.SanPham.AnhBia"
+                         alt="@item.SanPham.TenSach" />
+
+                    <!-- BODY -->
+
+                    <div class="card-body">
+
+                        <!-- NAME -->
+
+                        <h5 class="card-title">
+
+                            @item.SanPham.TenSach
+
+                        </h5>
+
+                        <!-- PRICE -->
+
+                        <div class="book-price">
+
+                            @if (item.SanPham.GiaSauGiam != null)
+                            {
+                                @item.SanPham.GiaSauGiam.ToString("N0")
+                            }
+                            else
+                            {
+                                @item.SanPham.GiaGoc.ToString("N0")
+                            }
+
+                            <span>đ</span>
+
+                        </div>
+
+                        <!-- STOCK -->
+                        @if (item.TongTonKho > 0)
+                        {
+                            <div class="book-stock con-hang">
+
+                                📦 Còn:
+                                @item.TongTonKho sản phẩm
+
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="book-stock het-hang">
+
+                                ❌ Hết hàng
+
+                            </div>
+                        }
+
+                        <!-- BUTTON -->
+
+                        <a class="btn btn-primary w-100 detail-btn"
+                           asp-controller="Sach"
+                           asp-action="ChiTiet"
+                           asp-route-id="@item.SanPham.Id">
+
+                            Xem chi tiết
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        }
+
+    </div>
 
 </div>

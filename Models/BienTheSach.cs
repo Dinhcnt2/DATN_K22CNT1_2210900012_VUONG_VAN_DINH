@@ -15,6 +15,9 @@ public partial class BienTheSach
 
     public int? SoLuongTon { get; set; }
 
+    // THÊM GIÁ BÁN BIẾN THỂ
+    public decimal? GiaBan { get; set; }
+
     public virtual ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; } = new List<ChiTietDonHang>();
 
     public virtual ICollection<GioHangChiTiet> GioHangChiTiets { get; set; } = new List<GioHangChiTiet>();
@@ -24,6 +27,4 @@ public partial class BienTheSach
     public virtual NgonNgu NgonN { get; set; } = null!;
 
     public virtual SanPham SanPham { get; set; } = null!;
-    
 }
-

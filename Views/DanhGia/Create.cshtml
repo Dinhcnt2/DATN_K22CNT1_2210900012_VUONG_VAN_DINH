@@ -1,0 +1,223 @@
+﻿@{
+    ViewData["Title"] = "Đánh giá sản phẩm";
+}
+
+<style>
+
+    body {
+        background: #f5f5f5;
+    }
+
+    .review-card {
+        max-width: 700px;
+        margin: 50px auto;
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .review-title {
+        font-size: 34px;
+        font-weight: 800;
+        color: #222;
+        margin-bottom: 25px;
+    }
+
+    .book-img {
+        width: 150px;
+        border-radius: 14px;
+        margin-bottom: 20px;
+        object-fit: cover;
+    }
+
+    .book-name {
+        font-size: 24px;
+        font-weight: 700;
+        color: #0d6efd;
+        margin-bottom: 25px;
+    }
+
+    .submit-btn {
+        border-radius: 30px;
+        padding: 12px 30px;
+        font-weight: 700;
+    }
+
+    .star-preview {
+        color: orange;
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+</style>
+
+<div class="review-card">
+
+    <!-- TITLE -->
+
+    <div class="review-title">
+
+        ⭐ Đánh giá sản phẩm
+
+    </div>
+
+    <!-- ERROR -->
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">
+
+            @TempData["Error"]
+
+        </div>
+    }
+
+    <!-- BOOK -->
+
+    <div class="text-center">
+
+        <img src="~/images/@(ViewBag.AnhBia ?? "no-image.png")"
+             class="book-img" />
+
+        <div class="book-name">
+
+            @ViewBag.TenSach
+
+        </div>
+
+    </div>
+
+    <!-- FORM -->
+
+    <form method="post"
+          asp-action="Create">
+
+        <!-- ID -->
+
+        <input type="hidden"
+               name="sanPhamId"
+               value="@ViewBag.SanPhamId" />
+
+        <!-- SAO -->
+
+        <div class="mb-4">
+
+            <label class="form-label fw-bold">
+
+                Chọn số sao
+
+            </label>
+
+            <select name="soSao"
+                    id="soSao"
+                    class="form-control">
+
+                <option value="5">⭐⭐⭐⭐⭐</option>
+
+                <option value="4">⭐⭐⭐⭐</option>
+
+                <option value="3">⭐⭐⭐</option>
+
+                <option value="2">⭐⭐</option>
+
+                <option value="1">⭐</option>
+
+            </select>
+
+            <!-- PREVIEW -->
+
+            <div id="starPreview"
+                 class="star-preview">
+
+                ★★★★★
+
+            </div>
+
+        </div>
+
+        <!-- NỘI DUNG -->
+
+        <div class="mb-4">
+
+            <label class="form-label fw-bold">
+
+                Nội dung đánh giá
+
+            </label>
+
+            <textarea name="noiDung"
+                      id="noiDung"
+                      class="form-control"
+                      rows="5"
+                      maxlength="500"
+                      placeholder="Nhập đánh giá của bạn..."></textarea>
+
+            <!-- COUNT -->
+
+            <small class="text-secondary">
+
+                <span id="count">0</span>/500 ký tự
+
+            </small>
+
+        </div>
+
+        <!-- BUTTON -->
+
+        <button type="submit"
+                class="btn btn-success submit-btn">
+
+            ✅ Gửi đánh giá
+
+        </button>
+
+    </form>
+
+</div>
+
+<!-- SCRIPT -->
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+
+    // ===== STAR PREVIEW =====
+
+    $("#soSao").change(function () {
+
+        var star =
+            parseInt($(this).val());
+
+        var html = "";
+
+        for (var i = 1; i <= 5; i++) {
+
+            if (i <= star) {
+
+                html += "★";
+            }
+
+            else {
+
+                html += "☆";
+            }
+        }
+
+        $("#starPreview").html(html);
+    });
+
+    // ===== COUNT TEXT =====
+
+    $("#noiDung").keyup(function () {
+
+        $("#count").text(
+
+            $(this).val().length
+        );
+    });
+
+</script>

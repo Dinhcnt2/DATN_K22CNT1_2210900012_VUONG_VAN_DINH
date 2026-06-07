@@ -1,54 +1,250 @@
 ﻿@model VVD_2210900012_DATN.Models.LienHe
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Chỉnh sửa liên hệ";
 }
 
-<h1>Edit</h1>
+<style>
 
-<h4>LienHe</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+    body {
+        background: #f5f5f5;
+    }
+
+    .edit-container {
+        max-width: 750px;
+        margin: 40px auto;
+    }
+
+    .edit-card {
+        background: white;
+        border-radius: 25px;
+        padding: 40px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    .page-title {
+        text-align: center;
+        font-size: 38px;
+        font-weight: 800;
+        margin-bottom: 10px;
+        color: #222;
+    }
+
+    .sub-title {
+        text-align: center;
+        color: #777;
+        margin-bottom: 35px;
+        font-size: 16px;
+    }
+
+    .form-group {
+        margin-bottom: 22px;
+    }
+
+    .form-label {
+        font-size: 18px;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .form-control {
+        border-radius: 14px;
+        padding: 14px;
+        border: 1px solid #ddd;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+        .form-control:focus {
+            border-color: #ff6a00;
+            box-shadow: 0 0 0 0.2rem rgba(255,106,0,0.2);
+        }
+
+    textarea.form-control {
+        min-height: 150px;
+        resize: none;
+    }
+
+    .btn-save {
+        width: 100%;
+        border: none;
+        padding: 14px;
+        border-radius: 35px;
+        font-size: 18px;
+        font-weight: 700;
+        color: white;
+        background: linear-gradient(120deg,#ff9800,#ff5722);
+        transition: 0.3s;
+    }
+
+        .btn-save:hover {
+            transform: translateY(-2px);
+            opacity: 0.95;
+        }
+
+    .back-link {
+        display: inline-block;
+        margin-top: 25px;
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: 700;
+        color: #ff5722;
+        transition: 0.3s;
+    }
+
+        .back-link:hover {
+            color: #e64a19;
+        }
+
+    .text-danger {
+        font-size: 14px;
+    }
+</style>
+
+<div class="edit-container">
+
+    <div class="edit-card">
+
+        <!-- TITLE -->
+
+        <div class="page-title">
+
+            ✏️ Chỉnh sửa liên hệ
+
+        </div>
+
+        <div class="sub-title">
+
+            Cập nhật thông tin liên hệ khách hàng
+
+        </div>
+
+        <!-- FORM -->
+
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="HoTen" class="control-label"></label>
-                <input asp-for="HoTen" class="form-control" />
-                <span asp-validation-for="HoTen" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TieuDe" class="control-label"></label>
-                <input asp-for="TieuDe" class="form-control" />
-                <span asp-validation-for="TieuDe" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NoiDung" class="control-label"></label>
-                <input asp-for="NoiDung" class="form-control" />
-                <span asp-validation-for="NoiDung" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NgayGui" class="control-label"></label>
-                <input asp-for="NgayGui" class="form-control" />
-                <span asp-validation-for="NgayGui" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+            <div asp-validation-summary="ModelOnly"
+                 class="text-danger mb-3">
+            </div>
+
+            <input type="hidden" asp-for="Id" />
+
+            <!-- HỌ TÊN -->
+
+            <div class="form-group">
+
+                <label class="form-label">
+                    Họ tên
+                </label>
+
+                <input asp-for="HoTen"
+                       class="form-control" />
+
+                <span asp-validation-for="HoTen"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <label class="form-label">
+                    Email
+                </label>
+
+                <input asp-for="Email"
+                       class="form-control" />
+
+                <span asp-validation-for="Email"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <!-- TIÊU ĐỀ -->
+
+            <div class="form-group">
+
+                <label class="form-label">
+                    Tiêu đề
+                </label>
+
+                <input asp-for="TieuDe"
+                       class="form-control" />
+
+                <span asp-validation-for="TieuDe"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <!-- NỘI DUNG -->
+
+            <div class="form-group">
+
+                <label class="form-label">
+                    Nội dung
+                </label>
+
+                <textarea asp-for="NoiDung"
+                          class="form-control">
+                </textarea>
+
+                <span asp-validation-for="NoiDung"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <!-- NGÀY GỬI -->
+
+            <div class="form-group">
+
+                <label class="form-label">
+                    Ngày gửi
+                </label>
+
+                <input asp-for="NgayGui"
+                       class="form-control" />
+
+                <span asp-validation-for="NgayGui"
+                      class="text-danger">
+                </span>
+
+            </div>
+
+            <!-- BUTTON -->
+
+            <button type="submit"
+                    class="btn-save">
+
+                💾 Lưu thay đổi
+
+            </button>
+
+        </form>
+
+        <!-- BACK -->
+
+        <a asp-action="Index"
+           class="back-link">
+
+            ← Quay lại danh sách
+
+        </a>
+
+    </div>
+
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
 }

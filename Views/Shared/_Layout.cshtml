@@ -2,180 +2,337 @@
 <html lang="vi">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - BookStore</title>
 
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>
+        @ViewData["Title"] - BookStore
+    </title>
+
+    <!-- BOOTSTRAP -->
+
+    <link rel="stylesheet"
+          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet"
+          href="~/css/site.css" />
 
     <style>
+
         body {
             background: #f5f5f5;
+            font-family: 'Segoe UI';
         }
+
+        /* ===== NAVBAR ===== */
+
+        .custom-navbar {
+            background: linear-gradient( 90deg, #0f172a, #1e293b );
+            padding: 14px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        /* ===== LOGO ===== */
 
         .logo {
-            font-weight: bold;
-            font-size: 22px;
-            color: #ff6a00 !important;
+            font-weight: 800;
+            font-size: 32px;
+            color: #ffffff !important;
+            letter-spacing: 1px;
         }
 
+        /* ===== MENU ===== */
+
         .navbar-nav .nav-link {
-            font-weight: 500;
-            transition: 0.2s;
+            color: #e2e8f0 !important;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 6px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            transition: 0.3s;
+            border-bottom: 3px solid transparent;
         }
 
             .navbar-nav .nav-link:hover {
-                color: #ff6a00 !important;
+                color: #ffffff !important;
+                background: rgba(255,255,255,0.08);
+                border-bottom: 3px solid #38bdf8;
                 transform: translateY(-1px);
             }
 
+        /* ===== ACTIVE ===== */
+
         .nav-active {
-            color: #ff6a00 !important;
-            font-weight: bold;
-            border-bottom: 2px solid #ff6a00;
+            color: #38bdf8 !important;
+            background: rgba(56,189,248,0.12);
+            border-bottom: 3px solid #38bdf8;
         }
+
+        /* ===== SEARCH ===== */
 
         .search-wrapper {
             position: relative;
-            width: 300px;
+            width: 320px;
         }
+
+            .search-wrapper input {
+                border-radius: 30px;
+                border: none;
+                padding: 10px 18px;
+                background: #f8fafc;
+                color: #111827;
+                box-shadow: inset 0 0 3px rgba(0,0,0,0.15);
+            }
+
+                .search-wrapper input:focus {
+                    outline: none;
+                    box-shadow: 0 0 0 3px rgba(56,189,248,0.3);
+                }
+
+        /* ===== SEARCH GỢI Ý ===== */
 
         #goiY {
             position: absolute;
-            top: 40px;
+            top: 52px;
             width: 100%;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
             z-index: 999;
         }
 
             #goiY a {
                 display: flex;
                 align-items: center;
-                padding: 8px;
-                gap: 10px;
+                gap: 12px;
+                padding: 10px;
                 text-decoration: none;
-                color: black;
+                color: #111827;
+                transition: 0.2s;
             }
 
                 #goiY a:hover {
-                    background: #ffe4ec;
+                    background: #eff6ff;
                 }
+
+        /* ===== BUTTON ===== */
+
+        .btn-primary {
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient( 45deg, #2563eb, #3b82f6 );
+            font-weight: 600;
+            padding: 10px 18px;
+        }
+
+            .btn-primary:hover {
+                background: linear-gradient( 45deg, #1d4ed8, #2563eb );
+            }
+
+        /* ===== LOGIN ===== */
+
+        .btn-outline-primary {
+            border-radius: 30px;
+            background: white;
+            border: none;
+            color: #0f172a;
+            font-weight: 600;
+            padding: 10px 18px;
+        }
+
+            .btn-outline-primary:hover {
+                background: #e2e8f0;
+                color: #0f172a;
+            }
+
+        /* ===== ĐĂNG XUẤT ===== */
+
+        .btn-danger {
+            border-radius: 30px;
+            font-weight: 600;
+            padding: 10px 18px;
+        }
     </style>
+
 </head>
 
 <body>
 
+    <!-- HEADER -->
+
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+
+        <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+
             <div class="container">
+
+                <!-- LOGO -->
 
                 <a class="navbar-brand logo"
                    asp-controller="Home"
                    asp-action="Index">
+
                     📚 BookStore
+
                 </a>
+
+                <!-- MOBILE -->
 
                 <button class="navbar-toggler"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#menu">
+
                     <span class="navbar-toggler-icon"></span>
+
                 </button>
 
-                <div class="collapse navbar-collapse" id="menu">
+                <!-- MENU -->
 
-                    <!-- MENU -->
+                <div class="collapse navbar-collapse"
+                     id="menu">
+
                     <ul class="navbar-nav me-auto">
 
                         <!-- TRANG CHỦ -->
+
                         <li class="nav-item">
+
                             <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString()=="Home"?"nav-active":"")"
                                asp-controller="Home"
                                asp-action="Index">
+
                                 Trang chủ
+
                             </a>
+
                         </li>
 
                         <!-- SÁCH -->
+
                         <li class="nav-item">
+
                             <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString()=="Sach"?"nav-active":"")"
                                asp-controller="Sach"
                                asp-action="Index">
+
                                 📚 Sách
+
                             </a>
+
                         </li>
 
                         <!-- BÀI VIẾT -->
+
                         <li class="nav-item">
+
                             <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString()=="BaiViet"?"nav-active":"")"
                                asp-controller="BaiViet"
                                asp-action="Index">
+
                                 📰 Bài viết
+
                             </a>
+
                         </li>
 
                         <!-- GIỎ HÀNG -->
+
                         <li class="nav-item">
+
                             <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString()=="GioHang"?"nav-active":"")"
                                asp-controller="GioHang"
                                asp-action="Index">
+
                                 🛒 Giỏ hàng
+
                             </a>
+
                         </li>
 
                         <!-- LIÊN HỆ -->
+
                         <li class="nav-item">
+
                             <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString()=="LienHe"?"nav-active":"")"
                                asp-controller="LienHe"
                                asp-action="Index">
+
                                 📩 Liên hệ
+
                             </a>
+
                         </li>
 
-                        <!-- ĐƠN HÀNG ĐÃ MUA -->
+                        <!-- ĐƠN HÀNG -->
+
                         <li class="nav-item">
+
                             <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString()=="DonHang"?"nav-active":"")"
                                href="/DonHang/DonHangDaMua">
+
                                 📦 Đơn hàng đã mua
+
                             </a>
+
                         </li>
 
                     </ul>
 
                     <!-- SEARCH -->
-                    <div class="search-wrapper me-3">
 
-                        <input id="searchBox"
-                               class="form-control"
-                               placeholder="🔍 Tìm sách..."
-                               autocomplete="off" />
+                    <form asp-controller="Sach"
+                          asp-action="TimKiem"
+                          method="get">
 
-                        <div id="goiY"></div>
+                        <div class="search-wrapper me-3">
 
-                    </div>
+                            <input id="searchBox"
+                                   name="keyword"
+                                   value="@ViewBag.Keyword"
+                                   class="form-control"
+                                   placeholder="🔍 Tìm sách, tác giả, thể loại..."
+                                   autocomplete="off" />
+
+                            <div id="goiY"></div>
+
+                        </div>
+
+                    </form>
 
                     <!-- USER -->
+
                     <ul class="navbar-nav">
 
                         @if (Context.Session.GetString("TenNguoiDung") == null)
                         {
                             <li class="nav-item">
+
                                 <a class="btn btn-outline-primary me-2"
                                    asp-controller="TaiKhoan"
                                    asp-action="DangNhap">
+
                                     Đăng nhập
+
                                 </a>
+
                             </li>
 
                             <li class="nav-item">
+
                                 <a class="btn btn-primary"
                                    asp-controller="TaiKhoan"
                                    asp-action="DangKy">
+
                                     Đăng ký
+
                                 </a>
+
                             </li>
                         }
                         else
@@ -184,38 +341,52 @@
 
                                 <a asp-controller="TaiKhoan"
                                    asp-action="ThongTinTaiKhoan"
-                                   style="text-decoration:none;color:black;">
+                                   style="text-decoration:none;color:white;">
 
                                     Xin chào:
-                                    <b>@Context.Session.GetString("TenNguoiDung")</b>
+                                    <b>
+                                        @Context.Session.GetString("TenNguoiDung")
+                                    </b>
 
                                 </a>
 
                             </li>
 
                             <li class="nav-item">
+
                                 <a class="btn btn-danger"
                                    asp-controller="TaiKhoan"
                                    asp-action="DangXuat">
+
                                     Đăng xuất
+
                                 </a>
+
                             </li>
                         }
 
                     </ul>
 
                 </div>
+
             </div>
+
         </nav>
+
     </header>
 
     <!-- BODY -->
+
     <div class="container mt-4">
+
         @RenderBody()
+
     </div>
 
     <!-- SCRIPT -->
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
@@ -225,37 +396,70 @@
             var keyword = $(this).val();
 
             if (keyword.length === 0) {
+
                 $("#goiY").html("");
+
                 return;
             }
 
-            $.get("/Sach/TimKiemAjax",
+            $.get(
+                "/Sach/TimKiemAjax",
                 { keyword: keyword },
-                function (data) {
+
+                function (res) {
+
+                    if (!res.success) {
+
+                        $("#goiY").html(
+                            "<div class='p-3'>Không tìm thấy</div>"
+                        );
+
+                        return;
+                    }
 
                     var html = "";
 
-                    data.forEach(function (item) {
+                    res.data.forEach(function (item) {
 
                         html += `
                             <a href="/Sach/ChiTiet/${item.id}">
-                                <img src="/images/${item.anh}"
-                                     width="40"
-                                     height="50"
-                                     style="object-fit:cover"/>
 
-                                ${item.ten}
-                                - ${item.gia.toLocaleString()} đ
+                                <img src="/images/${item.anh}"
+                                     width="45"
+                                     height="55"
+                                     style="
+                                        object-fit:cover;
+                                        border-radius:6px;
+                                     " />
+
+                                <div>
+
+                                    <div style="
+                                        font-weight:600;
+                                    ">
+                                        ${item.ten}
+                                    </div>
+
+                                    <div style="
+                                        color:red;
+                                        font-size:14px;
+                                    ">
+                                        ${item.gia.toLocaleString()} đ
+                                    </div>
+
+                                </div>
+
                             </a>
                         `;
                     });
 
                     $("#goiY").html(html);
-                });
-
+                }
+            );
         });
 
     </script>
 
 </body>
+
 </html>

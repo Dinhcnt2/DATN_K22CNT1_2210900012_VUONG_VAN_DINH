@@ -1,4 +1,5 @@
-﻿@model VVD_2210900012_DATN.Models.BienTheSach
+﻿
+@model VVD_2210900012_DATN.Models.BienTheSach
 
 @{
     ViewData["Title"] = "Details";
@@ -48,8 +49,9 @@
         padding: 25px;
         border-radius: 16px;
         box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-        max-width: 600px;
+        max-width: 700px;
         margin: auto;
+        animation: fadeUp .5s ease;
     }
 
     dt {
@@ -65,70 +67,122 @@
             border-bottom: none;
         }
 
+    .price {
+        color: #dc2626;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
     a {
         display: inline-block;
         margin-top: 20px;
         margin-right: 10px;
-        padding: 8px 14px;
+        padding: 10px 16px;
         border-radius: 8px;
         text-decoration: none;
         font-weight: 600;
         transition: 0.3s;
     }
 
-        a[asp-action="Edit"] {
-            background: #facc15;
-            color: #000;
-        }
-
-        a[asp-action="Index"] {
-            background: #6366f1;
-            color: white;
-        }
-
         a:hover {
             opacity: 0.85;
-            transform: translateY(-1px);
+            transform: translateY(-2px);
         }
+
+    .btn-edit {
+        background: #facc15;
+        color: #000;
+    }
+
+    .btn-back {
+        background: #6366f1;
+        color: white;
+    }
+
+    @@keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(25px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 </style>
 
 <h1>📄 Chi tiết biến thể</h1>
 
 <div>
     <h4>Thông tin chi tiết</h4>
+
     <hr />
+
     <dl class="row">
+
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SoLuongTon)
+            Số lượng tồn
         </dt>
+
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SoLuongTon)
+            @Model.SoLuongTon
         </dd>
 
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.LoaiBia)
+            Giá bán
         </dt>
+
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.LoaiBia.MaLoaiBia)
+            <span class="price">
+                @Model.GiaBan?.ToString("N0") đ
+            </span>
         </dd>
 
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.NgonN)
+            Loại bìa
         </dt>
+
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.NgonN.MaNgonNgu)
+            @Model.LoaiBia?.MaLoaiBia
         </dd>
 
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SanPham)
+            Ngôn ngữ
         </dt>
+
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SanPham.Id)
+            @Model.NgonN?.MaNgonNgu
         </dd>
+
+        <dt class="col-sm-2">
+            Sách
+        </dt>
+
+        <dd class="col-sm-10">
+            @Model.SanPham?.TenSach
+        </dd>
+
     </dl>
+
 </div>
 
 <div style="text-align:center;">
-    <a asp-action="Edit" asp-route-id="@Model?.Id">✏️ Sửa</a>
-    <a asp-action="Index">⬅ Quay lại</a>
+
+    <a asp-action="Edit"
+       asp-route-id="@Model?.Id"
+       class="btn-edit">
+
+        ✏️ Sửa
+
+    </a>
+
+    <a asp-action="Index"
+       class="btn-back">
+
+        ⬅ Quay lại
+
+    </a>
+
 </div>
+

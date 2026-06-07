@@ -1,36 +1,118 @@
 ﻿@model List<VVD_2210900012_DATN.Models.DanhGia>
 
-<h4>⭐ Đánh giá sản phẩm</h4>
+<style>
+
+    .review-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .review-box {
+        background: white;
+        border-radius: 12px;
+        padding: 18px;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .review-user {
+        font-weight: bold;
+        font-size: 17px;
+        color: #333;
+    }
+
+    .review-star {
+        color: orange;
+        font-size: 20px;
+        margin: 5px 0;
+    }
+
+    .review-content {
+        font-size: 15px;
+        margin-top: 8px;
+        color: #444;
+    }
+
+    .review-date {
+        color: #777;
+        font-size: 13px;
+        margin-top: 10px;
+        display: block;
+    }
+
+    .empty-review {
+        background: #fff3cd;
+        color: #856404;
+        padding: 15px;
+        border-radius: 10px;
+        font-weight: bold;
+    }
+</style>
+
+<h4 class="review-title">
+
+    ⭐ Đánh giá sản phẩm
+
+</h4>
 
 @if (!Model.Any())
 {
-    <p>Chưa có đánh giá</p>
+    <div class="empty-review">
+
+        Chưa có đánh giá nào cho sản phẩm này
+
+    </div>
 }
 else
 {
     foreach (var item in Model)
     {
-        <div class="border p-2 mb-2">
+        <div class="review-box">
 
-            <b>@item.MaNguoiDungNavigation?.TenDangNhap</b>
+            <!-- USER -->
 
-            <div>
+            <div class="review-user">
+
+                👤
+                @item.MaNguoiDungNavigation?.TenDangNhap
+
+            </div>
+
+            <!-- STAR -->
+
+            <div class="review-star">
+
                 @for (int i = 1; i <= 5; i++)
                 {
                     if (i <= item.SoSao)
                     {
-                        <span style="color:orange;">★</span>
+                        <span>★</span>
                     }
                     else
                     {
-                        <span>☆</span>
+                        <span style="color:#ccc;">☆</span>
                     }
                 }
+
             </div>
 
-            <p>@item.NoiDung</p>
+            <!-- CONTENT -->
 
-            <small>@item.NgayDanhGia?.ToString("dd/MM/yyyy HH:mm")</small>
+            <div class="review-content">
+
+                @item.NoiDung
+
+            </div>
+
+            <!-- DATE -->
+
+            <small class="review-date">
+
+                🕒
+                @item.NgayDanhGia?.ToString("dd/MM/yyyy HH:mm")
+
+            </small>
 
         </div>
     }

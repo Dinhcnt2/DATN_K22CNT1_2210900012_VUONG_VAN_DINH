@@ -164,6 +164,10 @@ namespace VVD_2210900012_DATN.Controllers
 
             model.VaiTro = "khachhang";
 
+            // HIỂN THỊ ADMIN
+
+            model.IsActive = true;
+
             model.NgayTao = DateTime.Now;
 
             model.HoTen ??= "";

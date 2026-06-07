@@ -1,4 +1,5 @@
-﻿@model List<VVD_2210900012_DATN.Controllers.GioHangItem>
+﻿
+@model List<VVD_2210900012_DATN.Controllers.GioHangItem>
 
 @inject VVD_2210900012_DATN.Models.BookstoreContext _context
 
@@ -6,10 +7,14 @@
     ViewData["Title"] = "Giỏ hàng";
 
     // ===== LẤY VOUCHER =====
-    var voucherId = Context.Session.GetInt32("VoucherId");
 
-    // ===== TÍNH TỔNG TIỀN =====
-    decimal tongTien = Model.Sum(x => x.Gia * x.SoLuong);
+    var voucherId =
+        Context.Session.GetInt32("VoucherId");
+
+    // ===== TÍNH TỔNG =====
+
+    decimal tongTien =
+        Model.Sum(x => x.Gia * x.SoLuong);
 
     VVD_2210900012_DATN.Models.Voucher? voucher = null;
 
@@ -20,18 +25,25 @@
 
         if (voucher != null)
         {
-            decimal giamGia = voucher.GiamGia ?? 0;
+            decimal giamGia =
+                voucher.GiamGia ?? 0;
 
-            // ===== GIẢM THEO % =====
+            // 🔥 GIẢM %
+
             if (voucher.Loai == "PhanTram")
             {
-                tongTien -= tongTien * (giamGia / 100);
+                tongTien -=
+                    tongTien * (giamGia / 100);
             }
+
+            // 🔥 GIẢM TIỀN
+
             else
             {
-                // ===== GIẢM TIỀN =====
                 tongTien -= giamGia;
             }
+
+            // 🔥 CHỐNG ÂM
 
             if (tongTien < 0)
             {
@@ -42,6 +54,110 @@
 }
 
 <style>
+    /* =========================
+       ANIMATION
+    ========================= */
+
+    @@keyframes fadeUp {
+        from
+
+    {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    }
+
+    @@keyframes zoomIn {
+        from
+
+    {
+        opacity: 0;
+        transform: scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    }
+
+    .cart-title {
+        animation: fadeUp .7s ease;
+    }
+
+    .cart-table {
+        animation: fadeUp .8s ease;
+        transition: .3s;
+    }
+
+        .cart-table:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,.12);
+        }
+
+    .voucher-box {
+        animation: fadeUp 1s ease;
+        transition: .3s;
+    }
+
+        .voucher-box:hover {
+            transform: translateY(-3px);
+        }
+
+    .order-box {
+        animation: fadeUp 1.2s ease;
+        transition: .3s;
+    }
+
+        .order-box:hover {
+            transform: translateY(-3px);
+        }
+
+    .cart-table tbody tr {
+        transition: .3s;
+    }
+
+        .cart-table tbody tr:hover {
+            background: #fff8e7;
+        }
+
+    .price {
+        transition: .3s;
+    }
+
+        .price:hover {
+            color: #ff5722;
+        }
+
+    .total-price {
+        animation: zoomIn .8s ease;
+    }
+
+    .main-btn {
+        transition: .3s;
+    }
+
+        .main-btn:hover {
+            transform: translateY(-3px);
+        }
+
+    .form-control {
+        transition: .3s;
+    }
+
+        .form-control:focus {
+            transform: scale(1.02);
+        }
+
+    .alert {
+        animation: fadeUp .6s ease;
+    }
 
     body {
         background: #f5f5f5;
@@ -101,8 +217,19 @@
 <div class="container mt-5 mb-5">
 
     <h1 class="cart-title mb-4">
+
         🛒 Giỏ hàng của bạn
+
     </h1>
+
+    @if (TempData["Loi"] != null)
+    {
+        <div class="alert alert-danger">
+
+            @TempData["Loi"]
+
+        </div>
+    }
 
     @if (!Model.Any())
     {
@@ -115,6 +242,7 @@
     else
     {
         <!-- TABLE -->
+
         <div class="cart-table mb-4">
 
             <table class="table align-middle text-center mb-0">
@@ -122,11 +250,17 @@
                 <thead class="table-warning">
 
                     <tr>
+
                         <th>Sách</th>
+
                         <th>Giá</th>
+
                         <th>Số lượng</th>
+
                         <th>Tổng</th>
+
                         <th></th>
+
                     </tr>
 
                 </thead>
@@ -138,16 +272,23 @@
                         <tr>
 
                             <!-- TÊN -->
+
                             <td class="book-name">
+
                                 @item.TenSach
+
                             </td>
 
                             <!-- GIÁ -->
+
                             <td class="price">
+
                                 @item.Gia.ToString("N0") đ
+
                             </td>
 
                             <!-- SỐ LƯỢNG -->
+
                             <td style="width:220px;">
 
                                 <input type="number"
@@ -158,7 +299,8 @@
 
                             </td>
 
-                            <!-- TỔNG -->
+                            <!-- TOTAL -->
+
                             <td class="fw-bold text-success item-total fs-5">
 
                                 @((item.Gia * item.SoLuong).ToString("N0")) đ
@@ -166,6 +308,7 @@
                             </td>
 
                             <!-- XOÁ -->
+
                             <td>
 
                                 <a href="/GioHang/Xoa/@item.Id"
@@ -186,7 +329,8 @@
 
         </div>
 
-        <!-- TỔNG -->
+        <!-- TOTAL -->
+
         <div class="text-end mb-4">
 
             @if (voucher != null)
@@ -202,8 +346,11 @@
             <div class="total-price">
 
                 Tổng tiền:
+
                 <span id="cart-total">
+
                     @tongTien.ToString("N0") đ
+
                 </span>
 
             </div>
@@ -211,13 +358,17 @@
         </div>
 
         <!-- VOUCHER -->
+
         <div class="voucher-box mb-4">
 
             <h4 class="mb-4">
+
                 🎟 Voucher
+
             </h4>
 
             <!-- NHẬP CODE -->
+
             <div class="d-flex mb-3">
 
                 <input type="text"
@@ -234,7 +385,8 @@
 
             </div>
 
-            <!-- CHỌN -->
+            <!-- MODAL -->
+
             <button class="btn btn-warning main-btn"
                     onclick="openVoucherModal()">
 
@@ -245,13 +397,17 @@
         </div>
 
         <!-- FORM -->
+
         <div class="order-box">
 
             <h3 class="mb-4">
+
                 📦 Thông tin nhận hàng
+
             </h3>
 
-            <form method="post" action="/GioHang/DatHang">
+            <form method="post"
+                  action="/GioHang/DatHang">
 
                 <input name="ten"
                        class="form-control mb-3"
@@ -282,7 +438,9 @@
 </div>
 
 <!-- MODAL -->
-<div class="modal fade" id="voucherModal">
+
+<div class="modal fade"
+     id="voucherModal">
 
     <div class="modal-dialog">
 
@@ -291,7 +449,9 @@
             <div class="modal-header">
 
                 <h5>
+
                     🎟 Chọn Voucher
+
                 </h5>
 
                 <button class="btn-close"
@@ -300,7 +460,8 @@
 
             </div>
 
-            <div class="modal-body" id="voucherList">
+            <div class="modal-body"
+                 id="voucherList">
 
                 ⏳ Đang tải...
 
@@ -313,6 +474,7 @@
 </div>
 
 <!-- SCRIPT -->
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -320,37 +482,65 @@
 <script>
 
     // ===== UPDATE REALTIME =====
+
     $(".quantity").on("change", function () {
 
-        var input = $(this);
+        var input =
+            $(this);
 
-        var id = input.data("id");
+        var id =
+            input.data("id");
 
-        var soluong = input.val();
+        var soluong =
+            input.val();
 
-        var row = input.closest("tr");
+        var row =
+            input.closest("tr");
 
-        $.post("/GioHang/UpdateAjax",
+        $.post(
+
+            "/GioHang/UpdateAjax",
+
             {
                 id: id,
                 soluong: soluong
             },
+
             function (res) {
 
+                // 🔥 FAIL
+
+                if (!res.success) {
+
+                    alert(res.message);
+
+                    location.reload();
+
+                    return;
+                }
+
+                // 🔥 SUCCESS
+
                 row.find(".item-total").text(
-                    res.itemTotal.toLocaleString() + " đ"
+
+                    res.itemTotal.toLocaleString()
+                    + " đ"
                 );
 
                 $("#cart-total").text(
-                    res.cartTotal.toLocaleString() + " đ"
+
+                    res.cartTotal.toLocaleString()
+                    + " đ"
                 );
             });
     });
 
     // ===== NHẬP VOUCHER =====
+
     function applyVoucher() {
 
-        var code = $("#voucherCode").val();
+        var code =
+            $("#voucherCode").val();
 
         if (!code) {
 
@@ -359,10 +549,14 @@
             return;
         }
 
-        $.post("/GioHang/NhapVoucher",
+        $.post(
+
+            "/GioHang/NhapVoucher",
+
             {
                 code: code
             },
+
             function (res) {
 
                 if (res.success) {
@@ -379,16 +573,22 @@
     }
 
     // ===== MODAL =====
+
     function openVoucherModal() {
 
         var modal =
             new bootstrap.Modal(
-                document.getElementById('voucherModal')
+
+                document.getElementById(
+                    'voucherModal'
+                )
             );
 
         modal.show();
 
-        $("#voucherList").html("⏳ Đang tải...");
+        $("#voucherList").html(
+            "⏳ Đang tải..."
+        );
 
         $.ajax({
 
@@ -398,12 +598,14 @@
 
             success: function (data) {
 
-                $("#voucherList").html(data);
+                $("#voucherList")
+                    .html(data);
             },
 
             error: function () {
 
                 $("#voucherList").html(
+
                     "<span class='text-danger'>Lỗi load voucher</span>"
                 );
             }
@@ -411,12 +613,17 @@
     }
 
     // ===== CHỌN VOUCHER =====
+
     function chonVoucher(id) {
 
-        $.post("/GioHang/ChonVoucher",
+        $.post(
+
+            "/GioHang/ChonVoucher",
+
             {
                 id: id
             },
+
             function () {
 
                 location.reload();
@@ -424,3 +631,4 @@
     }
 
 </script>
+```

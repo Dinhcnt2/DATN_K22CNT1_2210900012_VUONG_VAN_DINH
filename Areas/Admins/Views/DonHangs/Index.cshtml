@@ -5,6 +5,149 @@
 }
 
 <style>
+    /* =========================
+       ANIMATION
+    ========================= */
+
+    @@keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @@keyframes zoomIn {
+        from {
+            opacity: 0;
+            transform: scale(.9);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @@keyframes slideLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-40px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @@keyframes pulseGlow {
+
+        0% {
+            box-shadow: 0 0 0 rgba(255,106,0,0);
+        }
+
+        50% {
+            box-shadow: 0 0 25px rgba(255,106,0,.5);
+        }
+
+        100% {
+            box-shadow: 0 0 0 rgba(255,106,0,0);
+        }
+    }
+
+    /* ===== TITLE ===== */
+
+    h1 {
+        animation: slideLeft .7s ease;
+    }
+
+    /* ===== FILTER ===== */
+
+    .card-box {
+        animation: fadeUp .8s ease;
+        transition: .35s;
+    }
+
+        .card-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,.15);
+        }
+
+    /* ===== CREATE BUTTON ===== */
+
+    .btn-create {
+        transition: .3s;
+        animation: pulseGlow 3s infinite;
+    }
+
+        .btn-create:hover {
+            transform: translateY(-3px) scale(1.05);
+            color: white;
+        }
+
+    /* ===== TABLE ===== */
+
+    .table-custom {
+        animation: fadeUp 1s ease;
+    }
+
+        .table-custom tbody tr {
+            transition: .3s;
+        }
+
+            .table-custom tbody tr:hover {
+                background: #fff4eb;
+                transform: scale(1.01);
+            }
+
+    /* ===== PRICE ===== */
+
+    .price {
+        transition: .3s;
+    }
+
+        .price:hover {
+            color: #ff5722;
+            transform: scale(1.08);
+        }
+
+    /* ===== BADGE ===== */
+
+    .badge {
+        transition: .3s;
+    }
+
+        .badge:hover {
+            transform: scale(1.08);
+            box-shadow: 0 5px 15px rgba(0,0,0,.15);
+        }
+
+    /* ===== ACTION BUTTON ===== */
+
+    .btn-action {
+        transition: .3s;
+    }
+
+        .btn-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,.2);
+        }
+
+    /* ===== INPUT FILTER ===== */
+
+    .form-control {
+        transition: .3s;
+    }
+
+        .form-control:focus {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(13,110,253,.25);
+        }
     body {
         background: #f5f6fa;
     }
@@ -35,7 +178,8 @@
         color: white;
     }
 
-    .table-custom th, .table-custom td {
+    .table-custom th,
+    .table-custom td {
         text-align: center;
         vertical-align: middle;
     }
@@ -99,98 +243,322 @@
 
 <h1>📦 Quản lý đơn hàng</h1>
 
+<!-- ================= FILTER ================= -->
+
+<div class="card-box mb-3">
+
+    <form method="get">
+
+        <div class="row">
+
+            <!-- STATUS -->
+
+            <div class="col-md-3">
+
+                <select name="status"
+                        class="form-control">
+
+                    <option value="">
+                        -- Tất cả trạng thái --
+                    </option>
+
+                    <option value="ChoXacNhan"
+                            selected="@(ViewBag.Status == "ChoXacNhan")">
+
+                        Chờ xác nhận
+
+                    </option>
+
+                    <option value="DangXuLy"
+                            selected="@(ViewBag.Status == "DangXuLy")">
+
+                        Đang xử lý
+
+                    </option>
+
+                    <option value="HoanThanh"
+                            selected="@(ViewBag.Status == "HoanThanh")">
+
+                        Hoàn thành
+
+                    </option>
+
+                    <option value="DaHuy"
+                            selected="@(ViewBag.Status == "DaHuy")">
+
+                        Đã huỷ
+
+                    </option>
+
+                </select>
+
+            </div>
+
+            <!-- FROM -->
+
+            <div class="col-md-3">
+
+                <input type="date"
+                       name="fromDate"
+                       value="@ViewBag.FromDate"
+                       class="form-control" />
+
+            </div>
+
+            <!-- TO -->
+
+            <div class="col-md-3">
+
+                <input type="date"
+                       name="toDate"
+                       value="@ViewBag.ToDate"
+                       class="form-control" />
+
+            </div>
+
+            <!-- BUTTON -->
+
+            <div class="col-md-3">
+
+                <button type="submit"
+                        class="btn btn-primary w-100">
+
+                    🔍 Lọc đơn hàng
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
 <p>
-    <a asp-action="Create" class="btn-create">➕ Tạo đơn</a>
+    <a asp-action="Create"
+       class="btn-create">
+
+        ➕ Tạo đơn
+
+    </a>
 </p>
 
 <div class="card-box">
 
     <table class="table table-hover table-custom">
+
         <thead>
+
             <tr>
+
                 <th>Mã</th>
+
                 <th>Khách</th>
+
                 <th>SĐT</th>
+
                 <th>Tổng</th>
+
                 <th>Voucher</th>
+
                 <th>Thanh toán</th>
+
                 <th>Trạng thái</th>
+
                 <th>Ngày</th>
+
                 <th></th>
+
             </tr>
+
         </thead>
 
         <tbody>
-            @foreach (var item in Model)
+
+            @if (Model.Any())
+            {
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <!-- MÃ -->
+
+                        <td>
+                            <b>@item.MaDonHangCode</b>
+                        </td>
+
+                        <!-- USER -->
+
+                        <td>
+                            @item.HoTen
+                        </td>
+
+                        <!-- PHONE -->
+
+                        <td>
+                            @item.SoDienThoai
+                        </td>
+
+                        <!-- TOTAL -->
+
+                        <td class="price">
+
+                            @item.TongTien?.ToString("N0") đ
+
+                        </td>
+
+                        <!-- VOUCHER -->
+
+                        <td>
+
+                            @(item.Voucher != null
+                                ? item.Voucher.MaCode
+                                : "Không")
+
+                        </td>
+
+                        <!-- THANH TOÁN -->
+
+                        <td>
+
+                            @if (item.TrangThaiThanhToan
+                           == "ChuaThanhToan")
+                            {
+                                <a asp-action="CapNhatThanhToan"
+                                   asp-route-id="@item.MaDonHang"
+                                   asp-route-status="DaThanhToan"
+                                   class="badge cancel">
+
+                                    💳 Xác nhận TT
+
+                                </a>
+                            }
+                            else
+                            {
+                                <span class="badge done">
+
+                                    Đã TT
+
+                                </span>
+                            }
+
+                        </td>
+
+                        <!-- TRẠNG THÁI -->
+
+                        <td>
+
+                            @if (item.TrangThaiThanhToan
+                           == "ChuaThanhToan")
+                            {
+                                <span class="badge cancel">
+
+                                    Chưa TT
+
+                                </span>
+                            }
+                            else if (item.TrangThai
+                            == "ChoXacNhan")
+                            {
+                                <a asp-action="CapNhatTrangThai"
+                                   asp-route-id="@item.MaDonHang"
+                                   asp-route-status="DangXuLy"
+                                   class="badge waiting">
+
+                                    ⚙️ Xử lý
+
+                                </a>
+                            }
+                            else if (item.TrangThai
+                            == "DangXuLy")
+                            {
+                                <a asp-action="CapNhatTrangThai"
+                                   asp-route-id="@item.MaDonHang"
+                                   asp-route-status="HoanThanh"
+                                   class="badge processing">
+
+                                    ✅ Hoàn thành
+
+                                </a>
+                            }
+                            else if (item.TrangThai
+                            == "HoanThanh")
+                            {
+                                <span class="badge done">
+
+                                    Hoàn thành
+
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="badge cancel">
+
+                                    Huỷ
+
+                                </span>
+                            }
+
+                        </td>
+
+                        <!-- DATE -->
+
+                        <td>
+
+                            @(item.NgayDat?.ToString("dd/MM/yyyy"))
+
+                        </td>
+
+                        <!-- ACTION -->
+
+                        <td>
+
+                            <a asp-action="Edit"
+                               asp-route-id="@item.MaDonHang"
+                               class="btn-action edit">
+
+                                Sửa
+
+                            </a>
+
+                            <a asp-action="Details"
+                               asp-route-id="@item.MaDonHang"
+                               class="btn-action detail">
+
+                                Xem
+
+                            </a>
+
+                            <a asp-action="Delete"
+                               asp-route-id="@item.MaDonHang"
+                               class="btn-action delete">
+
+                                Xoá
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+                }
+            }
+            else
             {
                 <tr>
-                    <td><b>@item.MaDonHangCode</b></td>
-                    <td>@item.HoTen</td>
-                    <td>@item.SoDienThoai</td>
-                    <td class="price">@item.TongTien?.ToString("N0") đ</td>
-                    <td>@(item.Voucher != null ? item.Voucher.MaCode : "Không")</td>
 
-                    <!-- 🔥 THANH TOÁN -->
-                    <td>
-                        @if (item.TrangThaiThanhToan == "ChuaThanhToan")
-                        {
-                            <a asp-action="CapNhatThanhToan"
-                               asp-route-id="@item.MaDonHang"
-                               asp-route-status="DaThanhToan"
-                               class="badge cancel">
-                                💳 Xác nhận TT
-                            </a>
-                        }
-                        else
-                        {
-                            <span class="badge done">Đã TT</span>
-                        }
+                    <td colspan="9"
+                        class="text-danger fw-bold text-center">
+
+                        Không có đơn hàng nào
+
                     </td>
 
-                    <!-- 🔥 TRẠNG THÁI (FIX LỖI RAZOR) -->
-                    <td>
-                        @if (item.TrangThaiThanhToan == "ChuaThanhToan")
-                        {
-                            <span class="badge cancel">Chưa TT</span>
-                        }
-                        else if (item.TrangThai == "ChoXacNhan")
-                        {
-                            <a asp-action="CapNhatTrangThai"
-                               asp-route-id="@item.MaDonHang"
-                               asp-route-status="DangXuLy"
-                               class="badge waiting">
-                                ⚙️ Xử lý
-                            </a>
-                        }
-                        else if (item.TrangThai == "DangXuLy")
-                        {
-                            <a asp-action="CapNhatTrangThai"
-                               asp-route-id="@item.MaDonHang"
-                               asp-route-status="HoanThanh"
-                               class="badge processing">
-                                ✅ Hoàn thành
-                            </a>
-                        }
-                        else if (item.TrangThai == "HoanThanh")
-                        {
-                            <span class="badge done">Hoàn thành</span>
-                        }
-                        else
-                        {
-                            <span class="badge cancel">Huỷ</span>
-                        }
-                    </td>
-
-                    <td>@item.NgayDat?.ToString("dd/MM/yyyy")</td>
-
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.MaDonHang" class="btn-action edit">Sửa</a>
-                        <a asp-action="Details" asp-route-id="@item.MaDonHang" class="btn-action detail">Xem</a>
-                        <a asp-action="Delete" asp-route-id="@item.MaDonHang" class="btn-action delete">Xoá</a>
-                    </td>
                 </tr>
             }
+
         </tbody>
+
     </table>
 
 </div>

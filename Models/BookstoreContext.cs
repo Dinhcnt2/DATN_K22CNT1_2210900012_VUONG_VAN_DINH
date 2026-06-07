@@ -91,12 +91,24 @@ public partial class BookstoreContext : DbContext
             entity.HasIndex(e => new { e.SanPhamId, e.LoaiBiaId, e.NgonNguId }, "UQ_BienTheSach").IsUnique();
 
             entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.LoaiBiaId).HasColumnName("loaiBiaId");
-            entity.Property(e => e.NgonNguId).HasColumnName("ngonNguId");
-            entity.Property(e => e.SanPhamId).HasColumnName("sanPhamId");
+
+            entity.Property(e => e.LoaiBiaId)
+                .HasColumnName("loaiBiaId");
+
+            entity.Property(e => e.NgonNguId)
+                .HasColumnName("ngonNguId");
+
+            entity.Property(e => e.SanPhamId)
+                .HasColumnName("sanPhamId");
+
             entity.Property(e => e.SoLuongTon)
                 .HasDefaultValue(0)
                 .HasColumnName("soLuongTon");
+
+            // THÊM MAPPING GIÁ BÁN
+            entity.Property(e => e.GiaBan)
+                .HasColumnType("decimal(12, 2)")
+                .HasColumnName("giaBan");
 
             entity.HasOne(d => d.LoaiBia).WithMany(p => p.BienTheSaches)
                 .HasForeignKey(d => d.LoaiBiaId)

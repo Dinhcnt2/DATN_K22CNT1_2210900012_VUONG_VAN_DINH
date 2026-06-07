@@ -5,88 +5,265 @@
 }
 
 <style>
+
+    body {
+        background: linear-gradient(135deg,#eef2ff,#f8fafc);
+    }
+
     .dashboard {
         padding: 20px;
     }
 
+    /* =========================
+           ANIMATION
+        ========================= */
+
+    @@keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @@keyframes zoomIn {
+        from {
+            opacity: 0;
+            transform: scale(.9);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @@keyframes slideLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-40px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @@keyframes floatCard {
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-5px);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    /* =========================
+           TITLE
+        ========================= */
+
+    .dashboard h2 {
+        font-size: 48px;
+        font-weight: 900;
+        margin-bottom: 25px;
+        background: linear-gradient(90deg,#2563eb,#7c3aed);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: slideLeft .8s ease;
+    }
+
+    /* =========================
+           CARD
+        ========================= */
+
     .card-container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 15px;
-        margin-bottom: 25px;
+        gap: 20px;
+        margin-bottom: 30px;
     }
 
     .card-box {
-        padding: 20px;
-        border-radius: 12px;
+        padding: 25px;
+        border-radius: 22px;
         color: white;
         font-weight: bold;
+        position: relative;
+        overflow: hidden;
+        animation: zoomIn .8s ease;
+        transition: .4s;
+        box-shadow: 0 10px 25px rgba(0,0,0,.15);
     }
 
+        .card-box::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255,255,255,.15);
+            transform: rotate(25deg);
+            transition: .8s;
+        }
+
+        .card-box:hover::before {
+            left: 120%;
+        }
+
+        .card-box:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 15px 35px rgba(0,0,0,.25);
+        }
+
+        .card-box h2 {
+            font-size: 48px;
+            margin: 0;
+            animation: floatCard 4s infinite ease-in-out;
+        }
+
+        .card-box p {
+            margin-top: 12px;
+            font-size: 18px;
+        }
+
     .blue {
-        background: #007bff;
+        background: linear-gradient(135deg,#2563eb,#60a5fa);
     }
 
     .green {
-        background: #28a745;
+        background: linear-gradient(135deg,#16a34a,#4ade80);
     }
 
     .yellow {
-        background: #ffc107;
-        color: black;
+        background: linear-gradient(135deg,#f59e0b,#fcd34d);
+        color: #222;
     }
 
     .red {
-        background: #dc3545;
+        background: linear-gradient(135deg,#dc2626,#fb7185);
     }
 
-    .card-box h2 {
-        font-size: 26px;
-        margin: 0;
-    }
-
-    .card-box p {
-        margin: 5px 0 0;
-    }
+    /* =========================
+           TABLE BOX
+        ========================= */
 
     .table-box {
-        background: #fff;
-        padding: 15px;
-        border-radius: 12px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        margin-top: 20px;
+        background: white;
+        padding: 20px;
+        border-radius: 20px;
+        margin-top: 25px;
+        box-shadow: 0 10px 25px rgba(0,0,0,.08);
+        animation: fadeUp .8s ease;
+        transition: .4s;
     }
+
+        .table-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,.12);
+        }
+
+        .table-box h4 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+    /* =========================
+           TABLE
+        ========================= */
 
     table {
         width: 100%;
     }
 
-    .badge {
-        padding: 5px 10px;
-        border-radius: 20px;
-        font-size: 12px;
-        font-weight: bold;
+    .table {
+        overflow: hidden;
+        border-radius: 15px;
     }
 
+        .table thead {
+            background: linear-gradient(90deg,#2563eb,#06b6d4);
+            color: white;
+        }
+
+        .table th {
+            border: none !important;
+            font-size: 16px;
+        }
+
+        .table tbody tr {
+            transition: .3s;
+        }
+
+            .table tbody tr:hover {
+                background: #eff6ff;
+                transform: scale(1.01);
+            }
+
+    /* =========================
+           BADGE
+        ========================= */
+
+    .badge {
+        padding: 8px 16px;
+        border-radius: 30px;
+        font-size: 13px;
+        font-weight: bold;
+        transition: .3s;
+        box-shadow: 0 3px 10px rgba(0,0,0,.15);
+    }
+
+        .badge:hover {
+            transform: scale(1.08);
+        }
+
     .waiting {
-        background: orange;
+        background: linear-gradient(135deg,#ff9800,#ff5722);
         color: white;
     }
 
     .processing {
-        background: #17a2b8;
+        background: linear-gradient(135deg,#0ea5e9,#06b6d4);
         color: white;
     }
 
     .done {
-        background: #28a745;
+        background: linear-gradient(135deg,#22c55e,#16a34a);
         color: white;
     }
 
     .cancel {
-        background: #dc3545;
+        background: linear-gradient(135deg,#ef4444,#dc2626);
         color: white;
     }
+
+    /* =========================
+           BOOK IMAGE
+        ========================= */
+
+    .book-img {
+        width: 65px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: .4s;
+    }
+
+        .book-img:hover {
+            transform: scale(1.15) rotate(2deg);
+            box-shadow: 0 8px 20px rgba(0,0,0,.25);
+        }
 </style>
 
 <div class="dashboard">
@@ -94,111 +271,260 @@
     <h2>📊 Dashboard Quản Trị</h2>
 
     <!-- 🔥 THỐNG KÊ -->
+
     <div class="card-container">
 
         <div class="card-box blue">
+
             <h2>@ViewBag.TongSach</h2>
+
             <p>Tổng sách</p>
+
         </div>
 
         <div class="card-box green">
+
             <h2>@ViewBag.TongDon</h2>
+
             <p>Đơn hàng</p>
+
         </div>
 
         <div class="card-box yellow">
+
             <h2>@ViewBag.TongUser</h2>
+
             <p>Người dùng</p>
+
         </div>
 
         <div class="card-box red">
+
             <h2>@ViewBag.DoanhThu.ToString("N0") đ</h2>
+
             <p>Doanh thu</p>
+
         </div>
 
     </div>
 
     <!-- 🔥 ĐƠN GẦN ĐÂY -->
+
     <div class="table-box">
 
         <h4>📦 Đơn hàng gần đây</h4>
 
         <table class="table table-bordered">
+
             <thead>
+
                 <tr>
+
                     <th>Mã</th>
+
                     <th>Khách</th>
+
                     <th>Tổng tiền</th>
+
                     <th>Trạng thái</th>
+
                 </tr>
+
             </thead>
 
             <tbody>
+
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>@item.MaDonHangCode</td>
-                        <td>@item.HoTen</td>
-                        <td>@item.TongTien?.ToString("N0") đ</td>
 
                         <td>
-                            @if (item.TrangThaiThanhToan == "ChuaThanhToan")
+                            @item.MaDonHangCode
+                        </td>
+
+                        <td>
+                            @item.HoTen
+                        </td>
+
+                        <td>
+                            @item.TongTien?.ToString("N0") đ
+                        </td>
+
+                        <td>
+
+                            @if (item.TrangThaiThanhToan
+                           == "ChuaThanhToan")
                             {
-                                <span class="badge cancel">Chưa thanh toán</span>
+                                <span class="badge cancel">
+
+                                    Chưa thanh toán
+
+                                </span>
                             }
                             else
                             {
-                                if (item.TrangThai == "ChoXacNhan")
+                                if (item.TrangThai
+                                == "ChoXacNhan")
                                 {
-                                    <span class="badge waiting">Đã thanh toán</span>
+                                    <span class="badge waiting">
+
+                                        Đã thanh toán
+
+                                    </span>
                                 }
-                                else if (item.TrangThai == "DangXuLy")
+                                else if (item.TrangThai
+                                == "DangXuLy")
                                 {
-                                    <span class="badge processing">Đang xử lý</span>
+                                    <span class="badge processing">
+
+                                        Đang xử lý
+
+                                    </span>
                                 }
-                                else if (item.TrangThai == "HoanThanh")
+                                else if (item.TrangThai
+                                == "HoanThanh")
                                 {
-                                    <span class="badge done">Hoàn thành</span>
+                                    <span class="badge done">
+
+                                        Hoàn thành
+
+                                    </span>
                                 }
                                 else
                                 {
-                                    <span class="badge cancel">Huỷ</span>
+                                    <span class="badge cancel">
+
+                                        Huỷ
+
+                                    </span>
                                 }
                             }
+
                         </td>
+
                     </tr>
                 }
+
             </tbody>
+
         </table>
 
     </div>
 
-    <!-- 🔥 ĐÁNH GIÁ GẦN ĐÂY (THÊM MỚI) -->
+    <!-- 🔥 ĐÁNH GIÁ GẦN ĐÂY -->
+
     <div class="table-box">
 
         <h4>⭐ Đánh giá gần đây</h4>
 
         <table class="table table-bordered">
+
             <thead>
+
                 <tr>
+
                     <th>User</th>
+
                     <th>Sách</th>
+
                     <th>Sao</th>
+
                     <th>Nội dung</th>
+
                 </tr>
+
             </thead>
 
             <tbody>
+
                 @foreach (var dg in ViewBag.DanhGiaGanDay)
                 {
                     <tr>
-                        <td>@dg.MaNguoiDungNavigation?.TenDangNhap</td>
-                        <td>@dg.SanPham?.TenSach</td>
-                        <td>@dg.SoSao ⭐</td>
-                        <td>@dg.NoiDung</td>
+
+                        <td>
+                            @dg.MaNguoiDungNavigation?.TenDangNhap
+                        </td>
+
+                        <td>
+                            @dg.SanPham?.TenSach
+                        </td>
+
+                        <td>
+                            @dg.SoSao ⭐
+                        </td>
+
+                        <td>
+                            @dg.NoiDung
+                        </td>
+
                     </tr>
                 }
+
             </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- 🔥 SÁCH BÁN CHẠY -->
+
+    <div class="table-box">
+
+        <h4>🔥 Sách bán chạy</h4>
+
+        <table class="table table-bordered">
+
+            <thead>
+
+                <tr>
+
+                    <th>Ảnh</th>
+
+                    <th>Tên sách</th>
+
+                    <th>Số lượng bán</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (var sp in ViewBag.SachBanChay)
+                {
+                    <tr>
+
+                        <!-- ẢNH -->
+
+                        <td>
+
+                            <img src="~/images/@sp.AnhBia"
+                                 class="book-img"
+                                 onerror="this.src='/images/no-image.png'" />
+
+                        </td>
+
+                        <!-- TÊN -->
+
+                        <td>
+
+                            @sp.TenSach
+
+                        </td>
+
+                        <!-- SOLD -->
+
+                        <td class="fw-bold text-danger">
+
+                            @sp.SoLuongBan
+
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+
         </table>
 
     </div>
