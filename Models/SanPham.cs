@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VVD_2210900012_DATN.Models;
 
@@ -64,5 +65,6 @@ public partial class SanPham
     public virtual NguoiDung? UpdatedByNavigation { get; set; }
     public int? VoucherId { get; set; }
     public Voucher? Voucher { get; set; }
-
+    [NotMapped]
+    public int SoLuongTon { get; set; }
 }

@@ -1,6 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using VVD_2210900012_DATN.Models;
 
 namespace VVD_2210900012_DATN.Areas.Admins.Controllers
@@ -18,32 +23,21 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
         // =====================================================
         // DANH SÁCH + SEARCH
         // =====================================================
-
-        public async Task<IActionResult> Index(
-            string keyword,
-            int? danhMucId)
+        public async Task<IActionResult> Index(string keyword, int? danhMucId)
         {
             var sanPhams = _context.SanPhams
                 .Include(x => x.DanhMuc)
                 .AsQueryable();
 
-            // ===== SEARCH TÊN SÁCH =====
-
             if (!string.IsNullOrEmpty(keyword))
             {
-                sanPhams = sanPhams.Where(x =>
-                    x.TenSach.Contains(keyword));
+                sanPhams = sanPhams.Where(x => x.TenSach.Contains(keyword));
             }
-
-            // ===== FILTER DANH MỤC =====
 
             if (danhMucId != null)
             {
-                sanPhams = sanPhams.Where(x =>
-                    x.DanhMucId == danhMucId);
+                sanPhams = sanPhams.Where(x => x.DanhMucId == danhMucId);
             }
-
-            // ===== VIEWBAG =====
 
             ViewBag.Keyword = keyword;
 
@@ -60,7 +54,6 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
         // =====================================================
         // CHI TIẾT
         // =====================================================
-
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -79,20 +72,12 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
         // =====================================================
         // CREATE GET
         // =====================================================
-
         public IActionResult Create()
         {
-            ViewData["DanhMucId"] = new SelectList(
-                _context.DanhMucs,
-                "Id",
-                "TenDanhMuc"
-            );
-
-            // ===== VOUCHER =====
+            ViewData["DanhMucId"] = new SelectList(_context.DanhMucs, "Id", "TenDanhMuc");
 
             ViewBag.VoucherId = new SelectList(
-                _context.Vouchers
-                    .Where(x => x.TrangThai == true),
+                _context.Vouchers.Where(x => x.TrangThai == true),
                 "Id",
                 "MaCode"
             );
@@ -101,90 +86,78 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
         }
 
         // =====================================================
-        // CREATE POST
+        // CREATE POST (FIX CHUẨN ĐỒNG BỘ database)
         // =====================================================
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(
-            SanPham sanPham,
-            IFormFile uploadImage)
+        public async Task<IActionResult> Create(SanPham sanPham, IFormFile uploadImage, int soLuongTon)
         {
             try
             {
                 // ===== TẠO SLUG =====
-
-                sanPham.Slug = sanPham.TenSach
-                    .Replace(" ", "-")
-                    .ToLower();
+                sanPham.Slug = sanPham.TenSach.Replace(" ", "-").ToLower();
 
                 // ===== GIÁ SAU GIẢM =====
-
                 if (sanPham.PhanTramGiam != null)
                 {
-                    sanPham.GiaSauGiam =
-                        sanPham.GiaGoc
-                        - (sanPham.GiaGoc
-                        * sanPham.PhanTramGiam / 100);
+                    sanPham.GiaSauGiam = sanPham.GiaGoc - (sanPham.GiaGoc * sanPham.PhanTramGiam / 100);
                 }
                 else
                 {
-                    sanPham.GiaSauGiam =
-                        sanPham.GiaGoc;
+                    sanPham.GiaSauGiam = sanPham.GiaGoc;
                 }
 
                 // ===== UPLOAD ẢNH =====
-
-                if (uploadImage != null
-                    && uploadImage.Length > 0)
+                if (uploadImage != null && uploadImage.Length > 0)
                 {
-                    string fileName =
-                        Guid.NewGuid().ToString()
-                        + Path.GetExtension(
-                            uploadImage.FileName);
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(uploadImage.FileName);
+                    string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
 
-                    string path = Path.Combine(
-                        Directory.GetCurrentDirectory(),
-                        "wwwroot/images",
-                        fileName
-                    );
-
-                    using (var stream =
-                        new FileStream(
-                            path,
-                            FileMode.Create))
+                    using (var stream = new FileStream(path, FileMode.Create))
                     {
-                        await uploadImage
-                            .CopyToAsync(stream);
+                        await uploadImage.CopyToAsync(stream);
                     }
 
                     sanPham.AnhBia = fileName;
                 }
 
-                // ===== CREATED =====
-
                 sanPham.CreatedAt = DateTime.Now;
-
                 sanPham.IsActive = true;
 
-                // ===== SAVE =====
-
+                // ===== SAVE SAN PHAM =====
                 _context.Add(sanPham);
-
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction(
-                    nameof(Index));
+                // ===== DÒ TÌM KHÓA NGOẠI AN TOÀN TRÁNH LỖI RÀNG BUỘC =====
+                var firstLoaiBia = await _context.LoaiBia.FirstOrDefaultAsync();
+                var firstNgonNgu = await _context.NgonNgus.FirstOrDefaultAsync();
+
+                if (firstLoaiBia == null || firstNgonNgu == null)
+                {
+                    throw new Exception("Vui lòng đảm bảo bạn đã nhập dữ liệu mẫu cho bảng Loại bìa và Ngôn ngữ trước!");
+                }
+
+                // ===== TỰ ĐỘNG THÊM BIẾN THỂ VỚI SỐ LƯỢNG TỒN =====
+                var bienTheMacDinh = new BienTheSach
+                {
+                    SanPhamId = sanPham.Id,
+                    LoaiBiaId = firstLoaiBia.MaLoaiBia, // Lấy mã thực tế có sẵn đầu tiên trong database
+                    NgonNguId = firstNgonNgu.MaNgonNgu, // Lấy mã thực tế có sẵn đầu tiên trong database
+                    SoLuongTon = soLuongTon,
+                    GiaBan = sanPham.GiaSauGiam ?? sanPham.GiaGoc // Gán giá bán bắt buộc bằng giá tiền của sản phẩm
+                };
+
+                _context.Add(bienTheMacDinh);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (System.Exception ex)
             {
-                ViewBag.DanhMucId =
-                    new SelectList(
-                        _context.DanhMucs,
-                        "Id",
-                        "TenDanhMuc",
-                        sanPham.DanhMucId
-                    );
+                ModelState.AddModelError("", "Có lỗi xảy ra: " + (ex.InnerException != null ? ex.InnerException.Message : ex.Message));
+
+                ViewBag.DanhMucId = new SelectList(_context.DanhMucs, "Id", "TenDanhMuc", sanPham.DanhMucId);
+                ViewBag.VoucherId = new SelectList(_context.Vouchers.Where(x => x.TrangThai == true), "Id", "MaCode", sanPham.VoucherId);
 
                 return View(sanPham);
             }
@@ -193,156 +166,80 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
         // =====================================================
         // EDIT GET
         // =====================================================
-
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
                 return NotFound();
 
-            var sanPham =
-                await _context.SanPhams
-                    .FindAsync(id);
+            var sanPham = await _context.SanPhams.FindAsync(id);
 
             if (sanPham == null)
                 return NotFound();
 
-            ViewBag.DanhMucId =
-                new SelectList(
-                    _context.DanhMucs,
-                    "Id",
-                    "TenDanhMuc",
-                    sanPham.DanhMucId
-                );
-
+            ViewBag.DanhMucId = new SelectList(_context.DanhMucs, "Id", "TenDanhMuc", sanPham.DanhMucId);
             return View(sanPham);
         }
 
         // =====================================================
         // EDIT POST
         // =====================================================
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(
-            int id,
-            SanPham sanPham,
-            IFormFile uploadImage)
+        public async Task<IActionResult> Edit(int id, SanPham sanPham, IFormFile uploadImage)
         {
-            var sp =
-                await _context.SanPhams
-                    .FindAsync(id);
+            var sp = await _context.SanPhams.FindAsync(id);
 
             if (sp == null)
                 return NotFound();
 
             try
             {
-                // ===== UPDATE =====
-
                 sp.TenSach = sanPham.TenSach;
+                sp.DanhMucId = sanPham.DanhMucId;
+                sp.TacGia = sanPham.TacGia;
+                sp.NhaXuatBan = sanPham.NhaXuatBan;
+                sp.NamXuatBan = sanPham.NamXuatBan;
+                sp.SoTrang = sanPham.SoTrang;
+                sp.Isbn = sanPham.Isbn;
+                sp.GiaGoc = sanPham.GiaGoc;
+                sp.PhanTramGiam = sanPham.PhanTramGiam;
+                sp.MoTaNgan = sanPham.MoTaNgan;
+                sp.MoTaChiTiet = sanPham.MoTaChiTiet;
 
-                sp.DanhMucId =
-                    sanPham.DanhMucId;
-
-                sp.TacGia =
-                    sanPham.TacGia;
-
-                sp.NhaXuatBan =
-                    sanPham.NhaXuatBan;
-
-                sp.NamXuatBan =
-                    sanPham.NamXuatBan;
-
-                sp.SoTrang =
-                    sanPham.SoTrang;
-
-                sp.Isbn =
-                    sanPham.Isbn;
-
-                sp.GiaGoc =
-                    sanPham.GiaGoc;
-
-                sp.PhanTramGiam =
-                    sanPham.PhanTramGiam;
-
-                sp.MoTaNgan =
-                    sanPham.MoTaNgan;
-
-                sp.MoTaChiTiet =
-                    sanPham.MoTaChiTiet;
-
-                // ===== SLUG =====
-
-                sp.Slug = sanPham.TenSach
-                    .Replace(" ", "-")
-                    .ToLower();
-
-                // ===== GIÁ SAU GIẢM =====
+                sp.Slug = sanPham.TenSach.Replace(" ", "-").ToLower();
 
                 if (sp.PhanTramGiam != null)
                 {
-                    sp.GiaSauGiam =
-                        sp.GiaGoc
-                        - (sp.GiaGoc
-                        * sp.PhanTramGiam / 100);
+                    sp.GiaSauGiam = sp.GiaGoc - (sp.GiaGoc * sp.PhanTramGiam / 100);
                 }
                 else
                 {
-                    sp.GiaSauGiam =
-                        sp.GiaGoc;
+                    sp.GiaSauGiam = sp.GiaGoc;
                 }
 
-                // ===== UPLOAD ẢNH =====
-
-                if (uploadImage != null
-                    && uploadImage.Length > 0)
+                if (uploadImage != null && uploadImage.Length > 0)
                 {
-                    string fileName =
-                        Guid.NewGuid().ToString()
-                        + Path.GetExtension(
-                            uploadImage.FileName);
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(uploadImage.FileName);
+                    string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
 
-                    string path = Path.Combine(
-                        Directory.GetCurrentDirectory(),
-                        "wwwroot/images",
-                        fileName
-                    );
-
-                    using (var stream =
-                        new FileStream(
-                            path,
-                            FileMode.Create))
+                    using (var stream = new FileStream(path, FileMode.Create))
                     {
-                        await uploadImage
-                            .CopyToAsync(stream);
+                        await uploadImage.CopyToAsync(stream);
                     }
 
                     sp.AnhBia = fileName;
                 }
 
-                // ===== UPDATED =====
-
                 sp.UpdatedAt = DateTime.Now;
 
-                // ===== SAVE =====
-
                 _context.Update(sp);
-
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction(
-                    nameof(Index));
+                return RedirectToAction(nameof(Index));
             }
             catch
             {
-                ViewBag.DanhMucId =
-                    new SelectList(
-                        _context.DanhMucs,
-                        "Id",
-                        "TenDanhMuc",
-                        sanPham.DanhMucId
-                    );
-
+                ViewBag.DanhMucId = new SelectList(_context.DanhMucs, "Id", "TenDanhMuc", sanPham.DanhMucId);
                 return View(sanPham);
             }
         }
@@ -350,92 +247,63 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
         // =====================================================
         // DELETE
         // =====================================================
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
-            var sanPham =
-                await _context.SanPhams
-                    .FindAsync(id);
+            var sanPham = await _context.SanPhams.FindAsync(id);
 
             if (sanPham == null)
                 return NotFound();
 
-            var bienThes =
-                _context.BienTheSaches
-                    .Where(x =>
-                        x.SanPhamId == id)
-                    .ToList();
+            var bienThes = _context.BienTheSaches
+                .Where(x => x.SanPhamId == id)
+                .ToList();
 
             bool daCoDon = false;
 
             foreach (var bt in bienThes)
             {
-                if (_context.ChiTietDonHangs
-                    .Any(x =>
-                        x.BienTheId == bt.Id))
+                if (_context.ChiTietDonHangs.Any(x => x.BienTheId == bt.Id))
                 {
                     daCoDon = true;
                     break;
                 }
             }
 
-            // ===== ĐÃ CÓ ĐƠN =====
-
             if (daCoDon)
             {
                 sanPham.IsActive = false;
-
                 _context.Update(sanPham);
-
                 await _context.SaveChangesAsync();
 
-                TempData["Error"] =
-                    " Sản phẩm đã có đơn không thể xoá!";
-
-                return RedirectToAction(
-                    nameof(Index));
+                TempData["Error"] = "Sản phẩm đã có đơn không thể xoá!";
+                return RedirectToAction(nameof(Index));
             }
 
-            // ===== XOÁ =====
-
-            _context.BienTheSaches
-                .RemoveRange(bienThes);
-
-            _context.SanPhams
-                .Remove(sanPham);
-
+            _context.BienTheSaches.RemoveRange(bienThes);
+            _context.SanPhams.Remove(sanPham);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction(
-                nameof(Index));
+            return RedirectToAction(nameof(Index));
         }
 
         // =====================================================
         // RESTORE
         // =====================================================
-
         public async Task<IActionResult> Restore(int id)
         {
-            var sanPham =
-                await _context.SanPhams
-                    .FindAsync(id);
+            var sanPham = await _context.SanPhams.FindAsync(id);
 
             if (sanPham == null)
                 return NotFound();
 
             sanPham.IsActive = true;
-
             _context.Update(sanPham);
-
             await _context.SaveChangesAsync();
 
-            TempData["Success"] =
-                "✅ Đã khôi phục sản phẩm!";
-
-            return RedirectToAction(
-                nameof(Index));
+            TempData["Success"] = "✅ Đã khôi phục sản phẩm!";
+            return RedirectToAction(nameof(Index));
         }
     }
 }

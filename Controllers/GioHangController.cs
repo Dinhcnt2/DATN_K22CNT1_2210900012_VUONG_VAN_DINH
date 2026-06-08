@@ -4,6 +4,8 @@ using Newtonsoft.Json;
 using VVD_2210900012_DATN.Models;
 using System.Linq;
 using System.Collections.Generic;
+using System;
+using Microsoft.AspNetCore.Http;
 
 namespace VVD_2210900012_DATN.Controllers
 {
@@ -93,12 +95,12 @@ namespace VVD_2210900012_DATN.Controllers
 
         public IActionResult MuaNgay(int id)
         {
-// 🔥 TÌM BIẾN THỂ
+            // 🔥 TÌM BIẾN THỂ
 
 
-var bienThe =
-    _context.BienTheSaches
-    .FirstOrDefault(x => x.Id == id);
+            var bienThe =
+                _context.BienTheSaches
+                .FirstOrDefault(x => x.Id == id);
 
             // 🔥 KHÔNG TỒN TẠI
 
@@ -200,7 +202,7 @@ var bienThe =
             return RedirectToAction("Index");
 
 
-}
+        }
 
 
         // ===== UPDATE AJAX =====
@@ -320,6 +322,15 @@ var bienThe =
 
         public IActionResult ChonVoucher(int id)
         {
+            // 🛡️ CHẶN KHI CLICK CHỌN VOUCHER TỪ DANH SÁCH (Dưới 50k không cho chọn)
+            var cart = GetCart();
+            decimal tongTienTruocGiam = cart.Sum(x => x.Gia * x.SoLuong);
+
+            if (tongTienTruocGiam < 50000)
+            {
+                return BadRequest("Đơn hàng tối thiểu từ 50.000đ trở lên mới được áp dụng Voucher!");
+            }
+
             HttpContext.Session.SetInt32(
                 "VoucherId",
                 id);
@@ -334,6 +345,19 @@ var bienThe =
         public IActionResult NhapVoucher(
             string code)
         {
+            // 🛡️ CHẶN KHI GÕ CODE BẰNG TAY (Dưới 50k không cho áp dụng)
+            var cart = GetCart();
+            decimal tongTienTruocGiam = cart.Sum(x => x.Gia * x.SoLuong);
+
+            if (tongTienTruocGiam < 50000)
+            {
+                return Json(new
+                {
+                    success = false,
+                    message = "Đơn hàng tối thiểu từ 50.000đ trở lên mới được áp dụng Voucher!"
+                });
+            }
+
             var voucher =
                 _context.Vouchers
 
@@ -423,49 +447,58 @@ var bienThe =
 
             if (voucherId != null)
             {
-                voucher =
-                    _context.Vouchers
-                    .FirstOrDefault(x =>
-                        x.Id == voucherId);
-
-                // ===== GIẢM GIÁ =====
-
-                if (voucher != null)
+                // 🛡️ CHẶN CUỐI: Nếu tổng tiền sản phẩm thực tế lúc đặt hàng dưới 50k (do người dùng sửa giảm số lượng trước đó)
+                if (tongTien < 50000)
                 {
-                    decimal giamGia =
-                        voucher.GiamGia ?? 0;
+                    HttpContext.Session.Remove("VoucherId"); // Xóa voucher khỏi phiên làm việc
+                    voucherId = null; // Huỷ bỏ giảm giá đơn hàng này
+                }
+                else
+                {
+                    voucher =
+                        _context.Vouchers
+                        .FirstOrDefault(x =>
+                            x.Id == voucherId);
 
-                    // 🔥 %
+                    // ===== GIẢM GIÁ =====
 
-                    if (voucher.Loai
-                        == "PhanTram")
+                    if (voucher != null)
                     {
-                        tongTien -=
-                            tongTien
-                            * (giamGia / 100);
+                        decimal giamGia =
+                            voucher.GiamGia ?? 0;
+
+                        // 🔥 %
+
+                        if (voucher.Loai
+                            == "PhanTram")
+                        {
+                            tongTien -=
+                                tongTien
+                                * (giamGia / 100);
+                        }
+
+                        // 🔥 TIỀN
+
+                        else
+                        {
+                            tongTien -=
+                                giamGia;
+                        }
+
+                        // 🔥 CHỐNG ÂM
+
+                        if (tongTien < 0)
+                        {
+                            tongTien = 0;
+                        }
+
+                        // 🔥 TRỪ LƯỢT
+
+                        voucher.SoLuong -= 1;
+
+                        _context.Vouchers
+                            .Update(voucher);
                     }
-
-                    // 🔥 TIỀN
-
-                    else
-                    {
-                        tongTien -=
-                            giamGia;
-                    }
-
-                    // 🔥 CHỐNG ÂM
-
-                    if (tongTien < 0)
-                    {
-                        tongTien = 0;
-                    }
-
-                    // 🔥 TRỪ LƯỢT
-
-                    voucher.SoLuong -= 1;
-
-                    _context.Vouchers
-                        .Update(voucher);
                 }
             }
 

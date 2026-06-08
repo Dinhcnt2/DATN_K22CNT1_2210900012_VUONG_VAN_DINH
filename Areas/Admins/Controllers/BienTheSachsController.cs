@@ -1,7 +1,9 @@
-﻿
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 using VVD_2210900012_DATN.Models;
 
 namespace VVD_2210900012_DATN.Areas.Admins.Controllers
@@ -16,7 +18,9 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
             _context = context;
         }
 
+        // =====================================================
         // ===== INDEX =====
+        // =====================================================
         public async Task<IActionResult> Index()
         {
             var data = _context.BienTheSaches
@@ -27,7 +31,9 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
             return View(await data.ToListAsync());
         }
 
+        // =====================================================
         // ===== DETAILS =====
+        // =====================================================
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -45,12 +51,18 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
             return View(item);
         }
 
+        // =====================================================
         // ===== CREATE GET =====
+        // =====================================================
         public IActionResult Create()
         {
             LoadDropdown();
             return View();
         }
+
+        // =====================================================
+        // ===== CREATE POST =====
+        // =====================================================
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(BienTheSach model)
@@ -69,25 +81,34 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
 
             if (exist != null)
             {
-                ModelState.AddModelError("", "❌ Biến thể đã tồn tại!");
+                ModelState.AddModelError("", "❌ Biến thể với loại bìa và ngôn ngữ này đã tồn tại!");
                 LoadDropdown(model);
                 return View(model);
             }
 
-            // Giá bán mặc định
-            if (model.GiaBan == null)
+            if (model.GiaBan == null || model.GiaBan == 0)
             {
-                model.GiaBan = 0;
+                var sanPham = await _context.SanPhams.FindAsync(model.SanPhamId);
+                if (sanPham != null)
+                {
+                    model.GiaBan = sanPham.GiaSauGiam ?? sanPham.GiaGoc;
+                }
+                else
+                {
+                    model.GiaBan = 0;
+                }
             }
 
             _context.BienTheSaches.Add(model);
             await _context.SaveChangesAsync();
 
             TempData["Success"] = "✅ Thêm biến thể thành công!";
-
             return RedirectToAction(nameof(Index));
         }
+
+        // =====================================================
         // ===== EDIT GET =====
+        // =====================================================
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -99,11 +120,12 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
                 return NotFound();
 
             LoadDropdown(item);
-
             return View(item);
         }
 
+        // =====================================================
         // ===== EDIT POST =====
+        // =====================================================
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, BienTheSach model)
@@ -119,9 +141,17 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
 
             try
             {
-                if (model.GiaBan == null)
+                if (model.GiaBan == null || model.GiaBan == 0)
                 {
-                    model.GiaBan = 0;
+                    var sanPham = await _context.SanPhams.FindAsync(model.SanPhamId);
+                    if (sanPham != null)
+                    {
+                        model.GiaBan = sanPham.GiaSauGiam ?? sanPham.GiaGoc;
+                    }
+                    else
+                    {
+                        model.GiaBan = 0;
+                    }
                 }
 
                 _context.Update(model);
@@ -133,14 +163,15 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
             {
                 if (!_context.BienTheSaches.Any(e => e.Id == model.Id))
                     return NotFound();
-
                 throw;
             }
 
             return RedirectToAction(nameof(Index));
         }
 
+        // =====================================================
         // ===== DELETE GET =====
+        // =====================================================
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -158,7 +189,9 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
             return View(item);
         }
 
+        // =====================================================
         // ===== DELETE POST =====
+        // =====================================================
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -170,13 +203,16 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
                 _context.BienTheSaches.Remove(item);
                 await _context.SaveChangesAsync();
 
-                TempData["Success"] = "🗑️ Đã xoá biến thể!";
+                TempData["Success"] = "🗑️ Đã xoá biến thể thành công!";
             }
 
             return RedirectToAction(nameof(Index));
         }
 
+        // =====================================================
         // ===== LOAD DROPDOWN =====
+        // =====================================================
+        // FIX CHUẨN ĐÉT: Thêm dấu ? vào sau BienTheSach để chấp nhận giá trị null mẫu
         private void LoadDropdown(BienTheSach? model = null)
         {
             ViewBag.SanPhamId = new SelectList(
@@ -202,4 +238,3 @@ namespace VVD_2210900012_DATN.Areas.Admins.Controllers
         }
     }
 }
-
